@@ -56,20 +56,49 @@ pdfkeywords={First keyword, Second keyword, More},
 \maketitle
 
 \begin{abstract}
-Running AI/ML models in production is becoming more widespread, and maintaining these systems is more complex 
+Running AI/ML models in production is becoming widespread. At the same time, developing and maintaining AI workloads are becoming more difficult. In particular, most workloads are not portable and cannot easily be moved from one provider to another. Creating and operating fully automated end-to-end workflows across devices, edge, cloud adds even more complexity.
 
-    This paper presents a novel framework for managing computational workload across heterogeneous platforms. Colonies is based on  
-a loosly coupled microservice architecture where complex workflows are broken down in composable functions that are executed by independently deployable executors. Using a HTTP protocol, workflows can be expressed declarative in any computer language and be executed across platforms by so-called executors, independently deployed in the cloud, edge, devices, or even in web browser creating compute continuums across platforms. Colonies supports both real-time processing and batch jobs while at the same time offer full tracability and zero-trust security.  
+This paper presents a novel framework for running computational workload across heterogeneous platforms. Colonies is based on a loosely coupled microservice architecture where complex workflows are broken down in composable functions that are executed by independently deployable executors. Using a HTTP protocol, functions can be composed into declarative workflows in any computer language. The workflows are then executed across platforms by independently deployed executors running in the cloud, edge, devices, or even in web browser, creating compute continuums across platforms. Colonies support both real-time processing and batch jobs while at the same time offer full traceability and zero-trust security.
 
-The paper 
-
+The paper also describes how Colonies can be used to build a scalable remote sensing platform on Kubernetes, how it can be used as a building block for edge computing, and how it can be integrated with HPC platforms. Finally, the paper presents a performance investigation as well as a scalability and robustness evaluation. 
 \end{abstract}
 
 % keywords can be removed
 \keywords{Serverless computing \and Parallel computing \and Workflow orchestration}
 
 \section{Introduction}
-TODO
+Building robust and scalable AI systems is challenging and requires deep understanding in various fields. First an AI model must be trained, requiring technical skills in advanced statistics or machine learning, but also access to training and validation data. Usually, the data need to be pre-processed in several steps before it can be used, or a simulator needs to be developed to either generate syntentic data or play back historical data. While it may be resonable for small scale projects to run a whole environment on a local development computer, training large AI models usually requires access to powerful compute clusters or even HPC systems. Manually utilizing such infrastructure is cumbersome and time consuming. Being able to automate the training processes makes it possible to more quickly iterate and find useful models.  
+
+Going forward and taking an AI model into production requires significant software engineering skills. In constract to traditional IT workloads both the data and the model itself need to be managed. As most models need to be re-trained or re-calibrated regularly, it muste be possible to seamlessly update deployed model and the software without loosing information or introducing delays. In many cases, there is a constant flow of data that is ingested into the system that needs to be managed while parts of the system is not working correctly. This becomes even more challenging when nodes parts of the underlying infrastructure crashes or becomes unavailable due to maintenance such as software updates or misconfiguration errors. 
+
+Sometimes there is also need to scale the system to increase capacity or scale down to save resources. This is particularly important when using expensive cloud resources. Scaling the system means that underlying infastructure may change anytime causing additional failures. It must therefor be possible to detected failed computations and re-process failed tasks part of a larger workflow. If failed computation cannot gracefully be recovered, there must be a away for engineers perform root cause analysis and manually recover failures. 
+
+
+
+
+
+
+
+
+
+
+Taking an AI model intro production, 
+
+Development
+ - Data science
+ - Production system
+ - Integration, data ingestion, pre-processing
+ Workflows, real-time processing, back processing.
+Operation
+ - Computer faults
+ - Updates, DevOps
+Scability
+HPC
+ Requires a whole different set of toolchains. 
+
+ 
+
+
 https://modelserving.com/blog/why-do-people-say-its-so-hard-to-deploy-a-ml-model-to-production
 \section{The Colonies framework}
 \label{sec:headings}
