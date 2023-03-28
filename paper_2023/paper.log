@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.1.7)  27 MAR 2023 23:31
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.1.7)  28 MAR 2023 08:31
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -582,7 +582,7 @@ Package microtype Info: Loading generic protrusion settings for font family
 <arch.png, id=44, 567.0786pt x 327.1422pt>
 File: arch.png Graphic file (type png)
 <use arch.png>
-Package pdftex.def Info: arch.png  used on input line 76.
+Package pdftex.def Info: arch.png  used on input line 81.
 (pdftex.def)             Requested size: 226.82741pt x 130.85455pt.
 
 
@@ -591,7 +591,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 <raft.png, id=45, 246.6816pt x 214.6419pt>
 File: raft.png Graphic file (type png)
 <use raft.png>
-Package pdftex.def Info: raft.png  used on input line 83.
+Package pdftex.def Info: raft.png  used on input line 88.
 (pdftex.def)             Requested size: 98.67088pt x 85.85522pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
@@ -599,10 +599,10 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 <workflow.png, id=46, 1534.65344pt x 396.40096pt>
 File: workflow.png Graphic file (type png)
 <use workflow.png>
-Package pdftex.def Info: workflow.png  used on input line 92.
+Package pdftex.def Info: workflow.png  used on input line 97.
 (pdftex.def)             Requested size: 491.09914pt x 126.85089pt.
 
-Overfull \hbox (21.34415pt too wide) in paragraph at lines 92--93
+Overfull \hbox (21.34415pt too wide) in paragraph at lines 97--98
  [][] 
  []
 
@@ -612,21 +612,24 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<cron.png, id=47, 664.4022pt x 324.9741pt>
+File: cron.png Graphic file (type png)
+<use cron.png>
+Package pdftex.def Info: cron.png  used on input line 178.
+(pdftex.def)             Requested size: 265.75618pt x 129.98734pt.
 [1
 
 
 {/usr/local/texlive/2022/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-<cron.png, id=60, 664.4022pt x 324.9741pt>
-File: cron.png Graphic file (type png)
-<use cron.png>
-Package pdftex.def Info: cron.png  used on input line 173.
-(pdftex.def)             Requested size: 265.75618pt x 129.98734pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
@@ -646,8 +649,8 @@ Package rerunfilecheck Info: File `paper.out' has not changed.
  ) 
 Here is how much of TeX's memory you used:
  15821 strings out of 478268
- 264075 string characters out of 5846348
- 873602 words of memory out of 5000000
+ 264078 string characters out of 5846348
+ 874867 words of memory out of 5000000
  33680 multiletter control sequences out of 15000+600000
  515691 words of font info for 113 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -662,7 +665,7 @@ ive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive
 ist/fonts/type1/urw/times/utmbi8a.pfb></usr/local/texlive/2022/texmf-dist/fonts
 /type1/urw/times/utmr8a.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/urw
 /times/utmri8a.pfb>
-Output written on paper.pdf (4 pages, 592479 bytes).
+Output written on paper.pdf (4 pages, 593051 bytes).
 PDF statistics:
  139 PDF objects out of 1000 (max. 8388607)
  111 compressed objects within 2 object streams
