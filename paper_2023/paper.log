@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.1.7)  29 MAR 2023 22:16
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.1.7)  29 MAR 2023 22:20
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -373,28 +373,28 @@ LaTeX Warning: Label `fig:fig1' multiply defined.
 LaTeX Warning: Label `fig:fig1@cref' multiply defined.
 
 
+LaTeX Warning: Label `tab:table' multiply defined.
+
+
+LaTeX Warning: Label `tab:table@cref' multiply defined.
+
+
+LaTeX Warning: Label `tab:table' multiply defined.
+
+
+LaTeX Warning: Label `tab:table@cref' multiply defined.
+
+
+LaTeX Warning: Label `tab:table' multiply defined.
+
+
+LaTeX Warning: Label `tab:table@cref' multiply defined.
+
+
 LaTeX Warning: Label `fig:fig1' multiply defined.
 
 
 LaTeX Warning: Label `fig:fig1@cref' multiply defined.
-
-
-LaTeX Warning: Label `tab:table' multiply defined.
-
-
-LaTeX Warning: Label `tab:table@cref' multiply defined.
-
-
-LaTeX Warning: Label `tab:table' multiply defined.
-
-
-LaTeX Warning: Label `tab:table@cref' multiply defined.
-
-
-LaTeX Warning: Label `tab:table' multiply defined.
-
-
-LaTeX Warning: Label `tab:table@cref' multiply defined.
 
 )
 \openout1 = `paper.aux'.
