@@ -1,0 +1,12 @@
+{
+    "conditions": {
+        "colonyid": "0c1168fe986ffe39fad14f17e0bd9e5896f6d968405ac0fb3380154109ee4022",
+        "executortype": "test_executor"
+    },
+    "funcname": "say",
+    "args": ["hello world"],
+    "maxwaittime": 10,
+    "maxexectime": 100,
+    "maxretries": 3,
+    "priority": 1
+}
