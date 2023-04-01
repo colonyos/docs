@@ -1,5 +1,5 @@
 all:
 #	latex template
-#	bibtex template
+	bibtex paper 
 	pdflatex paper 
 	open paper.pdf

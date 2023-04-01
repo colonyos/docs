@@ -1,0 +1,12 @@
+\begin{thebibliography}{1}
+
+\bibitem{chaos_engineering}
+Principles of chaos engineering - the chaos engineering manifesto.
+
+\bibitem{raft}
+Diego Ongaro and John Ousterhout.
+\newblock In search of an understandable consensus algorithm.
+\newblock In {\em 2014 USENIX Annual Technical Conference (USENIX ATC 14)},
+  pages 305--319, Philadelphia, PA, June 2014. USENIX Association.
+
+\end{thebibliography}
