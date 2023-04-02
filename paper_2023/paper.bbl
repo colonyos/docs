@@ -1,16 +1,29 @@
 \begin{thebibliography}{1}
 
 \bibitem{apache_airflow}
-Apache airflow.
+{Apache Airflow}.
 \newblock \url{https://airflow.apache.org}.
 
 \bibitem{rabbitmq}
-Rabbitmq.
+{RabbitMQ}.
 \newblock \url{https://www.rabbitmq.com}.
 
 \bibitem{apache_kafka}
-Apache kafka.
+{Apache Kafka}.
 \newblock \url{https://kafka.apache.org}.
+
+\bibitem{openwolf}
+Christian Sicari, Lorenzo Carnevale, Antonino Galletta, and Massimo Villari.
+\newblock Openwolf: A serverless workflow engine for native cloud-edge
+  continuum.
+\newblock In {\em 2022 IEEE Intl Conf on Dependable, Autonomic and Secure
+  Computing, Intl Conf on Pervasive Intelligence and Computing, Intl Conf on
+  Cloud and Big Data Computing, Intl Conf on Cyber Science and Technology
+  Congress (DASC/PiCom/CBDCom/CyberSciTech)}, pages 1--8, 2022.
+
+\bibitem{openfaas}
+{OpenFaaS}.
+\newblock \url{https://www.openfaas.com}.
 
 \bibitem{GarciaRepresa1740746}
 Jaime Garcia Represa Felix Larrinaga Pal Varga William Ochoa Alain
@@ -20,12 +33,12 @@ Jaime Garcia Represa Felix Larrinaga Pal Varga William Ochoa Alain
 \newblock {\em Applied Sciences}, 13(3), 2023.
 
 \bibitem{chaos_engineering}
-Principles of chaos engineering - the chaos engineering manifesto.
+{Principles of Chaos Engineering - The Chaos Engineering manifesto}.
 \newblock \url{https://principlesofchaos.org}.
 
 \bibitem{raft}
 Diego Ongaro and John Ousterhout.
-\newblock In search of an understandable consensus algorithm.
+\newblock {In Search of an Understandable Consensus Algorithm}.
 \newblock In {\em 2014 USENIX Annual Technical Conference (USENIX ATC 14)},
   pages 305--319, Philadelphia, PA, June 2014. USENIX Association.
 
