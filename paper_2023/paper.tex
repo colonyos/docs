@@ -126,10 +126,10 @@ Queues can be implemented in different ways, and while message brokers are a com
 
 \begin{equation}
     \label{eq:pt}
-    priority_{time}=priority \cdot -10^9 \cdot 60 \cdot 60 \cdot 24 + submission_{time}  
+    priority_{time}=submission_{time} - priority \cdot 10^9 \cdot 60 \cdot 60 \cdot 24
 \end{equation}
 
-Implementing queue functionality using a database can be achieved in SQL by utilizing the \emph{order by timestamp} and \emph{limit 1} clauses to select tasks according to their submission times. Upon submission of a task, a \emph{priority time} value is computed and stored in the database. The primary objective of the priority time is to modify the submission timestamp by subtracting a delta time calculated as a function a priority value. This enables prioritization of more critical tasks. Equation \ref{eq:pt} shows how the priority time is calculated. 
+Implementing queue functionality using a database can be achieved in SQL by utilizing the \emph{order by timestamp} and \emph{limit 1} clauses to select tasks according to their submission times. Upon submission of a task, a \emph{priority time} value is computed and stored in the database. The primary objective of the priority time is to modify the submission timestamp by subtracting a delta time calculated as a function a priority value. This enables prioritization of more critical tasks. Equation \ref{eq:pt} shows how the priority time is calculated for a nanosecond timestamp. 
 
 \begin{figure}
      \centering
@@ -153,7 +153,8 @@ Colonies provides a platform for executors to interact with each other by enabli
 
 The Colonies server acts as a job broker for executors, almost like an employment agency for people. When an executor connects to the Colonies server, the server hang the incomming HTTP connection\footnote{An alternative protocol is to use WebSockets or gPRC to communicate with the Colonies server.} until the executor is assigned a process, or until a connection timer expires. Note that the Colonies server does not connect to any executor. Rather, it is the responsibility of the executors to connect to the Colonies server. This enables executors to be deployed anywhere on the Internet, behind firewalls, commercial telco networks, or even in web browser-based applications.
 
-Figure \ref{fig:process_assignment} illustrates an executor submitting a function specification that is later assigned to another executor. When registering, executors have to specify to the Colonies server which functions they are capable of executing. The Colonies server makes sure that the conditions (i.e requirmenets) of a function specification matches the capability of an executor. 
+Figure \ref{fig:process_assignment} illustrates an executor submitting a function specification that is later assigned to another executor. When registering, executors have to specify to the Colonies server which functions they are capable of executing. The Colonies server makes sure that the conditions (i.e requirmenets) of a function specification matches the capability of an executor. Note that the executors are responsibility of interpreting the assigned process and function specification to execute relevant code.
+
 \begin{figure}[h]
 	\centering
     \includegraphics[scale=0.35]{function_spec.png}
