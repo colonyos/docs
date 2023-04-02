@@ -1,7 +1,27 @@
 \begin{thebibliography}{1}
 
+\bibitem{apache_airflow}
+Apache airflow.
+\newblock \url{https://airflow.apache.org}.
+
+\bibitem{rabbitmq}
+Rabbitmq.
+\newblock \url{https://www.rabbitmq.com}.
+
+\bibitem{apache_kafka}
+Apache kafka.
+\newblock \url{https://kafka.apache.org}.
+
+\bibitem{GarciaRepresa1740746}
+Jaime Garcia Represa Felix Larrinaga Pal Varga William Ochoa Alain
+  Perez~Dániel Kozma and Jerker Delsing.
+\newblock Investigation of microservice-based workflow management solutions for
+  industrial automation.
+\newblock {\em Applied Sciences}, 13(3), 2023.
+
 \bibitem{chaos_engineering}
 Principles of chaos engineering - the chaos engineering manifesto.
+\newblock \url{https://principlesofchaos.org}.
 
 \bibitem{raft}
 Diego Ongaro and John Ousterhout.

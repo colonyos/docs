@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.1.7)  1 APR 2023 12:00
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.1.7)  2 APR 2023 12:10
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -595,43 +595,47 @@ Package microtype Info: Loading generic protrusion settings for font family
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [2]
-<arch.png, id=67, 567.0786pt x 327.1422pt>
+<arch.png, id=83, 567.0786pt x 327.1422pt>
 File: arch.png Graphic file (type png)
 <use arch.png>
-Package pdftex.def Info: arch.png  used on input line 128.
+Package pdftex.def Info: arch.png  used on input line 125.
 (pdftex.def)             Requested size: 209.8158pt x 121.04071pt.
 
-Overfull \hbox (68.88788pt too wide) in paragraph at lines 128--129
+Overfull \hbox (68.88788pt too wide) in paragraph at lines 125--126
  [][] 
  []
 
-<process.png, id=68, 391.2216pt x 444.4605pt>
+<process.png, id=84, 391.2216pt x 444.4605pt>
 File: process.png Graphic file (type png)
 <use process.png>
-Package pdftex.def Info: process.png  used on input line 134.
+Package pdftex.def Info: process.png  used on input line 131.
 (pdftex.def)             Requested size: 144.74973pt x 164.4478pt.
 
-Overfull \hbox (3.82181pt too wide) in paragraph at lines 134--135
+Overfull \hbox (3.82181pt too wide) in paragraph at lines 131--132
  [][] 
  []
 
-[3]
-<function_spec.png, id=80, 1004.75375pt x 394.47375pt>
+
+Underfull \vbox (badness 2809) has occurred while \output is active []
+
+ [3]
+<function_spec.png, id=96, 1004.75375pt x 394.47375pt>
 File: function_spec.png Graphic file (type png)
 <use function_spec.png>
-Package pdftex.def Info: function_spec.png  used on input line 150.
+Package pdftex.def Info: function_spec.png  used on input line 146.
 (pdftex.def)             Requested size: 351.66908pt x 138.06787pt.
- [4 <./arch.png> <./process.png> <./function_spec.png>]
-<raft.png, id=92, 298.9569pt x 422.5386pt>
+
+[4 <./arch.png> <./process.png> <./function_spec.png>]
+<raft.png, id=108, 298.9569pt x 422.5386pt>
 File: raft.png Graphic file (type png)
 <use raft.png>
-Package pdftex.def Info: raft.png  used on input line 165.
+Package pdftex.def Info: raft.png  used on input line 164.
 (pdftex.def)             Requested size: 149.47807pt x 211.26878pt.
  [5 <./raft.png>]
-<workflow.png, id=101, 1534.65344pt x 396.40096pt>
+<workflow.png, id=117, 1534.65344pt x 396.40096pt>
 File: workflow.png Graphic file (type png)
 <use workflow.png>
-Package pdftex.def Info: workflow.png  used on input line 187.
+Package pdftex.def Info: workflow.png  used on input line 185.
 (pdftex.def)             Requested size: 460.39958pt x 118.92119pt.
 
 
@@ -640,10 +644,13 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<cron.png, id=102, 664.4022pt x 324.9741pt>
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<cron.png, id=118, 664.4022pt x 324.9741pt>
 File: cron.png Graphic file (type png)
 <use cron.png>
-Package pdftex.def Info: cron.png  used on input line 264.
+Package pdftex.def Info: cron.png  used on input line 262.
 (pdftex.def)             Requested size: 265.75618pt x 129.98734pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
@@ -653,16 +660,16 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `paper.out' has not changed.
-(rerunfilecheck)             Checksum: 5F9478EC6D2412D4CBE54A17D3341093;1723.
+(rerunfilecheck)             Checksum: 0E83591260592E7A7897578C02167069;1940.
  ) 
 Here is how much of TeX's memory you used:
- 17012 strings out of 478268
- 289810 string characters out of 5846348
- 700043 words of memory out of 5000000
- 34735 multiletter control sequences out of 15000+600000
- 531255 words of font info for 209 fonts, out of 8000000 for 9000
+ 17045 strings out of 478268
+ 290316 string characters out of 5846348
+ 700204 words of memory out of 5000000
+ 34750 multiletter control sequences out of 15000+600000
+ 532155 words of font info for 217 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 70i,12n,77p,1036b,550s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 70i,11n,77p,1064b,500s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/base/8r.enc}{/usr/local/t
 exlive/2022/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}</usr/local/tex
 live/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texl
@@ -675,10 +682,10 @@ exmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2022/texmf-dist/
 fonts/type1/urw/times/utmbi8a.pfb></usr/local/texlive/2022/texmf-dist/fonts/typ
 e1/urw/times/utmr8a.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/urw/tim
 es/utmri8a.pfb>
-Output written on paper.pdf (8 pages, 858919 bytes).
+Output written on paper.pdf (8 pages, 864271 bytes).
 PDF statistics:
- 179 PDF objects out of 1000 (max. 8388607)
- 140 compressed objects within 2 object streams
- 35 named destinations out of 1000 (max. 500000)
- 58495 words of extra memory for PDF output out of 61914 (max. 10000000)
+ 202 PDF objects out of 1000 (max. 8388607)
+ 163 compressed objects within 2 object streams
+ 41 named destinations out of 1000 (max. 500000)
+ 58503 words of extra memory for PDF output out of 61914 (max. 10000000)
 
