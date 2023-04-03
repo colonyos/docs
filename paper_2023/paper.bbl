@@ -1,4 +1,4 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
 
 \bibitem{apache_airflow}
 {Apache Airflow}.
@@ -12,6 +12,10 @@
 {Apache Kafka}.
 \newblock \url{https://kafka.apache.org}.
 
+\bibitem{argowf}
+{Argo Workflows}.
+\newblock \url{https://argoproj.github.io/argo-workflows}.
+
 \bibitem{openwolf}
 Christian Sicari, Lorenzo Carnevale, Antonino Galletta, and Massimo Villari.
 \newblock Openwolf: A serverless workflow engine for native cloud-edge
@@ -24,6 +28,20 @@ Christian Sicari, Lorenzo Carnevale, Antonino Galletta, and Massimo Villari.
 \bibitem{openfaas}
 {OpenFaaS}.
 \newblock \url{https://www.openfaas.com}.
+
+\bibitem{serverlessworkflows}
+{Serverless Workflows}.
+\newblock \url{https://serverlessworkflow.io}.
+
+\bibitem{synapse}
+{Synapse}.
+\newblock \url{https://github.com/serverlessworkflow/synapse}.
+
+\bibitem{scafe}
+Zhijun Ding, Yuanyuan Zhou, Shuaijun Wang, and Changjun Jiang.
+\newblock {SCAFE: A Service-Centered Cloud-Native Workflow Engine
+  Architecture}.
+\newblock {\em IEEE Transactions on Services Computing}, pages 1--14, 2023.
 
 \bibitem{GarciaRepresa1740746}
 Jaime Garcia Represa Felix Larrinaga Pal Varga William Ochoa Alain

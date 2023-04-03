@@ -46,9 +46,9 @@
 }
 
 % Uncomment to override  the `A preprint' in the header
-%\renewcommand{\headeright}{Technical Report}
-%\renewcommand{\undertitle}{Technical Report}
-\renewcommand{\shorttitle}{\textit{arXiv} Template}
+\renewcommand{\headeright}{Technical Report}
+\renewcommand{\undertitle}{Technical Report}
+%\renewcommand{\shorttitle}{\textit{arXiv} Template}
 
 %%% Add PDF metadata to help others organize their library
 %%% Once the PDF is generated, you can check the metadata with
@@ -92,22 +92,16 @@ This paper presents a framework called Colonies, which is built around a loosely
 \section{Related work}
 Workflow management has been extensively studied in both academic and industrial settings with numerous approaches proposed to address the challenges in this field. For example, Apache Airflow \cite{apache_airflow} is a popular open-source workflow management system for handling data engineering pipelines. Like Colonies, Apache Airflow enables developers to create custom operators and executors that can be integrated with various systems. Additionally, Apache Airflow offers an HTTP API that makes it possible to develop software development kits (SDKs) in various programming languages. However, Apache Airflow does not realy on a queuing system. Instead, it must be integrated with a message broker, such as RabbitMQ \cite{rabbitmq} or Kafka \cite{apache_kafka}, to implement task queues, resulting in a more complex architecture than Colonies. Furthermore, Colonies is based on a distributed microservice architecture that makes it more suitable for DevOps software development. As Colonies is loosely coupled, executors can be implemented and dynamically deployed without reconfiguring the workflow engine, effectively making it work like a grid computing platform. 
 
-Argo is a ...
+Argo \cite{argowf} is an open source container-native workflow engine for orchestrating parallel jobs on Kubernetes. It is can be used for running CI/CD pipelines or compute intensive machine learning or data processing tasks where each job runs as a container. In contrast, Colonies offers a more versatile approach, allowing jobs to be launched within a container. As launching new containers on Kubernetes can occasionally be time-consuming, Colonies can delivers higher throughput as the costs of starting new jobs are minimal. This is particular useful when launching large container images, or workloads (e.g. Julia scripts) or that takes relative long time to start. 
 
 OpenWolf \cite{openwolf} is a serverless workflow engine designed to utilize the Function-as-a-Service (FaaS) paradigm for composing complex scientific workflows. It is based on OpenFaaS \cite{openfaas}, which allows functions to run on Kubernetes clusters. In contrast, Colonies does not require Kubernetes, but provides a zero-trust security protocol to allow functions to be executed securely by distributed executor workers deployed anywhere on the Internet.
 
-The serverless workflow project \cite{serverlessworkflow} aims at providing a vendor-neutral workflow DSL. Synapse is a workflow management system implementing the serverless workflow specification. It is important to point out that Colonies does not provide an infrastructure for function execution. Instead, Colonies primary role is to serve as a platform for coordinating function executions, which are carried out by distributed executor services.
+The serverless workflow project \cite{serverlessworkflows} aims at providing a vendor-neutral workflow DSL. Synapse \cite{synapse} is a workflow management system similar to Argo, but that implements the serverless workflow specification. A similar engine is proposed in \cite{scafe}. It is important to point out that Colonies does not provide an infrastructure for function execution. Instead, Colonies primary role is to serve as a platform for coordinating function executions, which are carried out by distributed executor.
 
-Colonies is based on a microservice architecture. J. Represa et al. \cite{GarciaRepresa1740746} discusses various challenges developing microservice-based workflow management for industrial automation. They concludes that microservice-based workflow technologies is feasible for industrial usage, especially considering its flexibility. The main contribution of this paper is a technica 
+J. Represa et al. \cite{GarciaRepresa1740746} explore various challenges associated with developing microservice-based workflow management for industrial automation within the context of the Arrowhead project. The authors conclude that microservice-based workflow technologies is viable for industrial applications, particularly due to their inherent flexibility. The primary contribution of this paper is a comprehensive technical description of how to implement a distributed workflow engine based on microservice principles, extending beyond orchestrating microservices to execute automation tasks.
 
-SCAFE: A Service-Centered Cloud-Native Workflow Engine Architecture
 
-https://www.alibabacloud.com/product/serverless-workflow
-https://serverlessworkflow.io/
 
-https://github.com/serverlessworkflow/synapse
-
-AWS Step Functions to design and run a serverless workflow that coordinates multiple AWS Lambda functions.
 
 \section{The Colonies framework}
 \label{sec:headings}
@@ -189,7 +183,7 @@ To minimize downtime in the event of hardware or software failures, there is a n
 
 Raft \cite{raft} is a consensus algorithm specifically designed to manage a replicated log within a distributed system. It functions within a cluster of servers, where a single server takes on the role of leader while the remaining servers act as followers. The leader is responsible for managing the replicated log, processing client requests, and replicating entries to the followers. Followers passively replicate the leader's log and participate in leader elections. The leadership can change over time due to elections triggered by timeouts or other factors.
 
-Integrating Raft with the Colonies framework allows incoming assign requests to be directed towards the leading Colonies server, thereby ensuring that only one Colonies server replica handles such requests. Figure \ref{fig:ha_deployment} shows an overview of a high-availability Colonies deployment. A new leader is elected in the event that a Colonies server replica fails. The Raft protocol also enables seamless updates to the Colonies server software by making it possible to upgrade each replica individually. As a result, Colonies becomes well-suited for Kubernetes deployments.
+Incorporting Raft with the Colonies framework allows incoming assign requests to be directed towards the leading Colonies server, thereby ensuring that only one Colonies server replica handles such requests. Figure \ref{fig:ha_deployment} shows an overview of a high-availability Colonies deployment. A new leader is elected in the event that a Colonies server replica fails. The Raft protocol also enables seamless updates to the Colonies server software by making it possible to upgrade each replica individually. As a result, Colonies becomes well-suited for Kubernetes deployments.
 
 \subsubsection{Workflows}
 A workflow is a series of tasks that need to be completed in a specific order. Workflows are often represented as directed acyclic graphs (DAGs), where nodes represent tasks and edges represent dependencies or data flow between tasks. 
