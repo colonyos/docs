@@ -1,5 +1,57 @@
 \begin{thebibliography}{10}
 
+\bibitem{wf_challenges}
+Rafael Ferreira~da Silva, Henri Casanova, Kyle Chard, Tainã Coleman, Dan
+  Laney, Dong Ahn, Shantenu Jha, Dorran Howell, Stian Soiland-Reys, Ilkay
+  Altintas, Douglas Thain, Rosa Filgueira, Yadu Babuji, Rosa~M. Badia, Bartosz
+  Balis, Silvina Caino-Lores, Scott Callaghan, Frederik Coppens, Michael~R.
+  Crusoe, Kaushik De, Frank Di~Natale, Tu~M.~A. Do, Bjoern Enders, Thomas
+  Fahringer, Anne Fouilloux, Grigori Fursin, Alban Gaignard, Alex Ganose,
+  Daniel Garijo, Sandra Gesing, Carole Goble, Adil Hasan, Sebastiaan Huber,
+  Daniel~S. Katz, Ulf Leser, Douglas Lowe, Bertram Ludaescher, Ketan
+  Maheshwari, Maciej Malawski, Rajiv Mayani, Kshitij Mehta, Andre Merzky, Todd
+  Munson, Jonathan Ozik, Loïc Pottier, Sashko Ristov, Mehdi Roozmeh, Renan
+  Souza, Frédéric Suter, Benjamin Tovar, Matteo Turilli, Karan Vahi, Alvaro
+  Vidal-Torreira, Wendy Whitcup, Michael Wilde, Alan Williams, Matthew Wolf,
+  and Justin Wozniak.
+\newblock {Workflows Community Summit: Advancing the State-of-the-art of
+  Scientific Workflows Management Systems Research and Development}.
+\newblock Technical report, 2021.
+
+\bibitem{service_wfs}
+W.~Viriyasitavat, L.~Da Xu, G.~Dhiman, A.~Sapsomboon, V.~Pungpapong, and Z.~Bi.
+\newblock {Service Workflow: State-of-the-Art and Future Trends}.
+\newblock {\em {IEEE Transactions on Services Computing}}, 16(01):757--772, jan
+  2023.
+
+\bibitem{schmitt2022workflow}
+Caspar Schmitt and Thomas Kuhr.
+\newblock A workflow management system guide, 2022.
+
+\bibitem{GarciaRepresa1740746}
+Jaime Garcia Represa Felix Larrinaga Pal Varga William Ochoa Alain
+  Perez~Dániel Kozma and Jerker Delsing.
+\newblock Investigation of microservice-based workflow management solutions for
+  industrial automation.
+\newblock {\em Applied Sciences}, 13(3), 2023.
+
+\bibitem{Ouyang2010}
+Chun Ouyang, Michael Adams, Moe~Thandar Wynn, and Arthur H.~M. ter Hofstede.
+\newblock {\em Workflow Management}, pages 387--418.
+\newblock Springer Berlin Heidelberg, Berlin, Heidelberg, 2010.
+
+\bibitem{NIKOLOV2021100440}
+Nikolay Nikolov, Yared~Dejene Dessalk, Akif~Quddus Khan, Ahmet Soylu, Mihhail
+  Matskin, Amir~H. Payberah, and Dumitru Roman.
+\newblock Conceptualization and scalable execution of big data workflows using
+  domain-specific languages and software containers.
+\newblock {\em Internet of Things}, 16:100440, 2021.
+
+\bibitem{workflow_in_bigdata}
+L.~Belcastro and Fabrizio Marozzo.
+\newblock {\em {Workflow Systems for Big Data Analysis}}.
+\newblock 01 2018.
+
 \bibitem{apache_airflow}
 {Apache Airflow}.
 \newblock \url{https://airflow.apache.org}.
@@ -43,15 +95,8 @@ Zhijun Ding, Yuanyuan Zhou, Shuaijun Wang, and Changjun Jiang.
   Architecture}.
 \newblock {\em IEEE Transactions on Services Computing}, pages 1--14, 2023.
 
-\bibitem{GarciaRepresa1740746}
-Jaime Garcia Represa Felix Larrinaga Pal Varga William Ochoa Alain
-  Perez~Dániel Kozma and Jerker Delsing.
-\newblock Investigation of microservice-based workflow management solutions for
-  industrial automation.
-\newblock {\em Applied Sciences}, 13(3), 2023.
-
 \bibitem{chaos_engineering}
-{Principles of Chaos Engineering - The Chaos Engineering manifesto}.
+{Principles of Chaos Engineering - The Chaos Engineering Manifesto}.
 \newblock \url{https://principlesofchaos.org}.
 
 \bibitem{raft}
