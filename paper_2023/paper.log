@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.1.7)  5 APR 2023 08:30
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.1.7)  5 APR 2023 18:32
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -386,12 +386,6 @@ Package: subcaption 2022/01/07 v1.5 Sub-captions (AR)
 )
 (./paper.aux
 
-LaTeX Warning: Label `fig:function_spec' multiply defined.
-
-
-LaTeX Warning: Label `fig:function_spec@cref' multiply defined.
-
-
 LaTeX Warning: Label `tab:table' multiply defined.
 
 
@@ -601,49 +595,52 @@ Underfull \vbox (badness 1107) has occurred while \output is active []
 
 
 {/usr/local/texlive/2022/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2]
-<overview.png, id=104, 711.6186pt x 636.2169pt>
+<overview.png, id=108, 711.6186pt x 636.2169pt>
 File: overview.png Graphic file (type png)
 <use overview.png>
 Package pdftex.def Info: overview.png  used on input line 109.
 (pdftex.def)             Requested size: 249.07024pt x 222.67924pt.
- [3 <./overview.png>]
-<arch.png, id=119, 567.0786pt x 327.1422pt>
+ [3 <./overview.png>] [4]
+<arch.png, id=127, 567.0786pt x 327.1422pt>
 File: arch.png Graphic file (type png)
 <use arch.png>
-Package pdftex.def Info: arch.png  used on input line 140.
+Package pdftex.def Info: arch.png  used on input line 149.
 (pdftex.def)             Requested size: 209.8158pt x 121.04071pt.
 
-Overfull \hbox (68.88788pt too wide) in paragraph at lines 140--141
+Overfull \hbox (68.88788pt too wide) in paragraph at lines 149--150
  [][] 
  []
 
-<process.png, id=120, 391.2216pt x 444.4605pt>
+<process.png, id=128, 391.2216pt x 444.4605pt>
 File: process.png Graphic file (type png)
 <use process.png>
-Package pdftex.def Info: process.png  used on input line 146.
+Package pdftex.def Info: process.png  used on input line 155.
 (pdftex.def)             Requested size: 144.74973pt x 164.4478pt.
 
-Overfull \hbox (3.82181pt too wide) in paragraph at lines 146--147
+Overfull \hbox (3.82181pt too wide) in paragraph at lines 155--156
  [][] 
  []
 
-[4]
-<function_spec.png, id=132, 1004.75375pt x 394.47375pt>
+<function_spec.png, id=131, 1004.75375pt x 394.47375pt>
 File: function_spec.png Graphic file (type png)
 <use function_spec.png>
-Package pdftex.def Info: function_spec.png  used on input line 162.
+Package pdftex.def Info: function_spec.png  used on input line 171.
 (pdftex.def)             Requested size: 351.66908pt x 138.06787pt.
- [5 <./arch.png> <./process.png> <./function_spec.png>]
-<raft.png, id=144, 298.9569pt x 422.5386pt>
+[5 <./arch.png> <./process.png>]
+<raft.png, id=146, 298.9569pt x 422.5386pt>
 File: raft.png Graphic file (type png)
 <use raft.png>
-Package pdftex.def Info: raft.png  used on input line 180.
+Package pdftex.def Info: raft.png  used on input line 189.
 (pdftex.def)             Requested size: 149.47807pt x 211.26878pt.
- [6 <./raft.png>]
-<workflow.png, id=153, 1534.65344pt x 396.40096pt>
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[6 <./function_spec.png>]
+<workflow.png, id=156, 1534.65344pt x 396.40096pt>
 File: workflow.png Graphic file (type png)
 <use workflow.png>
-Package pdftex.def Info: workflow.png  used on input line 201.
+Package pdftex.def Info: workflow.png  used on input line 210.
 (pdftex.def)             Requested size: 460.39958pt x 118.92119pt.
 
 
@@ -652,26 +649,33 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<cron.png, id=154, 664.4022pt x 324.9741pt>
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<cron.png, id=157, 664.4022pt x 324.9741pt>
 File: cron.png Graphic file (type png)
 <use cron.png>
-Package pdftex.def Info: cron.png  used on input line 278.
+Package pdftex.def Info: cron.png  used on input line 287.
 (pdftex.def)             Requested size: 265.75618pt x 129.98734pt.
-[7 <./workflow.png>] (./paper.bbl [8 <./cron.png>]) [9] (./paper.aux)
+[7 <./raft.png>] (./paper.bbl [8 <./workflow.png> <./cron.png>] [9]) [10]
+(./paper.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `paper.out' has not changed.
-(rerunfilecheck)             Checksum: 0E83591260592E7A7897578C02167069;1940.
+(rerunfilecheck)             Checksum: AB5EA06591A6763896B4E55F0D67D8B8;2063.
  ) 
 Here is how much of TeX's memory you used:
- 17118 strings out of 478268
- 291683 string characters out of 5846348
- 701438 words of memory out of 5000000
- 34801 multiletter control sequences out of 15000+600000
- 532401 words of font info for 220 fonts, out of 8000000 for 9000
+ 17132 strings out of 478268
+ 291834 string characters out of 5846348
+ 702587 words of memory out of 5000000
+ 34804 multiletter control sequences out of 15000+600000
+ 532981 words of font info for 226 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 70i,12n,77p,1264b,500s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 70i,11n,77p,1280b,524s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/base/8r.enc}{/usr/local/t
 exlive/2022/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}</usr/local/tex
 live/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texl
@@ -684,10 +688,10 @@ exmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2022/texmf-dist/
 fonts/type1/urw/times/utmbi8a.pfb></usr/local/texlive/2022/texmf-dist/fonts/typ
 e1/urw/times/utmr8a.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/urw/tim
 es/utmri8a.pfb>
-Output written on paper.pdf (9 pages, 1172305 bytes).
+Output written on paper.pdf (10 pages, 1175108 bytes).
 PDF statistics:
- 246 PDF objects out of 1000 (max. 8388607)
- 204 compressed objects within 3 object streams
- 58 named destinations out of 1000 (max. 500000)
- 58508 words of extra memory for PDF output out of 61914 (max. 10000000)
+ 254 PDF objects out of 1000 (max. 8388607)
+ 211 compressed objects within 3 object streams
+ 60 named destinations out of 1000 (max. 500000)
+ 58516 words of extra memory for PDF output out of 61914 (max. 10000000)
 
