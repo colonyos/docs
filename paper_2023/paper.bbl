@@ -95,6 +95,20 @@ Zhijun Ding, Yuanyuan Zhou, Shuaijun Wang, and Changjun Jiang.
   Architecture}.
 \newblock {\em IEEE Transactions on Services Computing}, pages 1--14, 2023.
 
+\bibitem{GarciaRepresa1640771}
+Jaime Garcia~Represa.
+\newblock {Workflows in Microservice Based System of Systems}, 2022.
+
+\bibitem{delsing2017iot}
+Jerker Delsing.
+\newblock {\em Iot automation: Arrowhead framework}.
+\newblock Crc Press, 2017.
+
+\bibitem{grid_computing}
+Armu Sungkar and Tena Kogoya.
+\newblock A review of grid computing.
+\newblock {\em Computer Science and IT Research Journal}, 1:1--6, 04 2020.
+
 \bibitem{chaos_engineering}
 {Principles of Chaos Engineering - The Chaos Engineering Manifesto}.
 \newblock \url{https://principlesofchaos.org}.
