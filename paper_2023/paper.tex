@@ -107,7 +107,7 @@ Grid computing \cite{grid_computing} is a distributed computing model that allow
 \begin{figure}[h]
 	\centering
     \includegraphics[scale=0.35]{overview.png}
-	\caption{Overview of ....}
+	\caption{Overview of the Colonies framework. Executors may be deployed anywhere on the Internet.}
 	\label{fig:function_spec}
 \end{figure}
 
@@ -191,7 +191,7 @@ To minimize downtime in the event of hardware or software failures, there is a n
 
 Raft \cite{raft} is a consensus algorithm specifically designed to manage a replicated log within a distributed system. It functions within a cluster of servers, where a single server takes on the role of leader while the remaining servers act as followers. The leader is responsible for managing the replicated log, processing client requests, and replicating entries to the followers. Followers passively replicate the leader's log and participate in leader elections. The leadership can change over time due to elections triggered by timeouts or other factors.
 
-Incorporting Raft with the Colonies framework allows incoming assign requests to be directed towards the leading Colonies server, thereby ensuring that only one Colonies server replica handles such requests. Figure \ref{fig:ha_deployment} shows an overview of a high-availability Colonies deployment. A new leader is elected in the event that a Colonies server replica fails. The Raft protocol also enables seamless updates to the Colonies server software by making it possible to upgrade each replica individually. As a result, Colonies becomes well-suited for Kubernetes deployments.
+Incorporting Raft with the Colonies framework allows incoming assign requests to be directed towards the leading Colonies server, thereby ensuring that only one Colonies server replica handles such requests. Figure \ref{fig:ha_deployment} shows an overview of a high-availability Colonies deployment. A new leader is elected in the event that a Colonies server replica fails. The Raft protocol also enables seamless updates to the Colonies server software by making it possible to upgrade each replica individually. Consequently, Colonies is well-suited for Kubernetes deployments, ensuring high levels of availability and fault tolerance.
 
 \subsubsection{Workflows}
 A workflow is a series of tasks that need to be completed in a specific order. Workflows are often represented as directed acyclic graphs (DAGs), where nodes represent tasks and edges represent dependencies or data flow between tasks. 
