@@ -68,6 +68,11 @@ L.~Belcastro and Fabrizio Marozzo.
 {Argo Workflows}.
 \newblock \url{https://argoproj.github.io/argo-workflows}.
 
+\bibitem{cognit}
+{COGNIT: Challenges and Vision for a Serverless and Multi-Provider Cognitive
+  Cloud-Edge Continuum}.
+\newblock Under review.
+
 \bibitem{openwolf}
 Christian Sicari, Lorenzo Carnevale, Antonino Galletta, and Massimo Villari.
 \newblock Openwolf: A serverless workflow engine for native cloud-edge
@@ -101,7 +106,7 @@ Jaime Garcia~Represa.
 
 \bibitem{delsing2017iot}
 Jerker Delsing.
-\newblock {\em Iot automation: Arrowhead framework}.
+\newblock {\em {IoT automation: Arrowhead framework}}.
 \newblock Crc Press, 2017.
 
 \bibitem{grid_computing}
