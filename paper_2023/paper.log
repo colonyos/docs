@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.1.7)  8 APR 2023 17:35
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.1.7)  9 APR 2023 00:50
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -384,34 +384,27 @@ Package: subcaption 2022/01/07 v1.5 Sub-captions (AR)
 \c@subfigure=\count294
 \c@subtable=\count295
 )
-(./paper.aux
-
-LaTeX Warning: Label `deptable' multiply defined.
-
-
-LaTeX Warning: Label `deptable@cref' multiply defined.
-
-)
+(./paper.aux)
 \openout1 = `paper.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 63.
-LaTeX Font Info:    ... okay on input line 63.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 63.
-LaTeX Font Info:    ... okay on input line 63.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 63.
-LaTeX Font Info:    ... okay on input line 63.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 63.
-LaTeX Font Info:    ... okay on input line 63.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 63.
-LaTeX Font Info:    ... okay on input line 63.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 63.
-LaTeX Font Info:    ... okay on input line 63.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 63.
-LaTeX Font Info:    ... okay on input line 63.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 63.
-LaTeX Font Info:    ... okay on input line 63.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 63.
-LaTeX Font Info:    ... okay on input line 63.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -479,7 +472,7 @@ LaTeX Font Info:    ... okay on input line 63.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-Package hyperref Info: Link coloring OFF on input line 63.
+Package hyperref Info: Link coloring OFF on input line 53.
 (/usr/local/texlive/2022/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
 
@@ -492,25 +485,25 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count296
 )
-LaTeX Info: Redefining \ref on input line 63.
-LaTeX Info: Redefining \pageref on input line 63.
-LaTeX Info: Redefining \nameref on input line 63.
+LaTeX Info: Redefining \ref on input line 53.
+LaTeX Info: Redefining \pageref on input line 53.
+LaTeX Info: Redefining \nameref on input line 53.
  (./paper.out) (./paper.out)
 \@outlinefile=\write3
 \openout3 = `paper.out'.
 
-LaTeX Info: Redefining \microtypecontext on input line 63.
-Package microtype Info: Applying patch `item' on input line 63.
-Package microtype Info: Applying patch `toc' on input line 63.
-Package microtype Info: Applying patch `eqnum' on input line 63.
-Package microtype Info: Applying patch `footnote' on input line 63.
+LaTeX Info: Redefining \microtypecontext on input line 53.
+Package microtype Info: Applying patch `item' on input line 53.
+Package microtype Info: Applying patch `toc' on input line 53.
+Package microtype Info: Applying patch `eqnum' on input line 53.
+Package microtype Info: Applying patch `footnote' on input line 53.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
 Package microtype Info: Automatic font expansion enabled (level 2),
 (microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
 Package microtype Info: Using default expansion set `alltext-nott'.
-LaTeX Info: Redefining \showhyphens on input line 63.
+LaTeX Info: Redefining \showhyphens on input line 53.
 Package microtype Info: No adjustment of tracking.
 Package microtype Info: No adjustment of interword spacing.
 Package microtype Info: No adjustment of character kerning.
@@ -548,7 +541,7 @@ Package caption Info: End \AtBeginDocument code.
 File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman 
 (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+msa on input line 65.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 55.
 
 
 (/usr/local/texlive/2022/texmf-dist/tex/latex/amsfonts/umsa.fd
@@ -557,7 +550,7 @@ File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 (/usr/local/texlive/2022/texmf-dist/tex/latex/microtype/mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 65.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 55.
 
 
 (/usr/local/texlive/2022/texmf-dist/tex/latex/amsfonts/umsb.fd
@@ -566,7 +559,7 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 (/usr/local/texlive/2022/texmf-dist/tex/latex/microtype/mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
-LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 6
+LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 5
 5.
 
 (/usr/local/texlive/2022/texmf-dist/tex/latex/base/t1cmtt.fd
@@ -586,96 +579,122 @@ Underfull \vbox (badness 1107) has occurred while \output is active []
 <overview.png, id=118, 711.6186pt x 636.2169pt>
 File: overview.png Graphic file (type png)
 <use overview.png>
-Package pdftex.def Info: overview.png  used on input line 109.
+Package pdftex.def Info: overview.png  used on input line 99.
 (pdftex.def)             Requested size: 320.22542pt x 286.29495pt.
  [3]
 LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 1
-26.
+16.
 
 (/usr/local/texlive/2022/texmf-dist/tex/latex/psnfss/ts1ptm.fd
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 ) [4 <./overview.png>]
-<arch.png, id=138, 567.0786pt x 327.1422pt>
+<arch.png, id=140, 567.0786pt x 327.1422pt>
 File: arch.png Graphic file (type png)
 <use arch.png>
-Package pdftex.def Info: arch.png  used on input line 157.
+Package pdftex.def Info: arch.png  used on input line 147.
 (pdftex.def)             Requested size: 209.8158pt x 121.04071pt.
 
-Overfull \hbox (68.88788pt too wide) in paragraph at lines 157--158
+Overfull \hbox (68.88788pt too wide) in paragraph at lines 147--148
  [][] 
  []
 
-<process.png, id=139, 391.2216pt x 444.4605pt>
+<process.png, id=141, 391.2216pt x 444.4605pt>
 File: process.png Graphic file (type png)
 <use process.png>
-Package pdftex.def Info: process.png  used on input line 163.
+Package pdftex.def Info: process.png  used on input line 153.
 (pdftex.def)             Requested size: 144.74973pt x 164.4478pt.
 
-Overfull \hbox (3.82181pt too wide) in paragraph at lines 163--164
+Overfull \hbox (3.82181pt too wide) in paragraph at lines 153--154
  [][] 
  []
 
 [5 <./arch.png> <./process.png>]
-<function_spec.png, id=146, 1004.75375pt x 394.47375pt>
+<function_spec.png, id=148, 1004.75375pt x 394.47375pt>
 File: function_spec.png Graphic file (type png)
 <use function_spec.png>
-Package pdftex.def Info: function_spec.png  used on input line 218.
+Package pdftex.def Info: function_spec.png  used on input line 208.
 (pdftex.def)             Requested size: 351.66908pt x 138.06787pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [6]
-<raft.png, id=166, 298.9569pt x 422.5386pt>
+<raft.png, id=168, 298.9569pt x 422.5386pt>
 File: raft.png Graphic file (type png)
 <use raft.png>
-Package pdftex.def Info: raft.png  used on input line 243.
+Package pdftex.def Info: raft.png  used on input line 233.
 (pdftex.def)             Requested size: 149.47807pt x 211.26878pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [7 <./function_spec.png>]
-<workflow.png, id=178, 1534.65344pt x 396.40096pt>
+<workflow.png, id=180, 1534.65344pt x 396.40096pt>
 File: workflow.png Graphic file (type png)
 <use workflow.png>
-Package pdftex.def Info: workflow.png  used on input line 281.
+Package pdftex.def Info: workflow.png  used on input line 271.
 (pdftex.def)             Requested size: 460.39958pt x 118.92119pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[8 <./raft.png>] [9 <./workflow.png>] (./paper.bbl [10]) [11] (./paper.aux)
+[8 <./raft.png>] [9 <./workflow.png>]
 
-LaTeX Warning: There were multiply-defined labels.
+LaTeX Warning: `h' float specifier changed to `ht'.
 
-Package rerunfilecheck Info: File `paper.out' has not changed.
-(rerunfilecheck)             Checksum: 71636EBE5AE8645554E5BA0C36F2A16B;2382.
+
+Underfull \hbox (badness 6364) in paragraph at lines 341--342
+[]\T1/ptm/m/n/10 (+20) Table []5[] shows an ex-am-ple of a colony ta-ble con-si
+st-ing of three ex-ecu-tors. In this case, to
+ []
+
+
+Underfull \hbox (badness 4872) in paragraph at lines 341--342
+\T1/ptm/m/n/10 (+20) reg-is-ter a new ex-ecu-tor, the SHA-3 hash of the re-cov-
+ered sig-na-ture needs to match the iden-dity
+ []
+
+[10] (./paper.bbl [11]) [12] (./paper.aux)
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+
+Package rerunfilecheck Warning: File `paper.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `paper.out':
+(rerunfilecheck)             Before: 71636EBE5AE8645554E5BA0C36F2A16B;2382
+(rerunfilecheck)             After:  DF2777589B637499CDA615C0E2B01DAA;2724.
  ) 
 Here is how much of TeX's memory you used:
- 17201 strings out of 478268
- 292753 string characters out of 5846348
- 702005 words of memory out of 5000000
- 34840 multiletter control sequences out of 15000+600000
- 534723 words of font info for 243 fonts, out of 8000000 for 9000
+ 17226 strings out of 478268
+ 293083 string characters out of 5846348
+ 701496 words of memory out of 5000000
+ 34851 multiletter control sequences out of 15000+600000
+ 535173 words of font info for 247 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  70i,11n,77p,1279b,500s stack positions out of 10000i,1000n,20000p,200000b,200000s
-{/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/base/8r.enc}{/usr/local/t
-exlive/2022/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}</usr/local/tex
-live/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texl
-ive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texliv
-e/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/
-2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/202
-2/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2022
-/texmf-dist/fonts/type1/public/cm-super/sftt1000.pfb></usr/local/texlive/2022/t
-exmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2022/texmf-dist/
-fonts/type1/urw/times/utmbi8a.pfb></usr/local/texlive/2022/texmf-dist/fonts/typ
-e1/urw/times/utmr8a.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/urw/tim
-es/utmri8a.pfb>
-Output written on paper.pdf (11 pages, 1028602 bytes).
+
+pdfTeX warning (dest): name{subsection.4.1} has been referenced but does not ex
+ist, replaced by a fixed one
+
+{/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/base/8r.enc}{/usr/local/tex
+live/2022/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}</usr/local/texli
+ve/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texliv
+e/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/
+2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/20
+22/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2022/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2022/t
+exmf-dist/fonts/type1/public/cm-super/sftt1000.pfb></usr/local/texlive/2022/tex
+mf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2022/texmf-dist/fo
+nts/type1/urw/times/utmbi8a.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1
+/urw/times/utmr8a.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/urw/times
+/utmri8a.pfb>
+Output written on paper.pdf (12 pages, 1035314 bytes).
 PDF statistics:
- 280 PDF objects out of 1000 (max. 8388607)
- 237 compressed objects within 3 object streams
- 66 named destinations out of 1000 (max. 500000)
+ 300 PDF objects out of 1000 (max. 8388607)
+ 256 compressed objects within 3 object streams
+ 74 named destinations out of 1000 (max. 500000)
  60575 words of extra memory for PDF output out of 61914 (max. 10000000)
 

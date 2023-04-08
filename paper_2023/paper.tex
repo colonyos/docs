@@ -46,19 +46,9 @@
 }
 
 % Uncomment to override  the `A preprint' in the header
-\renewcommand{\headeright}{Technical Report}
-\renewcommand{\undertitle}{Technical Report}
+\renewcommand{\headeright}{DRAFT Technical Report}
+\renewcommand{\undertitle}{DRAFT Technical Report}
 %\renewcommand{\shorttitle}{\textit{arXiv} Template}
-
-%%% Add PDF metadata to help others organize their library
-%%% Once the PDF is generated, you can check the metadata with
-%%% $ pdfinfo template.pdf
-\hypersetup{
-pdftitle={A template for the arxiv style},
-pdfsubject={q-bio.NC, q-bio.QM},
-pdfauthor={David S.~Hippocampus, Elias D.~Striatum},
-pdfkeywords={First keyword, Second keyword, More},
-}
 
 \begin{document}
 \maketitle
@@ -68,15 +58,15 @@ Artificial intelligence and machine learning has gained significant traction in 
 
 To address the aforementioned challenges, the paper introduces an open-source framework called Colonies\footnote{https://github.com/colonyos/colonies}, which is designed to facilitate execution of computational workloads across a diverse range of platforms. Colonies enables development of a \emph{grid-like distributed virtual computer}, called a \emph{Colony}, which can effortlessly integrate with any third-party application or other workflow management systems.
 
-Built upon a stateless microservice architecture, Colonies enables complex workflows to be broken down into composable functions. With the use of an HTTP protocol, these composable functions can be implemented in any programming language and be executed by independent executors deployed across platforms, anywhere on the Internet, including cloud, edge, high-performance computing (HPC) environments, devices, or even web browsers. A zero-trust security protocol enables a collection of distributed executors to operate as a unified entity, thus establishing seamless computational continuums across multiple platforms.
+Built upon a stateless microservice architecture, Colonies enables complex workflows to be broken down into composable functions. With the use of an HTTP protocol, these composable functions can be implemented in any programming language and be executed by independent executors deployed across platforms, anywhere on the Internet, including cloud, edge, high-performance computing (HPC) environments. A zero-trust security protocol enables a collection of distributed executors to operate as a unified entity, thus establishing seamless computational continuums across multiple platforms.
 
-In addition to a technical description of the Colonies framework, the paper also describes some potential use cases. The paper describe how Colonies can be leveraged to build a remote sensing platform on Kubernetes, serve as a building block for edge computing, implement a serverless FaaS (Function-as-a-Service), and how it can be integrated with the Slurm workload manager. Finally, the paper presents a performance investigation, as well as scalability and robustness evaluation. 
+In addition to a technical description of the Colonies framework, the paper also describes some potential use cases. The paper describe how Colonies can be leveraged to build a remote sensing platform on Kubernetes, serve as a building block for edge computing, implement a serverless FaaS (Function-as-a-Service) platform, and be integrated with the Slurm workload manager. Finally, the paper presents a performance and robustness investigation.
 
 In summary, Colonies is a highly versatile and scalable framework that can streamline development and deployment of computational workloads across heterogeneous platforms while ensuring full traceability and zero-trust security.
 \end{abstract}
 
 % keywords can be removed
-\keywords{Distributed computing, serverless computing \and parallel computing \and Workflow orchestration}
+\keywords{Distributed computing, Serverless computing \and Parallel computing \and Workflow orchestration}
 
 \section{Introduction}
 Developing robust and scalable AI systems is a challenging task that requires deep understanding in several fields. To begin with, an AI model must be trained which requires knowledge in advanced statistics or machine learning. Typically, training and validation data must be pre-processed through various stages before it can be utilized. Although it may be practical for small-scale projects to run the entire training processes on local development computers, larger AI models typically require access to powerful compute clusters or even high-performance computing (HPC) systems. Manual use of such infrastructure can be laborious and time-consuming. Automating the training process enables faster iterations and quicker discovery of useful models.
@@ -120,7 +110,7 @@ Figure 1 depicts an overview of the components part of the Colonies framework. T
 \emph{Distributed executors} are responsible for executing processes assigned by the Colonies Servers. Several distributed executors form a \emph{Colony}, which is a collection of executors operating as a cohesive unit where each executor is responsible for executing specific type of processes. One could view a Colony as an organization or a society of distributed computer softwares acting a single virtual computer system. To interact with other executors, executors must prove their Colony membership using a cryptographic protocol that follows the zero-trust security principle \emph{never trust, always verify}. This security protocol ensures that users can keep control even when executors are distributed across plattforms. Zero-trust security is fundamental to the Colonies framework and will be further discussed in Section \ref{zerotrustsecurity}. The following sections outlines the underlying design principles and describes the Colonies framework in more details. 
 
 \subsection{Microservices}
-Microservices is an architectural design pattern in which an application is structured as a collection of small, independently deployable, and loosely coupled services that communicate with other microservices through a well-defined API. By dividing the application into smaller, focused microservices, applications become easier to understand, maintain, and develop. In the Colonies framework, executors are microservices having the following characteristics:
+Microservices \cite{microservices} is an architectural design pattern in which an application is structured as a collection of small, independently deployable, and loosely coupled services that communicate with other microservices through a well-defined API. By dividing the application into smaller, focused microservices, applications become easier to understand, maintain, and develop. In the Colonies framework, executors are microservices having the following characteristics:
 
 \begin{itemize}
 \item \textbf{Single responsibility:} Each executor is only accountable for executing specific functions. This makes the system easier to understand, develop, test and maintain.  
@@ -316,39 +306,51 @@ Cron is a time-based job scheduler designed to trigger workflows at pre-defined 
 Firstly, the leading Colonies server calculates a future deadline, indicating when a specific Cron workflow is scheduled to be executed. The leader server then conducts periodic scans of the Cron table. When the current time surpasses the calculated deadline for a particular workflow, a new workflow is automatically submitted. Note that this protocol maintains complete statefullness as no session information is stored in memory between cron scans. In the event that the leader Colonies server experiences a crash, a new leader is simply selected and assumes the responsibility of managing Cron workflows according to the two-step protocol.
 
 \subsubsection{Generators}
-Another features of the Colonies framework are so-called generators. Generators are workflow templates that are triggered automatically when specific conditions are met. Generators can be used accumulate input data in bulks to improve performance or parallelism. For example, an external service downloads satellite images and a workflow should automatically be triggered when 10 images are collected. This is achieved by sending a special \emph{pack request} containing input data to a Colonies server, targeting a certain generator. 
+Another features of the Colonies framework are so-called generators. Generators are workflow templates that are automatically triggered when specific conditions are met. Generators can be used accumulate input data into bulks to improve performance or parallelism. For example, an external service downloads satellite images and use a generator to automatically be triggered a workflow when 10 images are collected. This is achieved by sending a special \emph{pack request} containing input data to a Colonies server, targeting a certain generator. 
 
-Generators facilities integration with third-party systems as it allows for stateless implementation where interactions with Colonies can be done in a fire-and-forget style. Colonies guarantees that all pack requests submitted to a generator is processed correctly, even if a Colonies server is restarted or fails. Without generators, third-party software would have to use an alternative method such as a message broker or a database to enqueue input data and periodically empty the queues to generate workflows themselves. This adds complexity to the integration process and may requires additional infrastructure components. Generators are a powerful feature of the Colonies framework that can help simplify integration and implement robust data processing pipelines.
+Generators facilities integration with third-party systems as it allows for stateless implementation where interactions with Colonies can be done in a fire-and-forget style. Colonies guarantees that all pack requests submitted to a generator is processed correctly, even if a Colonies server is restarted or fails. Without generators, third-party integration software would have to use an alternative method such as a message broker or a database to enqueue input data and periodically empty the queues to generate workflows themselves. This adds complexity to the integration process and may requires additional infrastructure components. Generators are a powerful feature of the Colonies framework that can help simplify integration and implementing robust data processing pipelines.
 
-Generators can be implemented using a similar method to how Cron workflow are implemented. The elected leader Colonies server is responsible for scanning a special generator table to decide if a workflow should be triggered. This approach ensures that there is a single point of control for generating workflows and prevents generation of duplicate workflows. If the leader server crashes, a new leader Colonies server is automatically elected, and it takes over the responsibility for triggering the generators. This ensures that the generation of workflows is not impacted by server failures, and the system can continue to operate smoothly even in case of failures. It can be worth to point out that since the pack request only adds information to the generator table and does not manipulate any states, it can be processed by any Colonies server without synchronization precautious. This means that any Colonies server in the cluster can handle incoming pack requests, which increases the scalability and fault-tolerance of the system as a whole.
+Generators can be implemented using a similar method to how Cron workflow are implemented. The elected leader Colonies server is responsible for scanning a special generator table to decide if a workflow should be triggered. This approach ensures that there is a single point of control for generating workflows and prevents generation of duplicate workflows. If the leader server crashes, a new leader Colonies server is automatically elected, which takes over the responsibility for triggering generators. This ensures that the generation of workflows is not impacted by server failures, and the system can continue to operate smoothly even in case of failures. It can be worth to point out that since the pack request only adds information to the generator table and does not manipulate any states, it can be processed by any Colonies server without synchronization precautious. This means that any Colonies server in the cluster can handle incoming pack requests, which increases the scalability and fault-tolerance of the system as a whole.
 
 \subsubsection{Zero-trust security}
 \label{zerotrustsecurity}
-Zero-trust security is a fundamental to the Colonies framework. 
+As executors may be deployed across multiple platforms, there is a need for a unified security model that can be applied on top of any platform. Zero-trust security \cite{zerotrust} is a security model that assumes that any device or user is a potential threat, even if they are located within a secure network perimeter. Therefore, zero-trust security requires that every interaction between clients and servers is verified and authenticated before being processed, making it ideal for heterogeneous platform deployments. However, there must be a way to verify the identities of the clients to determine whether they should be granted access.
+
+As previously stated, a colony is a collection of distributed executors. Executors part of the same colony trust each other and can thus submit function specs and get process execution assignments. To implement such a scheme, the Colonies server must to be able to verify the identity of the executors and then check their colony membership. This can be accomplished in various ways. One solution is to use public key encryption and assign each executor a pair of keys - a public key and a private key. The public key is openly available and uploaded to the Colonies server, whereas the private key is kept secret and is only used by the executor to sign API request messages. The Colony server can then verify the signature of incoming request messages and use the public keys to determine whether an executor is a member of the colony it is attempting to interact with.
+
+ECDSA (Elliptic Curve Digital Signature Algorithm) \cite{ecdsa} is a digital public key encryption signature algorithm. It is a widely used in blockchains such as Bitcoin and Ethereum to verify transactions. One of the advantages of ECDSA is its ability to recover public keys from received messages and signatures without explicitly transmitting the public keys. This is particularly useful as the identity of an executor can be calculated simply as the SHA-3 hash of the recovered signature, saving space and eliminating the need for storing public keys. 
+
+In Colonies, there exist three distinct roles, each with its own set of responsibilities and authority levels. The Colonies server owner holds the highest level of authority and has permission to add new colonies to the Colonies server. The colony owner is responsible for the management of a given colony and has permission to register or unregister executors within that colony. Executors, on the other hand, have the lowest level of authority and are only authorized to manage processes within their appointed colony. This functionality can be implemented by introducing a new table to the Colonies database, the colony table.
 
 \begin{table}[h]
-	\caption{Colony Id: 4787a5071856a4acf702b2ffcea422e3237a679c681314113d86139461290cf4  }
+    \caption{Colony Id: \(4787a5071856a4acf702b2ffcea422e3237a679c681314113d86139461290cf4\)}
 	\centering
 	\begin{tabular}{ll}
 		\toprule
 		\cmidrule(r){1-2}
         Executor Id & Executor Name \\
 		\midrule
-        8a491bcac0be623a54411dd0934fdcdc9c844de5700527a7dbc9da08a6a8310d & $E_{1}$ \\
-        6a65f40343999415f47e739f09b625ab437b069b5f591f9844c234533f505bee & $E_{2}$ \\
-        41e4c1b10f92a53b7a5a86620ed366635901a1a96c48312a0ef566a13217fe03 & $E_{3}$ \\
+        \(8a491bcac0be623a54411dd0934fdcdc9c844de5700527a7dbc9da08a6a8310d\) & $E_{1}$ \\
+        \(6a65f40343999415f47e739f09b625ab437b069b5f591f9844c234533f505bee\) & $E_{2}$ \\
+        \(41e4c1b10f92a53b7a5a86620ed366635901a1a96c48312a0ef566a13217fe03\) & $E_{3}$ \\
 		\bottomrule
 	\end{tabular}
-	\label{deptable}
+	\label{coltable}
 \end{table}
 
+Table \ref{coltable} shows an example of a colony table consisting of three executors. In this case, to register a new executor, the SHA-3 hash of the recovered signature needs to match the idendity \(4787a5071856a4acf702b2ffcea422e3237a679c681314113d86139461290cf4\). This operation can only be performed by the colony owner possessing the corresponding private key. When an executor connects to the Colonies server to either submit a function specification or get a process assignment, it needs to sign the API message with its private key. The Colonies server will then recovery the identity of the executor and look up the colony table to check if the executor is a rightful colony member.
+
+
+\section{Implementation}
 
 \section{Use cases}
+\subsection{Remote sensing}
+\subsection{Edge computing}
 \subsection{Serverless computing}
 \label{faas}
 
 \section{Evaluation}
-\subsection{Implementation}
+\section{Discussion}
 
 \bibliographystyle{unsrt}
 \bibliography{references} 

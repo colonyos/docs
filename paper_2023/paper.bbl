@@ -114,6 +114,10 @@ Armu Sungkar and Tena Kogoya.
 \newblock A review of grid computing.
 \newblock {\em Computer Science and IT Research Journal}, 1:1--6, 04 2020.
 
+\bibitem{microservices}
+{Microservices - A definition of this new architectural term}.
+\newblock \url{https://martinfowler.com/articles/microservices.html}.
+
 \bibitem{chaos_engineering}
 {Principles of Chaos Engineering - The Chaos Engineering Manifesto}.
 \newblock \url{https://principlesofchaos.org}.
@@ -133,5 +137,17 @@ Jeffrey Dean and Sanjay Ghemawat.
 \bibitem{hadoop}
 {Apache Hadoop}.
 \newblock \url{https://hadoop.apache.org}.
+
+\bibitem{zerotrust}
+Christoph Buck, Christian Olenberger, Andr{\'e} Schweizer, Fabiane V{\"o}lter,
+  and Torsten Eymann.
+\newblock {Never trust, always verify: A multivocal literature review on
+  current knowledge and research gaps of zero-trust}.
+\newblock {\em Computers \& Security}, 110:102436, 2021.
+
+\bibitem{ecdsa}
+Panagiotis Kontogiannis and Theodora Varvarigou.
+\newblock {ECDSA Private Keys Study of Security}.
+\newblock {\em OALib}, 06:1--20, 01 2019.
 
 \end{thebibliography}

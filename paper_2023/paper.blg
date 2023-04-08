@@ -7,45 +7,45 @@ Warning--empty institution in wf_challenges
 Warning--can't use both author and editor fields in Ouyang2010
 Warning--empty chapter and pages in workflow_in_bigdata
 Warning--empty publisher in workflow_in_bigdata
-You've used 24 entries,
+You've used 27 entries,
             1791 wiz_defined-function locations,
-            564 strings with 8224 characters,
-and the built_in function-call counts, 5079 in all, are:
-= -- 369
-> -- 327
+            581 strings with 8733 characters,
+and the built_in function-call counts, 5631 in all, are:
+= -- 414
+> -- 353
 < -- 5
-+ -- 121
-- -- 97
-* -- 314
-:= -- 767
-add.period$ -- 61
-call.type$ -- 24
-change.case$ -- 22
++ -- 131
+- -- 104
+* -- 349
+:= -- 853
+add.period$ -- 69
+call.type$ -- 27
+change.case$ -- 25
 chr.to.int$ -- 0
-cite$ -- 28
-duplicate$ -- 215
-empty$ -- 513
-format.name$ -- 97
-if$ -- 1162
+cite$ -- 31
+duplicate$ -- 238
+empty$ -- 573
+format.name$ -- 104
+if$ -- 1287
 int.to.chr$ -- 0
-int.to.str$ -- 24
-missing$ -- 14
-newline$ -- 111
-num.names$ -- 14
-pop$ -- 122
+int.to.str$ -- 27
+missing$ -- 16
+newline$ -- 125
+num.names$ -- 16
+pop$ -- 130
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 153
+skip$ -- 166
 stack$ -- 0
-substring$ -- 171
-swap$ -- 62
+substring$ -- 201
+swap$ -- 65
 text.length$ -- 5
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 4
-while$ -- 30
-width$ -- 26
-write$ -- 220
+while$ -- 34
+width$ -- 29
+write$ -- 249
 (There were 4 warnings)
