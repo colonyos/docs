@@ -124,4 +124,14 @@ Diego Ongaro and John Ousterhout.
 \newblock In {\em 2014 USENIX Annual Technical Conference (USENIX ATC 14)},
   pages 305--319, Philadelphia, PA, June 2014. USENIX Association.
 
+\bibitem{mapreduce}
+Jeffrey Dean and Sanjay Ghemawat.
+\newblock Mapreduce: Simplified data processing on large clusters.
+\newblock In {\em OSDI'04: Sixth Symposium on Operating System Design and
+  Implementation}, pages 137--150, San Francisco, CA, 2004.
+
+\bibitem{hadoop}
+{Apache Hadoop}.
+\newblock \url{https://hadoop.apache.org}.
+
 \end{thebibliography}

@@ -66,9 +66,9 @@ pdfkeywords={First keyword, Second keyword, More},
 \begin{abstract}
 Artificial intelligence and machine learning has gained significant traction in recent years. At the same time, development and operation of AI workloads has become increasingly challenging. One difficulty is the lack of portability, making it cumbersome to move from one platform to another. Creating and operating fully automated end-to-end workflows across devices, edge, and cloud platforms is even more challenging.
 
-To address the aforementioned challenges, the paper introduces an open-source framework called Colonies\footnote{https://github.com/colonyos/colonies}, which is designed to facilitate execution of computational workloads across a diverse range of platforms. Colonies enables the development of a \emph{grid-like distributed virtual computer}, called a \emph{Colony}, which can effortlessly integrate with any third-party application or other workflow management systems.
+To address the aforementioned challenges, the paper introduces an open-source framework called Colonies\footnote{https://github.com/colonyos/colonies}, which is designed to facilitate execution of computational workloads across a diverse range of platforms. Colonies enables development of a \emph{grid-like distributed virtual computer}, called a \emph{Colony}, which can effortlessly integrate with any third-party application or other workflow management systems.
 
-Built upon a modular microservice architecture, Colonies enables complex workflows to be broken down into composable functions. With the use of an HTTP protocol, these composable functions can be implemented in any programming language and be executed by independent executors deployed across platforms, anywhere on the Internet, including cloud, edge, high-performance computing (HPC) environments, devices, or even web browsers. A zero-trust security protocol enables a collection of distributed executors to operate as a unified entity, thus establishing seamless computational continuums across multiple platforms.
+Built upon a stateless microservice architecture, Colonies enables complex workflows to be broken down into composable functions. With the use of an HTTP protocol, these composable functions can be implemented in any programming language and be executed by independent executors deployed across platforms, anywhere on the Internet, including cloud, edge, high-performance computing (HPC) environments, devices, or even web browsers. A zero-trust security protocol enables a collection of distributed executors to operate as a unified entity, thus establishing seamless computational continuums across multiple platforms.
 
 In addition to a technical description of the Colonies framework, the paper also describes some potential use cases. The paper describe how Colonies can be leveraged to build a remote sensing platform on Kubernetes, serve as a building block for edge computing, implement a serverless FaaS (Function-as-a-Service), and how it can be integrated with the Slurm workload manager. Finally, the paper presents a performance investigation, as well as scalability and robustness evaluation. 
 
@@ -104,9 +104,9 @@ Currently, microservices are primarily used to implement large-scale web applica
 
 Grid computing \cite{grid_computing} is a distributed computing model that allows multiple computers, which may be geographically dispersed, to collaborate in addressing large-scale computational challenges. The Colonies framework is founded upon a grid computing model with the primary purpose of assigning tasks to distributed executors. To the best of the authors' knowledge, no previous work has integrated a microservice-oriented architecture with a grid computing model to serve as an integration point for coordinating artificial intelligence workloads across a diverse range of platforms. Additionally, Colonies is designed to function as a ledger, offering complete transparency and execution history, which is essential for implementing zero-trust security.
 
-\begin{figure}[h]
+\begin{figure}[t]
 	\centering
-    \includegraphics[scale=0.35]{overview.png}
+    \includegraphics[scale=0.45]{overview.png}
 	\caption{Overview of the Colonies framework. Executors may be deployed anywhere on the Internet.}
 	\label{fig:overview}
 \end{figure}
@@ -148,21 +148,7 @@ Although microservices has attractive properties and simplifes both development 
 \item \textbf{Monitoring and debugging:} The Colonies framework must monitor the overall system, allowing administrators to track the health, performance, and resource utilization of the executors and the system as a whole.
 \end{itemize}
 
-The Colonies framework uses a combination of technologies to address the aforementioned challenge. A fundamental design principle is stateless web serices, which makes Colonies simpler, more reliable and scalable, and easier to implement. To ensure reliability and data consistency, distributed consensus algorithms are needed to offer high-availability and handle server crashes. The remainder of this section describes how the Colonies framework is implemented. The next discusses the role of queues to support batch jobs and realtime processing, but also as a mechanism to enable loose coupling of system components.
-
-\subsection{The role of queues as seperation of concerns}
-Separation of concerns (SoC) is a design principle to break down a complex software system into smaller, more manageable parts. For example, HTTP APIs can be used to abstract away implementation detail and provide a clear and simple interface for interacting with a particular service. However, HTTP protocols alone are insufficient for handling dynamic environments where components frequently fails or the underlying infrastructures is constantly changing. To address such environments, an alternative mechanism is necessary. 
-
-Queues enable software services to communicate indirectly by acting as a buffer between them. Queues makes it possible to decouple each executor and make them operate independently, e.g. an executor can be updated or replaced without affecting other executors. Queues also allow for asynchronous communication between executors, enabling them to process tasks at their own pace. This ensures that slower executors do not bottleneck faster ones, leading to a more efficient and scalable system. Most importantely, queues enable load balancing by distributing tasks among multiple executors, thus making it possible to parallelize workflow execution. 
-
-Queues can be implemented in different ways, and while message brokers are a common solution, Colonies adopts an alternative strategy and leverage a standard database and querying it for tasks to assign to different executors. One key advantage of this approach is that it enables fine-grained process assignments, making it possible to assign specific processes to particular executors. For instance, an executor of the browser type can be limited to only executing processes in web applications. This level of granularity cannot easily be implemented using message brokers which generally do not offer introspection of queue, or provide the ability to pull specific messages out of the queue. Generarally, the only way to retrieve a specific message is to pull all messages from the queue, obtain the message, and then place all remaining messages back into the queue in the same order. In contrast, a database can function as a queue and a query can match any columns thus making it possible to assign specific executors to specific processes.
-
-\begin{equation}
-    \label{eq:pt}
-    priority_{time}=submission_{time} - priority \cdot 10^9 \cdot 60 \cdot 60 \cdot 24
-\end{equation}
-
-Implementing a queue using a database can be achieved in SQL by utilizing the \emph{order by timestamp} and \emph{limit 1} clauses to select tasks according to their submission times. To make it possible to handle priorites, adjust the submission time so that higher priority processes are processed before lower priority processes. When a process is submitted, a \emph{priority time} value is computed and stored in the database. The primary is a modified submission timestamp calculated by subtracting a delta time calculated as a function of a priority value. This enables prioritization of more critical tasks. Equation \ref{eq:pt} shows how the priority time is calculated for a nanosecond timestamp. 
+The Colonies framework uses a combination of technologies to address the aforementioned challenges. A fundamental design principle is stateless web serices, which makes Colonies simpler, more reliable and scalable, and easier to implement. To ensure reliability and data consistency, distributed consensus algorithms are needed to offer high-availability and handle server crashes. The remainder of this section describes how the Colonies framework is implemented. The next discusses the role of queues to support batch jobs and realtime processing, but also how queues can be used to enable loose coupling of system components.
 
 \begin{figure}
      \centering
@@ -181,12 +167,51 @@ Implementing a queue using a database can be achieved in SQL by utilizing the \e
      \label{fig:process_assignment}
 \end{figure}
 
+\subsection{The role of queues as seperation of concerns}
+Separation of concerns (SoC) is a design principle to break down a complex software system into smaller, more manageable parts. For example, HTTP APIs can be used to abstract away implementation detail and provide a clear and simple interface for interacting with a particular service. However, HTTP protocols alone are insufficient for handling dynamic environments where components frequently fails or the underlying infrastructures is constantly changing. To address such environments, an alternative mechanism is necessary. 
+
+Queues enable software services to communicate indirectly by acting as a buffer between them. Queues makes it possible to decouple each executor and make them operate independently, e.g. an executor can be updated or replaced without affecting other executors. Queues also allow for asynchronous communication between executors, enabling them to process tasks at their own pace. This ensures that slower executors do not bottleneck faster ones, leading to a more efficient and scalable system. Most importantely, queues enable load balancing by distributing tasks among multiple executors, thus making it possible to parallelize workflow execution. 
+
+Queues can be implemented in different ways, and while message brokers are a common solution, Colonies adopts an alternative strategy and leverage a standard database and querying it for tasks to assign to different executors. One key advantage of this approach is that it enables fine-grained process assignments, making it possible to assign specific processes to particular executors. For instance, an executor of the browser type can be limited to only executing processes in web applications. This level of granularity cannot easily be implemented using message brokers which generally do not offer introspection of queue, or provide the ability to pull specific messages out of the queue. Generarally, the only way to retrieve a specific message is to pull all messages from the queue, obtain the message, and then place all remaining messages back into the queue in the same order. In contrast, a database can function as a queue and a query can match any columns thus making it possible to assign specific executors to specific processes.
+
 \subsection{Process tables}
-Colonies enables executors to interact with each other by submitting function specifications to the Colonies servers. Once submitted, other executors can connect to the server to receive process execution assignments. When a function specification is submitted to the Colonies server, it is store as a process entry in a process table database. 
+Colonies enables executors to interact with each other by submitting function specifications to the Colonies servers. Once submitted, other executors can connect to the servers to receive process execution assignments. A new process entry is added to the process table database when a function specification is submitted to the Colonies server.
 
-When an executor connects to the Colonies server, the server hang the incomming HTTP connection\footnote{An alternative protocol is to use WebSockets or gPRC to communicate with the Colonies server.} until the executor is assigned a process, or until a connection timer expires. Note that the Colonies server does not connect to any executor. Rather, it is the responsibility of the executors to connect to the Colonies server. This enables executors to be deployed anywhere on the Internet, behind firewalls, commercial telco networks, or even in web browser-based applications.
+\begin{table}[t]
+	\caption{Process Table}
+	\centering
+	\begin{tabular}{llllll}
+		\toprule
+		\cmidrule(r){1-2}
+        Process Id & Function Spec & Wait for Parents & Assigned Executor Id & State      & Priority Time \\
+		\midrule
+        $P_{1}$    & $F_{1}$       & $False$          & $E_{1}$              & Successful & 1679906715352024000 \\
+        $P_{2}$    & $F_{2}$       & $False$          & $E_{1}$              & Running    & 1679906715353453000 \\
+        $P_{3}$    & $F_{3}$       & $False$          & $E_{2}$              & Running    & 1679906715354286000 \\
+        $P_{4}$    & $F_{4}$       & $True$           & -                    & Waiting    & 1679906715355188000 \\
+		\bottomrule
+	\end{tabular}
+	\label{proctable}
+\end{table}
 
-Figure \ref{fig:process_assignment} illustrates an executor submitting a function specification that is later assigned to another executor. When registering, executors have to specify to the Colonies server which functions they are capable of executing. The Colonies server makes sure that the conditions (i.e requirmenets) of a function specification matches the capability of an executor. 
+\begin{table}[t]
+	\caption{Function Specifications}
+	\centering
+	\begin{tabular}{llllll}
+		\toprule
+		\cmidrule(r){1-2}
+        Function Spec & Function        & Executor Type & Priority & Max Exec Time & Max Retries \\
+		\midrule
+        $F_{1}$       & gen\_nums()     & Edge          & 1        & 200 s         & 5 \\
+        $F_{2}$       & square()        & Cloud         & 1        & 200 s         & 5 \\
+        $F_{3}$       & square()        & Cloud         & 1        & 200 s         & 5 \\
+        $F_{4}$       & sum()           & Browser       & 1        & 200 s         & 5 \\
+		\bottomrule
+	\end{tabular}
+	\label{functable}
+\end{table}
+
+When an executor connects to the Colonies server, the server hang the incomming HTTP connection\footnote{An alternative protocol is to use WebSockets or gPRC to communicate with the Colonies server.} until the executor is assigned a process, or until a connection timer expires. Note that the Colonies server does not connect to the executors. Rather, it is the responsibility of the executors to connect to the Colonies server. This enables executors to be deployed anywhere on the Internet, behind firewalls, commercial telco networks, or even in web browser-based applications.
 
 \begin{figure}[h]
 	\centering
@@ -195,6 +220,15 @@ Figure \ref{fig:process_assignment} illustrates an executor submitting a functio
 	\label{fig:function_spec}
 \end{figure}
 
+Figure \ref{fig:process_assignment} depicts an executor submitting a function specification that is later assigned to another executor. When registering, executors have to specify to the Colonies server which functions they are capable of executing. The Colonies server then makes sure that the conditions (i.e requirmenets) part of the function specification matches the capability of an executor. 
+
+\begin{equation}
+    \label{eq:pt}
+    priority_{time}=submission_{time} - priority \cdot 10^9 \cdot 60 \cdot 60 \cdot 24
+\end{equation}
+
+Table \ref{proctable} shows an example of a process table. The process table also contains a reference to a function specification depicted in Table \ref{functable}. To assign a process to an executor, the Colonies server searches in the process table to find a process matching a waiting executor. By using the \emph{priority time} column to sort the processes, the process table serves as a queue. This can be done in SQL by utilizing the \emph{order by} to sort processes according their submission time. To make it possible to handle priorites, the submission time is adjusted so that higher priority processes are processed before lower priority processes. When a process is submitted, a \emph{priority time} value is calculated and stored in the process table. Equation \ref{eq:pt} shows how the priority time is calculated for a nanosecond timestamp. 
+
 \subsection{A stateless failsafe mechanism}
 The primary objective of all Colonies API requests is to alter some state stored in the database or retrieve information from the database. The Colonies framework is designed to be stateless, meaning that the Colonies server does not keep any information between requests. In other words, each request is handled independently, without relying on any information from previous requests. 
 
@@ -202,7 +236,7 @@ Figure \ref{fig:function_spec} shows an example of a function specification. The
 
 Making it possible to specify maximum execution time is a simple but powerful mechanism. To scale up a system, more executors can simply be deployed. Scaling down, however, can be more challenging. One solution is to select a set of executors to be removed and then starv them out by denying them new process assignments. Another, simpler solution, is to immediately destroy the executors and use the \emph{maxexectime} failsafe mechanism move back processes from defunct executors to the queue. The \emph{maxexectime} failsafe mechanism ensures that processes will eventually be executed even in the case of failures. This mechanism also relieves the burden of user to check if a process has been executed or not, as they can simply look up the process in the database to get its current status. 
 
-Utilizing the \emph{maxexectime} failsafe mechanism not only enhances system reliability, but also provides an opportunity to apply Chaos engineering \cite{chaos_engineering}. For example, a Chaos monkey can be used to deliberately terminate executors. If executors are deployed on Kubernetes, Kubernetes will then automatically redeploy terminated executors. The constant replacement of executor instances ensures that the system is capable of gracefully tolerating failures.
+Utilizing the \emph{maxexectime} failsafe mechanism not only enhances system reliability, but also provides an opportunity to apply Chaos engineering \cite{chaos_engineering}. For example, a Chaos monkey can be used to deliberately terminate executors. If executors are deployed on Kubernetes, Kubernetes will then automatically redeploy terminated executors. The constant flux of executor replacements ensures that the system is capable of gracefully tolerating failures.
 
 \begin{figure}[h]
 	\centering
@@ -223,48 +257,7 @@ Raft \cite{raft} is a consensus algorithm specifically designed to manage a repl
 Incorporting Raft with the Colonies framework allows incoming assign requests to be directed towards the leading Colonies server, thereby ensuring that only one Colonies server replica handles such requests. Figure \ref{fig:ha_deployment} shows an overview of a high-availability Colonies deployment. A new leader is elected in the event that a Colonies server replica fails. The Raft protocol also enables seamless updates to the Colonies server software by making it possible to upgrade each replica individually. Consequently, Colonies is well-suited for Kubernetes deployments, ensuring high levels of availability and fault tolerance.
 
 \subsubsection{Workflows}
-A workflow is a series of tasks that need to be completed in a specific order. Workflows are often represented as directed acyclic graphs (DAGs), where nodes represent tasks and edges represent dependencies or data flow between tasks. 
-
-\begin{figure}[h]
-	\centering
-    \includegraphics[scale=0.30]{workflow.png}
-	\caption{cron management}
-	\label{fig:fig3}
-\end{figure}
-
-\begin{table}[h]
-	\caption{Function Specifications}
-	\centering
-	\begin{tabular}{llllll}
-		\toprule
-		\cmidrule(r){1-2}
-        Function Spec & Function        & Executor Type & Priority & Max Exec Time & Max Retries \\
-		\midrule
-        $F_{1}$       & gen\_nums()     & Edge          & 1        & 200 s         & 5 \\
-        $F_{2}$       & square()        & Cloud         & 1        & 200 s         & 5 \\
-        $F_{3}$       & square()        & Cloud         & 1        & 200 s         & 5 \\
-        $F_{4}$       & sum()           & Browser       & 1        & 200 s         & 5 \\
-		\bottomrule
-	\end{tabular}
-	\label{tab:table}
-\end{table}
-
-\begin{table}[h]
-	\caption{Snapshot of Process Table as in Step 2}
-	\centering
-	\begin{tabular}{llllll}
-		\toprule
-		\cmidrule(r){1-2}
-        Process Id & Function Spec & Wait for Parents & Assigned Executor Id & State      & Priority Time \\
-		\midrule
-        $P_{1}$    & $F_{1}$       & $False$          & $E_{1}$              & Successful & 1679906715352024000 \\
-        $P_{2}$    & $F_{2}$       & $False$          & $E_{1}$              & Running    & 1679906715353453000 \\
-        $P_{3}$    & $F_{3}$       & $False$          & $E_{2}$              & Running    & 1679906715354286000 \\
-        $P_{4}$    & $F_{4}$       & $True$           & -                    & Waiting    & 1679906715355188000 \\
-		\bottomrule
-	\end{tabular}
-	\label{tab:table}
-\end{table}
+A workflow is a series of processes that need to be completed in a specific order. In Colonies, workflows are represented as directed acyclic graphs (DAGs) where nodes represent processes and edges represent dependencies and data flow between processes. Similar to processes, workflows are managed completely statelessly. When a workflow is submitted, all processes part of the workflow are submitted and added to the process table similar to how ordinary processes are handled. To control the order processes can be assigned, Colonies sets a flag, \emph{wait for parents} to prevent processes to be assigned to an executor before their dependencies have been satisfied. Note that processes may run in parallel if sufficient number of executors are available.
 
 \begin{table}[h]
 	\caption{Dependency Table}
@@ -280,11 +273,24 @@ A workflow is a series of tasks that need to be completed in a specific order. W
         $P_{4}$    & $Task_{4}$ & $Task_{2}$, $Task_{3}$ \\
 		\bottomrule
 	\end{tabular}
-	\label{tab:table}
+	\label{deptable}
 \end{table}
-	
+
+\begin{figure}[h]
+	\centering
+    \includegraphics[scale=0.30]{workflow.png}
+	\caption{Workflow execution timeline.}
+	\label{fig:workflowexec}
+\end{figure}
+
+When a process is closed, the Colonies server checks its child processes to see if all their parent processes have also completed. If all parents of a child process have finished, the server updates the process table in the database by setting the flag \emph{wait for parents} to false, which allows child processes to be assigned to executors. This operation is also done statelessly when processing the close request. 
+
+Figure \ref{fig:workflowexec} portrays an execution timeline for a workflow. Upon submission, process \(P_{1}\) is assigned to Executor \(E_{1}\). After being closed, processes \(P_{2}\) and \(P_{3}\) are simultaneously assigned to \(E_{1}\) and \(E_{2}\), allowing for concurrent execution. Lastly, process \(P_{4}\) is assigned to \(E_{2}\).  
+
+To be able to generate a DAG, an additional database table is required. Table \ref{deptable} shows an example of a dependency table stroing relationship and dependencies between processes. The table is updated when a workflow is submitted to a Colonies server. As mentioned before, when an executor is assigned a process it obtains exclusive rights to that process within the process table. This exclusivity also means that is possible for an exector to dynamically add new children processes the workflow DAG on the fly. As a result, it becomes possible to implement MapReduce \cite{mapreduce} data processing patterns similar to Hadoop \cite{hadoop}.  
+
 \begin{table}[h]
-	\caption{Input/Output Table}
+	\caption{Input/Output}
 	\centering
 	\begin{tabular}{lll}
 		\toprule
@@ -297,8 +303,10 @@ A workflow is a series of tasks that need to be completed in a specific order. W
         $P_{4}$    & [4,9] & 13 \\
 		\bottomrule
 	\end{tabular}
-	\label{tab:table}
+	\label{inouttable}
 \end{table}
+
+To manage data flow between processes that are part of a workflow, it is necessary to store the input and output values resulting from function invocations in a database. An example of such a database is presented in Table \ref{inouttable}. An executor can subsequently query the output from a parent process and use that as arguments while invoking a function.
 
 \subsubsection{Cron}
 TODO
