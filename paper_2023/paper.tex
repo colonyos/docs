@@ -58,7 +58,7 @@ Artificial intelligence and machine learning has gained significant traction in 
 
 To address the aforementioned challenges, the paper introduces an open-source framework called Colonies\footnote{https://github.com/colonyos/colonies}, which is designed to facilitate execution of computational workloads across a diverse range of platforms. Colonies enables development of a \emph{grid-like distributed virtual computer}, called a \emph{Colony}, which can effortlessly integrate with any third-party application or other workflow management systems.
 
-Built upon a stateless microservice architecture, Colonies enables complex workflows to be broken down into composable functions. With the use of an HTTP protocol, these composable functions can be implemented in any programming language and be executed by independent executors deployed across platforms, anywhere on the Internet, including cloud, edge, high-performance computing (HPC) environments. A zero-trust security protocol enables a collection of distributed executors to operate as a unified entity, thus establishing seamless computational continuums across multiple platforms.
+Built upon a stateless microservice architecture, Colonies enables complex workflows to be broken down into composable functions. With the use of an HTTP protocol, these composable functions can be implemented in any programming language and be executed by independent executors deployed across platforms, anywhere on the Internet, including cloud, edge, high-performance computing (HPC) environments. A zero-trust security protocol enables a collection of distributed executors to operate as a unified entity, thus establishing seamless compute continuums across multiple platforms.
 
 In addition to a technical description of the Colonies framework, the paper also describes some potential use cases. The paper describe how Colonies can be leveraged to build a remote sensing platform on Kubernetes, serve as a building block for edge computing, implement a serverless FaaS (Function-as-a-Service) platform, and be integrated with the Slurm workload manager. Finally, the paper presents a performance and robustness investigation.
 
@@ -338,8 +338,9 @@ In Colonies, there exist three distinct roles, each with its own set of responsi
 	\label{coltable}
 \end{table}
 
-Table \ref{coltable} shows an example of a colony table consisting of three executors. In this case, to register a new executor, the SHA-3 hash of the recovered signature needs to match the idendity \(4787a5071856a4acf702b2ffcea422e3237a679c681314113d86139461290cf4\). This operation can only be performed by the colony owner possessing the corresponding private key. When an executor connects to the Colonies server to either submit a function specification or get a process assignment, it needs to sign the API message with its private key. The Colonies server will then recovery the identity of the executor and look up the colony table to check if the executor is a rightful colony member.
+Table \ref{coltable} shows an example of a colony table consisting of three executors. In this case, to register a new executor, the SHA-3 hash of the recovered signature needs to match the idendity \(4787a5071856a4acf702b2ffcea422e3237a679c681314113d86139461290cf4\) stored in the colony table. This operation can only be performed by the colony owner possessing the corresponding private key. Similarly, when an executor connects to the Colonies server to either submit a function specification or get a process assignment, it needs to sign the API message with its private key. The Colonies server will then recovery the identity of the executor and look up the colony table to check if the executor is a rightful colony member.
 
+An advantage of using a stateless architecture for workflow managament as proposed in the paper is the ability to monitor executor performance to detect any unusual or suspicious behaviors. Because all transactions are recorded in a database, it is possible to track the activity of individual executors and identify any unusual patterns or behaviors. For example, if an executor suddenly starting to consume lot of resources, it could indicate a performance issue, or it could be a sign of malicious activity, such as a denial-of-service attack. Automatic montiring can for example be implemented using anonomaly detection algorithms and machine learning to grade the performance each executor. Administrators can then be automatically notified if the grade of an executor exceeds a certain threshold, enabling them to take appropriate action.
 
 \section{Implementation}
 
@@ -354,5 +355,61 @@ Table \ref{coltable} shows an example of a colony table consisting of three exec
 
 \bibliographystyle{unsrt}
 \bibliography{references} 
+
+\newpage
+\appendix
+\section{Appendix - Colonies operations}
+
+\begin{table}[h]
+	\centering
+	\begin{tabular}{llcl}
+		\toprule
+		\cmidrule(r){1-4}
+        Operations                 & Role         & Assignment & Note \\
+		\midrule
+        \(add\_colony\)            & Server owner &            & Registers a new colony to the Colonies server. \\
+        \(delete\_colony\)         & Server owner &            & Unregisters a colony from the Colonies server. \\
+        \(add\_executor\)          & Colony owner &            & Register a new executor to a colony. \\
+        \(delete\_executor\)       & Colony owner &            & Unregister a executor from a colony. \\
+        \(approve\_executor\)      & Colony owner &            & Approve an executor to get process assignments. \\
+        \(reject\_executor\)       & Colony owner &            & Disaprove an executor from getting process assignments. \\
+        \(get\_executors\)         & Executor     &            & List all executors member of a colony. \\
+        \(get\_executor\)          & Executor     &            & Get info about an executor. \\
+        \(get\_colonies\)          & Executor     &            & List all colonies on the Colonies server. \\
+        \(get\_colony\)            & Executor     &            & Get info about a colony. \\
+        \(subscribe\_process\)     & Executor     &            & Subscribe to a particular process. \\
+        \(subscribe\_processes\)   & Executor     &            & Subscribe to processes status changes. \\
+        \(submit\)                 & Executor     &            & Submit a function specification. \\
+        \(assign\)                 & Executor     &            & Assign and binds a waiting process to an executor. \\
+        \(unassign\)               & Executor     & x          & Unassign a process from a executor. \\
+        \(close\)                  & Executor     & x          & Close a process as successful. \\
+        \(fail\)                   & Executor     & x          & Close a process as failed. \\
+        \(get\_processes\)         & Executor     &            & List all waiting, successful or failed processes. \\
+        \(get\_process\)           & Executor     &            & Get info about a process. \\
+        \(delete\_all\_processes\) & Colony owner &            & Delete all processes. \\
+        \(delete\_process\)        & Colony owner &            & Delete a process. \\
+        \(add\_attribute\)         & Executor     & x          & Add attribuite to a process. \\
+        \(remove\_attribute\)      & Executor     & x          & Remove attribute from a process. \\
+        \(subscribe\_attribute\)   & Executor     &            & Subscribe to a attribute. \\
+        \(submit\_workflow\)       & Executor     &            & Submit a workflow. \\
+        \(get\_workflow\)          & Executor     &            & Get info about a workflow. \\
+        \(get\_dag\)               & Executor     &            & Get info about a DAG. \\
+        \(add\_child\)             & Executor     & x          & Add a child to a process part of a DAG. \\
+        \(add\_generator\)         & Colony owner &            & Add a generator. \\
+        \(get\_generators\)        & Executor     &            & Get info about a generator. \\
+        \(pack\)                   & Executor     &            & Add input to an a generator. \\
+        \(remove\_generator\)      & Colony owner &            & Remove a generator. \\
+        \(add\_cron\)              & Colony owner &            & Add a cron to a colony.\\
+        \(remove\_cron\)           & Colony owner &            & Remove a cron from a colony.\\
+        \(get\_cron\)              & Executor     &            & Get info about a cron. \\
+        \(delete\_cron\)           & Colony owner &            & Delete a cron from a colony.\\
+        \(get\_crons\)             & Executor     &            & List all crons part of a colony.\\
+        \(add\_function\)          & Executor     &            & Register a function to an executor. \\
+        \(remove\_function\)       & Executor     &            & Unregister a function from an executor. \\
+        \(get\_functions\)         & Executor     &            & List all functions supported by the colony. \\
+		\bottomrule
+	\end{tabular}
+	\label{optable}
+\end{table}
 
 \end{document}

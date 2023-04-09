@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.1.7)  9 APR 2023 00:50
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.1.7)  9 APR 2023 11:02
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -570,13 +570,13 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 
-Underfull \vbox (badness 1107) has occurred while \output is active []
+Underfull \vbox (badness 3219) has occurred while \output is active []
 
  [1
 
 
 {/usr/local/texlive/2022/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2]
-<overview.png, id=118, 711.6186pt x 636.2169pt>
+<overview.png, id=134, 711.6186pt x 636.2169pt>
 File: overview.png Graphic file (type png)
 <use overview.png>
 Package pdftex.def Info: overview.png  used on input line 99.
@@ -588,7 +588,7 @@ LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 1
 (/usr/local/texlive/2022/texmf-dist/tex/latex/psnfss/ts1ptm.fd
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 ) [4 <./overview.png>]
-<arch.png, id=140, 567.0786pt x 327.1422pt>
+<arch.png, id=156, 567.0786pt x 327.1422pt>
 File: arch.png Graphic file (type png)
 <use arch.png>
 Package pdftex.def Info: arch.png  used on input line 147.
@@ -598,7 +598,7 @@ Overfull \hbox (68.88788pt too wide) in paragraph at lines 147--148
  [][] 
  []
 
-<process.png, id=141, 391.2216pt x 444.4605pt>
+<process.png, id=157, 391.2216pt x 444.4605pt>
 File: process.png Graphic file (type png)
 <use process.png>
 Package pdftex.def Info: process.png  used on input line 153.
@@ -609,7 +609,7 @@ Overfull \hbox (3.82181pt too wide) in paragraph at lines 153--154
  []
 
 [5 <./arch.png> <./process.png>]
-<function_spec.png, id=148, 1004.75375pt x 394.47375pt>
+<function_spec.png, id=164, 1004.75375pt x 394.47375pt>
 File: function_spec.png Graphic file (type png)
 <use function_spec.png>
 Package pdftex.def Info: function_spec.png  used on input line 208.
@@ -619,7 +619,7 @@ Package pdftex.def Info: function_spec.png  used on input line 208.
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [6]
-<raft.png, id=168, 298.9569pt x 422.5386pt>
+<raft.png, id=185, 298.9569pt x 422.5386pt>
 File: raft.png Graphic file (type png)
 <use raft.png>
 Package pdftex.def Info: raft.png  used on input line 233.
@@ -629,7 +629,7 @@ Package pdftex.def Info: raft.png  used on input line 233.
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [7 <./function_spec.png>]
-<workflow.png, id=180, 1534.65344pt x 396.40096pt>
+<workflow.png, id=196, 1534.65344pt x 396.40096pt>
 File: workflow.png Graphic file (type png)
 <use workflow.png>
 Package pdftex.def Info: workflow.png  used on input line 271.
@@ -654,47 +654,39 @@ Underfull \hbox (badness 4872) in paragraph at lines 341--342
 ered sig-na-ture needs to match the iden-dity
  []
 
-[10] (./paper.bbl [11]) [12] (./paper.aux)
+[10] (./paper.bbl [11]) [12]
+Overfull \hbox (0.51492pt too wide) in paragraph at lines 365--413
+ [][] 
+ []
 
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
-
-Package rerunfilecheck Warning: File `paper.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `paper.out':
-(rerunfilecheck)             Before: 71636EBE5AE8645554E5BA0C36F2A16B;2382
-(rerunfilecheck)             After:  DF2777589B637499CDA615C0E2B01DAA;2724.
+[13] (./paper.aux)
+Package rerunfilecheck Info: File `paper.out' has not changed.
+(rerunfilecheck)             Checksum: 6EE7458DB2E688FDEA863A1399449298;2928.
  ) 
 Here is how much of TeX's memory you used:
- 17226 strings out of 478268
- 293083 string characters out of 5846348
- 701496 words of memory out of 5000000
- 34851 multiletter control sequences out of 15000+600000
+ 17234 strings out of 478268
+ 293175 string characters out of 5846348
+ 704626 words of memory out of 5000000
+ 34857 multiletter control sequences out of 15000+600000
  535173 words of font info for 247 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  70i,11n,77p,1279b,500s stack positions out of 10000i,1000n,20000p,200000b,200000s
-
-pdfTeX warning (dest): name{subsection.4.1} has been referenced but does not ex
-ist, replaced by a fixed one
-
-{/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/base/8r.enc}{/usr/local/tex
-live/2022/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}</usr/local/texli
-ve/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texliv
-e/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/
-2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/20
-22/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2022/
-texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2022/t
-exmf-dist/fonts/type1/public/cm-super/sftt1000.pfb></usr/local/texlive/2022/tex
-mf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2022/texmf-dist/fo
-nts/type1/urw/times/utmbi8a.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1
-/urw/times/utmr8a.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/urw/times
-/utmri8a.pfb>
-Output written on paper.pdf (12 pages, 1035314 bytes).
+{/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/base/8r.enc}{/usr/local/t
+exlive/2022/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}</usr/local/tex
+live/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texl
+ive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texliv
+e/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/
+2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/202
+2/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2022
+/texmf-dist/fonts/type1/public/cm-super/sftt1000.pfb></usr/local/texlive/2022/t
+exmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2022/texmf-dist/
+fonts/type1/urw/times/utmbi8a.pfb></usr/local/texlive/2022/texmf-dist/fonts/typ
+e1/urw/times/utmr8a.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/urw/tim
+es/utmri8a.pfb>
+Output written on paper.pdf (13 pages, 1039211 bytes).
 PDF statistics:
- 300 PDF objects out of 1000 (max. 8388607)
- 256 compressed objects within 3 object streams
- 74 named destinations out of 1000 (max. 500000)
- 60575 words of extra memory for PDF output out of 61914 (max. 10000000)
+ 318 PDF objects out of 1000 (max. 8388607)
+ 273 compressed objects within 3 object streams
+ 76 named destinations out of 1000 (max. 500000)
+ 60607 words of extra memory for PDF output out of 61914 (max. 10000000)
 
