@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.1.7)  9 APR 2023 11:02
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.1.7)  9 APR 2023 22:48
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -384,7 +384,20 @@ Package: subcaption 2022/01/07 v1.5 Sub-captions (AR)
 \c@subfigure=\count294
 \c@subtable=\count295
 )
-(./paper.aux)
+(./paper.aux
+
+LaTeX Warning: Label `fig:dashboard1' multiply defined.
+
+
+LaTeX Warning: Label `fig:dashboard1@cref' multiply defined.
+
+
+LaTeX Warning: Label `fig:dashboard1' multiply defined.
+
+
+LaTeX Warning: Label `fig:dashboard1@cref' multiply defined.
+
+)
 \openout1 = `paper.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 53.
@@ -576,11 +589,14 @@ Underfull \vbox (badness 3219) has occurred while \output is active []
 
 
 {/usr/local/texlive/2022/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2]
-<overview.png, id=134, 711.6186pt x 636.2169pt>
+<overview.png, id=138, 711.6186pt x 636.2169pt>
 File: overview.png Graphic file (type png)
 <use overview.png>
 Package pdftex.def Info: overview.png  used on input line 99.
 (pdftex.def)             Requested size: 320.22542pt x 286.29495pt.
+
+Underfull \vbox (badness 5533) has occurred while \output is active []
+
  [3]
 LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 1
 16.
@@ -588,7 +604,7 @@ LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 1
 (/usr/local/texlive/2022/texmf-dist/tex/latex/psnfss/ts1ptm.fd
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 ) [4 <./overview.png>]
-<arch.png, id=156, 567.0786pt x 327.1422pt>
+<arch.png, id=160, 567.0786pt x 327.1422pt>
 File: arch.png Graphic file (type png)
 <use arch.png>
 Package pdftex.def Info: arch.png  used on input line 147.
@@ -598,7 +614,7 @@ Overfull \hbox (68.88788pt too wide) in paragraph at lines 147--148
  [][] 
  []
 
-<process.png, id=157, 391.2216pt x 444.4605pt>
+<process.png, id=161, 391.2216pt x 444.4605pt>
 File: process.png Graphic file (type png)
 <use process.png>
 Package pdftex.def Info: process.png  used on input line 153.
@@ -609,7 +625,7 @@ Overfull \hbox (3.82181pt too wide) in paragraph at lines 153--154
  []
 
 [5 <./arch.png> <./process.png>]
-<function_spec.png, id=164, 1004.75375pt x 394.47375pt>
+<function_spec.png, id=168, 1004.75375pt x 394.47375pt>
 File: function_spec.png Graphic file (type png)
 <use function_spec.png>
 Package pdftex.def Info: function_spec.png  used on input line 208.
@@ -619,7 +635,7 @@ Package pdftex.def Info: function_spec.png  used on input line 208.
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [6]
-<raft.png, id=185, 298.9569pt x 422.5386pt>
+<raft.png, id=189, 298.9569pt x 422.5386pt>
 File: raft.png Graphic file (type png)
 <use raft.png>
 Package pdftex.def Info: raft.png  used on input line 233.
@@ -629,48 +645,91 @@ Package pdftex.def Info: raft.png  used on input line 233.
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [7 <./function_spec.png>]
-<workflow.png, id=196, 1534.65344pt x 396.40096pt>
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<workflow.png, id=200, 1534.65344pt x 396.40096pt>
 File: workflow.png Graphic file (type png)
 <use workflow.png>
 Package pdftex.def Info: workflow.png  used on input line 271.
 (pdftex.def)             Requested size: 460.39958pt x 118.92119pt.
 
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[8 <./raft.png>] [9 <./workflow.png>]
-
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
+Underfull \vbox (badness 6493) has occurred while \output is active []
+
+ [8 <./raft.png>] [9 <./workflow.png>]
+Underfull \vbox (badness 1210) has occurred while \output is active []
+
+ [10]
 Underfull \hbox (badness 6364) in paragraph at lines 341--342
 []\T1/ptm/m/n/10 (+20) Table []5[] shows an ex-am-ple of a colony ta-ble con-si
 st-ing of three ex-ecu-tors. In this case, to
  []
 
 
-Underfull \hbox (badness 4872) in paragraph at lines 341--342
+Underfull \hbox (badness 5288) in paragraph at lines 341--342
 \T1/ptm/m/n/10 (+20) reg-is-ter a new ex-ecu-tor, the SHA-3 hash of the re-cov-
-ered sig-na-ture needs to match the iden-dity
+ered sig-na-ture needs to match the iden-tity
  []
 
-[10] (./paper.bbl [11]) [12]
-Overfull \hbox (0.51492pt too wide) in paragraph at lines 365--413
+<executor_code.png, id=236, 1078.0275pt x 563.10374pt>
+File: executor_code.png Graphic file (type png)
+<use executor_code.png>
+Package pdftex.def Info: executor_code.png  used on input line 350.
+(pdftex.def)             Requested size: 377.31528pt x 197.08926pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<assign_code.png, id=237, 1063.975pt x 123.46124pt>
+File: assign_code.png Graphic file (type png)
+<use assign_code.png>
+Package pdftex.def Info: assign_code.png  used on input line 357.
+(pdftex.def)             Requested size: 372.39684pt x 43.21207pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<dashboard1.png, id=238, 1676.2625pt x 1185.42876pt>
+File: dashboard1.png Graphic file (type png)
+<use dashboard1.png>
+Package pdftex.def Info: dashboard1.png  used on input line 364.
+(pdftex.def)             Requested size: 419.0646pt x 296.35646pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<dashboard2.png, id=239, 1676.2625pt x 1185.42876pt>
+File: dashboard2.png Graphic file (type png)
+<use dashboard2.png>
+Package pdftex.def Info: dashboard2.png  used on input line 371.
+(pdftex.def)             Requested size: 419.0646pt x 296.35646pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+(./paper.bbl [11] [12 <./executor_code.png> <./assign_code.png>]) [13 <./dashbo
+ard1.png>]
+Overfull \hbox (0.51492pt too wide) in paragraph at lines 395--443
  [][] 
  []
 
-[13] (./paper.aux)
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[14 <./dashboard2.png>] [15] (./paper.aux)
+
+LaTeX Warning: There were multiply-defined labels.
+
 Package rerunfilecheck Info: File `paper.out' has not changed.
-(rerunfilecheck)             Checksum: 6EE7458DB2E688FDEA863A1399449298;2928.
+(rerunfilecheck)             Checksum: 1F85D60FC0E899645970FAF575665003;3064.
  ) 
 Here is how much of TeX's memory you used:
- 17234 strings out of 478268
- 293175 string characters out of 5846348
- 704626 words of memory out of 5000000
- 34857 multiletter control sequences out of 15000+600000
- 535173 words of font info for 247 fonts, out of 8000000 for 9000
+ 17277 strings out of 478268
+ 293941 string characters out of 5846348
+ 704912 words of memory out of 5000000
+ 34886 multiletter control sequences out of 15000+600000
+ 534853 words of font info for 245 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 70i,11n,77p,1279b,500s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 70i,12n,77p,1279b,500s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/base/8r.enc}{/usr/local/t
 exlive/2022/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}</usr/local/tex
 live/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texl
@@ -683,10 +742,10 @@ exmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2022/texmf-dist/
 fonts/type1/urw/times/utmbi8a.pfb></usr/local/texlive/2022/texmf-dist/fonts/typ
 e1/urw/times/utmr8a.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/urw/tim
 es/utmri8a.pfb>
-Output written on paper.pdf (13 pages, 1039211 bytes).
+Output written on paper.pdf (15 pages, 2468272 bytes).
 PDF statistics:
- 318 PDF objects out of 1000 (max. 8388607)
- 273 compressed objects within 3 object streams
- 76 named destinations out of 1000 (max. 500000)
- 60607 words of extra memory for PDF output out of 61914 (max. 10000000)
+ 357 PDF objects out of 1000 (max. 8388607)
+ 301 compressed objects within 4 object streams
+ 89 named destinations out of 1000 (max. 500000)
+ 60635 words of extra memory for PDF output out of 61914 (max. 10000000)
 
