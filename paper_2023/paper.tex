@@ -486,19 +486,25 @@ A workflow is just a set of processes with dependencies represented as a DAG int
 
 In addition to monitoring processes and executors, the Colonies dashboard can be used to visualize workflows. Figure \ref{fig:dashboard2} illustrates the DAG created when submitting the workflow shown in Listing \ref{code:workflow_spec}. This functionality makes it possible to follow workflow execution progress.
 
+\begin{figure}[h]
+	\centering
+    \includegraphics[scale=0.44]{cognite_faas.png}
+	\caption{A Colonies-based FaaS serverless computing platform.}
+	\label{fig:faas}
+\end{figure}
+
 \section{Use cases}
 Colonies is currently used commerically by a startup company called RockSigma AB\cite{https://www.rocksigma.com} to implement a compute engine for analysing seismic activities in underground mines. This section will not dig into the details of this specific implementation; instead it will provide an outline of potential future use cases in which Colonies could make a considerable impact.
 
 \subsection{Serverless computing}
 \label{faas}
-Serverless computing is a cloud-based architecture that allows developers to build and deploy applications without the need to manage the underlying infrastructure. In this model, the cloud service provider dynamically allocates and manages resources, such as computing power and storage, as required by the application.
+Serverless computing is a cloud-based architecture that allows developers to build and deploy applications without the need to manage the underlying infrastructure. In this model, the cloud service provider dynamically allocates and manages resources such as adding computing power or storage required by an application. Function-as-a-Service (FaaS) is a serverless computing model where developers provide a code snippet that should be executed, and the cloud provider takes care of scaling, configuration and deployment. FaaS is often used in event-driven architectures where functions are triggered by specific events, thus eliminating the need to keep servers continuously running. The Cognit project \cite{cognit} aims to extend the FaaS concept by supporting geographically distributed edge servers in addition to cloud resources. The project is also going to develop an AI-enabled orchestrator that can decide where to deploy FaaS code.
 
-\begin{figure}[h]
-	\centering
-    \includegraphics[scale=0.44]{cognite_faas.png}
-	\caption{A Colonies-based FaaS serverless computing platform.}
-	\label{fig:ha_deployment}
-\end{figure}
+Colonies offer functionality to call functions in remote executors, a fundamental requirement to implement a FaaS platform. Colonies could also provide service discovery and provide security isolation to prevent non-authorized function calls. In some cases, it could make sense to manually manage a colony by an administrator, and manually registering and deploying executors. Alternatively, a software solution could be developed to automate the administration and automatically deploy or undeploy executors. Such an approach would be very similar to a Function-as-a-Service (FaaS) platform.
+
+Figure \ref{fig:faas} depicts a Colonies-based FaaS platform. Similar to AWS Lambda or Google Cloud Functions, a developer would need to upload a code snippet, which would then be packaged and published as a container. To invoke a function, a function specification needs to be submitted  to the Colonies server indicating which function to call. 
+
+The advantage of Colonies is that it introduces an extra level of separation by offering a queuing system. If an executor is unavailable, the process is simply enqueued in the process table, enabling development of a loosely coupled system. A software agent could then monitor pending processes on the Colonies server, predict the system load, and automatically deploy executors to meet the load, resulting in a highly efficient and scalable system. In the future, the Cognit AI orchestrator could also be used together with Colonies to reduce energy consumption or minimize network latency by efficiently utilizing edge servers.
 
 \subsection{Slurm integration}
 \label{hpc_use_case}
@@ -520,7 +526,7 @@ OpenEO \cite{openeo} is an open-source project that aimes at providing a standar
 % 	\label{fig:dashboard2}
 % \end{figure}
 
-Colonies can be used to implement a decentralized, grid-like compute infrastructure for executing EO workloads across diverse platforms. By encapsulating computational EO tasks in Colony processes, interoperability among platforms can be significantly enhanced. Executors could also be used to provision computational resources if needed. For example, a provisioning engine similar to serverless engine presented in \ref{faas} can be used to deploy extra cloud executors to speed up execution of demaning EO workloads, or take advantage of HPC resources as discussed in Section \ref{hpc_use_case}. 
+Colonies can be used to implement a decentralized, grid-like compute infrastructure for executing EO workloads across diverse platforms. By encapsulating computational EO tasks in Colony processes, interoperability among platforms can be significantly enhanced. Executors could also be used to provision computational resources if needed. For example, automatically provision cloud resources and setup EO software, or deploy workflows at HPC systems to handle high-demand EO workloads. 
 
 \section{Discussion}
 This paper has presented an open-source framework called Colonies, which streamlines execution of computational workloads across platforms. Colonies enables creation of a grid-like distributed virtual computer, called a \emph{Colony}, which is a collective machine consisting of distributed executors running on the Internet. Unlike many other systems where security sometimes is added later on, Colonies builds on the principle, \emph{security first}.

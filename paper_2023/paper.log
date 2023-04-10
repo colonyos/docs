@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.1.7)  10 APR 2023 21:39
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.1.7)  10 APR 2023 23:39
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -426,14 +426,7 @@ Package: berasans 2004/01/30 (WaS)
 )
 (/usr/local/texlive/2022/texmf-dist/tex/latex/bera/beramono.sty
 Package: beramono 2004/01/31 (WaS)
-)) (./paper.aux
-
-LaTeX Warning: Label `fig:ha_deployment' multiply defined.
-
-
-LaTeX Warning: Label `fig:ha_deployment@cref' multiply defined.
-
-)
+)) (./paper.aux)
 \openout1 = `paper.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 80.
@@ -454,7 +447,6 @@ LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 80.
 LaTeX Font Info:    ... okay on input line 80.
 LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 80.
 LaTeX Font Info:    ... okay on input line 80.
-
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
@@ -714,7 +706,7 @@ Package pdftex.def Info: raft.png  used on input line 256.
 Underfull \vbox (badness 1237) has occurred while \output is active []
 
  [8 <./raft.png>] [9]
-<workflow.png, id=221, 1534.65344pt x 396.40096pt>
+<workflow.png, id=220, 1534.65344pt x 396.40096pt>
 File: workflow.png Graphic file (type png)
 <use workflow.png>
 Package pdftex.def Info: workflow.png  used on input line 305.
@@ -733,7 +725,7 @@ LaTeX Font Info:    Font shape `T1/fve/m/it' in size <9> not available
 LaTeX Font Info:    Font shape `T1/fve/m/sl' will be
 (Font)              scaled to size 8.09995pt on input line 406.
  [13]
-<dashboard1.png, id=299, 1373.13pt x 1296.845pt>
+<dashboard1.png, id=298, 1373.13pt x 1296.845pt>
 File: dashboard1.png Graphic file (type png)
 <use dashboard1.png>
 Package pdftex.def Info: dashboard1.png  used on input line 439.
@@ -743,7 +735,7 @@ Overfull \hbox (3.2465pt too wide) in paragraph at lines 439--440
  [][] 
  []
 
-<dashboard2.png, id=301, 1373.13pt x 1296.845pt>
+<dashboard2.png, id=300, 1373.13pt x 1296.845pt>
 File: dashboard2.png Graphic file (type png)
 <use dashboard2.png>
 Package pdftex.def Info: dashboard2.png  used on input line 446.
@@ -757,29 +749,35 @@ Overfull \hbox (3.2465pt too wide) in paragraph at lines 446--447
 Underfull \vbox (badness 3364) has occurred while \output is active []
 
  [14 <./dashboard1.png> <./dashboard2.png>]
-
-Package natbib Warning: Citation `https://www.rocksigma.com' on page 15 undefin
-ed on input line 490.
-
-<cognite_faas.png, id=321, 859.0494pt x 587.0733pt>
+<cognite_faas.png, id=320, 859.0494pt x 587.0733pt>
 File: cognite_faas.png Graphic file (type png)
 <use cognite_faas.png>
-Package pdftex.def Info: cognite_faas.png  used on input line 498.
+Package pdftex.def Info: cognite_faas.png  used on input line 491.
 (pdftex.def)             Requested size: 377.9829pt x 258.31305pt.
 
-LaTeX Warning: `h' float specifier changed to `ht'.
 
-<hpc_workflow.png, id=322, 761.7258pt x 442.5333pt>
+Package natbib Warning: Citation `https://www.rocksigma.com' on page 15 undefin
+ed on input line 497.
+
+
+Underfull \vbox (badness 8075) has occurred while \output is active []
+
+ [15 <./cognite_faas.png>]
+<hpc_workflow.png, id=343, 761.7258pt x 442.5333pt>
 File: hpc_workflow.png Graphic file (type png)
 <use hpc_workflow.png>
-Package pdftex.def Info: hpc_workflow.png  used on input line 508.
+Package pdftex.def Info: hpc_workflow.png  used on input line 514.
 (pdftex.def)             Requested size: 327.5357pt x 190.2856pt.
+
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[15] [16 <./cognite_faas.png> <./hpc_workflow.png>] [17] (./paper.bbl [18])
-[19]
-Overfull \hbox (1.08005pt too wide) in paragraph at lines 550--598
+
+Underfull \vbox (badness 5133) has occurred while \output is active []
+
+ [16]
+[17 <./hpc_workflow.png>] (./paper.bbl [18]) [19]
+Overfull \hbox (1.08005pt too wide) in paragraph at lines 556--604
  [][] 
  []
 
@@ -790,17 +788,14 @@ Package natbib Warning: There were undefined citations.
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-
-LaTeX Warning: There were multiply-defined labels.
-
 Package rerunfilecheck Info: File `paper.out' has not changed.
 (rerunfilecheck)             Checksum: 8D89F68C9A328B9CCC892AD0BBD0701C;3063.
  ) 
 Here is how much of TeX's memory you used:
- 18406 strings out of 478268
- 307978 string characters out of 5846348
- 984967 words of memory out of 5000000
- 35918 multiletter control sequences out of 15000+600000
+ 18408 strings out of 478268
+ 308003 string characters out of 5846348
+ 982029 words of memory out of 5000000
+ 35920 multiletter control sequences out of 15000+600000
  540835 words of font info for 250 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  70i,12n,77p,1279b,1383s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -815,7 +810,7 @@ e/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2
 nts/type1/public/bera/fver8a.pfb></usr/local/texlive/2022/texmf-dist/fonts/type
 1/public/bera/fver8a.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public
 /bera/fvmr8a.pfb>
-Output written on paper.pdf (20 pages, 2615581 bytes).
+Output written on paper.pdf (20 pages, 2617176 bytes).
 PDF statistics:
  468 PDF objects out of 1000 (max. 8388607)
  410 compressed objects within 5 object streams
