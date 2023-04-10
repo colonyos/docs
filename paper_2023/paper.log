@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.1.7)  10 APR 2023 13:54
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.1.7)  10 APR 2023 21:39
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -433,12 +433,6 @@ LaTeX Warning: Label `fig:ha_deployment' multiply defined.
 
 LaTeX Warning: Label `fig:ha_deployment@cref' multiply defined.
 
-
-LaTeX Warning: Label `fig:dashboard2' multiply defined.
-
-
-LaTeX Warning: Label `fig:dashboard2@cref' multiply defined.
-
 )
 \openout1 = `paper.aux'.
 
@@ -657,71 +651,73 @@ LaTeX Font Info:    Font shape `T1/fve/m/it' in size <10> not available
 LaTeX Font Info:    Font shape `T1/fve/m/sl' will be
 (Font)              scaled to size 8.99994pt on input line 86.
 LaTeX Font Info:    Font shape `T1/fve/b/it' in size <10> not available
-(Font)              Font shape `T1/fve/b/sl' tried instead on input line 95.
+(Font)              Font shape `T1/fve/b/sl' tried instead on input line 93.
 LaTeX Font Info:    Font shape `T1/fve/b/sl' will be
-(Font)              scaled to size 8.99994pt on input line 95.
-[1
+(Font)              scaled to size 8.99994pt on input line 93.
+
+Underfull \vbox (badness 5652) has occurred while \output is active []
+
+ [1
 
 
 {/usr/local/texlive/2022/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
 LaTeX Font Info:    Font shape `T1/fve/m/sc' will be
-(Font)              scaled to size 8.09995pt on input line 112.
-
-[2]
-<overview.png, id=139, 711.6186pt x 636.2169pt>
+(Font)              scaled to size 8.09995pt on input line 110.
+ [2]
+<overview.png, id=135, 711.6186pt x 636.2169pt>
 File: overview.png Graphic file (type png)
 <use overview.png>
-Package pdftex.def Info: overview.png  used on input line 125.
+Package pdftex.def Info: overview.png  used on input line 123.
 (pdftex.def)             Requested size: 320.22542pt x 286.29495pt.
  [3] [4 <./overview.png>]
 LaTeX Font Info:    Trying to load font information for TS1+fve on input line 1
-42.
-
-(/usr/local/texlive/2022/texmf-dist/tex/latex/bera/ts1fve.fd
+40.
+ (/usr/local/texlive/2022/texmf-dist/tex/latex/bera/ts1fve.fd
 File: ts1fve.fd 2004/09/07 scalable font definitions for TS1/fve.
 )
 LaTeX Font Info:    Font shape `TS1/fve/m/n' will be
-(Font)              scaled to size 8.99994pt on input line 142.
+(Font)              scaled to size 8.99994pt on input line 140.
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `fve' (encoding: TS1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
- [5]
-<arch.png, id=168, 567.0786pt x 327.1422pt>
+
+[5]
+<arch.png, id=164, 567.0786pt x 327.1422pt>
 File: arch.png Graphic file (type png)
 <use arch.png>
-Package pdftex.def Info: arch.png  used on input line 173.
+Package pdftex.def Info: arch.png  used on input line 171.
 (pdftex.def)             Requested size: 255.183pt x 147.21262pt.
 
-Overfull \hbox (67.28387pt too wide) in paragraph at lines 173--174
+Overfull \hbox (67.28387pt too wide) in paragraph at lines 171--172
  [][] 
  []
 
-<process.png, id=169, 391.2216pt x 444.4605pt>
+<process.png, id=165, 391.2216pt x 444.4605pt>
 File: process.png Graphic file (type png)
 <use process.png>
-Package pdftex.def Info: process.png  used on input line 179.
+Package pdftex.def Info: process.png  used on input line 177.
 (pdftex.def)             Requested size: 176.04808pt x 200.00537pt.
 
 Underfull \vbox (badness 3884) has occurred while \output is active []
 
  [6 <./arch.png> <./process.png>]
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
-nput line 232.
+nput line 230.
  [7]
-<raft.png, id=207, 298.9569pt x 422.5386pt>
+<raft.png, id=203, 298.9569pt x 422.5386pt>
 File: raft.png Graphic file (type png)
 <use raft.png>
-Package pdftex.def Info: raft.png  used on input line 258.
+Package pdftex.def Info: raft.png  used on input line 256.
 (pdftex.def)             Requested size: 179.3755pt x 253.52512pt.
 
 Underfull \vbox (badness 1237) has occurred while \output is active []
 
  [8 <./raft.png>] [9]
-<workflow.png, id=225, 1534.65344pt x 396.40096pt>
+<workflow.png, id=221, 1534.65344pt x 396.40096pt>
 File: workflow.png Graphic file (type png)
 <use workflow.png>
-Package pdftex.def Info: workflow.png  used on input line 307.
+Package pdftex.def Info: workflow.png  used on input line 305.
 (pdftex.def)             Requested size: 460.39958pt x 118.92119pt.
  [10 <./workflow.png>] [11]
 Underfull \vbox (badness 7133) has occurred while \output is active []
@@ -731,51 +727,66 @@ Underfull \vbox (badness 7133) has occurred while \output is active []
 File: lstlang1.sty 2020/03/24 1.8d listings language file
 )
 LaTeX Font Info:    Font shape `T1/fve/b/n' will be
-(Font)              scaled to size 8.09995pt on input line 396.
+(Font)              scaled to size 8.09995pt on input line 394.
 LaTeX Font Info:    Font shape `T1/fve/m/it' in size <9> not available
-(Font)              Font shape `T1/fve/m/sl' tried instead on input line 408.
+(Font)              Font shape `T1/fve/m/sl' tried instead on input line 406.
 LaTeX Font Info:    Font shape `T1/fve/m/sl' will be
-(Font)              scaled to size 8.09995pt on input line 408.
+(Font)              scaled to size 8.09995pt on input line 406.
  [13]
-<dashboard1.png, id=303, 1373.13pt x 1296.845pt>
+<dashboard1.png, id=299, 1373.13pt x 1296.845pt>
 File: dashboard1.png Graphic file (type png)
 <use dashboard1.png>
 Package pdftex.def Info: dashboard1.png  used on input line 439.
-(pdftex.def)             Requested size: 315.81326pt x 298.26808pt.
+(pdftex.def)             Requested size: 233.42902pt x 220.46072pt.
 
-[14 <./dashboard1.png>]
-<dashboard2.png, id=321, 1373.13pt x 1296.845pt>
+Overfull \hbox (3.2465pt too wide) in paragraph at lines 439--440
+ [][] 
+ []
+
+<dashboard2.png, id=301, 1373.13pt x 1296.845pt>
 File: dashboard2.png Graphic file (type png)
 <use dashboard2.png>
-Package pdftex.def Info: dashboard2.png  used on input line 467.
-(pdftex.def)             Requested size: 315.81326pt x 298.26808pt.
+Package pdftex.def Info: dashboard2.png  used on input line 446.
+(pdftex.def)             Requested size: 233.42902pt x 220.46072pt.
+
+Overfull \hbox (3.2465pt too wide) in paragraph at lines 446--447
+ [][] 
+ []
 
 
-LaTeX Warning: `h' float specifier changed to `ht'.
+Underfull \vbox (badness 3364) has occurred while \output is active []
 
-<cognite_faas.png, id=324, 859.0494pt x 587.0733pt>
+ [14 <./dashboard1.png> <./dashboard2.png>]
+
+Package natbib Warning: Citation `https://www.rocksigma.com' on page 15 undefin
+ed on input line 490.
+
+<cognite_faas.png, id=321, 859.0494pt x 587.0733pt>
 File: cognite_faas.png Graphic file (type png)
 <use cognite_faas.png>
-Package pdftex.def Info: cognite_faas.png  used on input line 480.
+Package pdftex.def Info: cognite_faas.png  used on input line 498.
 (pdftex.def)             Requested size: 377.9829pt x 258.31305pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<hpc_workflow.png, id=325, 761.7258pt x 442.5333pt>
+<hpc_workflow.png, id=322, 761.7258pt x 442.5333pt>
 File: hpc_workflow.png Graphic file (type png)
 <use hpc_workflow.png>
-Package pdftex.def Info: hpc_workflow.png  used on input line 490.
+Package pdftex.def Info: hpc_workflow.png  used on input line 508.
 (pdftex.def)             Requested size: 327.5357pt x 190.2856pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-(./paper.bbl [15] [16 <./dashboard2.png>] [17 <./cognite_faas.png> <./hpc_workf
-low.png>]) [18]
-Overfull \hbox (46.9797pt too wide) in paragraph at lines 506--554
+[15] [16 <./cognite_faas.png> <./hpc_workflow.png>] [17] (./paper.bbl [18])
+[19]
+Overfull \hbox (1.08005pt too wide) in paragraph at lines 550--598
  [][] 
  []
 
-[19] (./paper.aux)
+
+Package natbib Warning: There were undefined citations.
+
+[20] (./paper.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
@@ -783,14 +794,14 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `paper.out' has not changed.
-(rerunfilecheck)             Checksum: 07FFEA262D2C529CEC7E33A91C7E477C;3184.
+(rerunfilecheck)             Checksum: 8D89F68C9A328B9CCC892AD0BBD0701C;3063.
  ) 
 Here is how much of TeX's memory you used:
- 18383 strings out of 478268
- 307678 string characters out of 5846348
- 985804 words of memory out of 5000000
- 35909 multiletter control sequences out of 15000+600000
- 539733 words of font info for 242 fonts, out of 8000000 for 9000
+ 18406 strings out of 478268
+ 307978 string characters out of 5846348
+ 984967 words of memory out of 5000000
+ 35918 multiletter control sequences out of 15000+600000
+ 540835 words of font info for 250 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  70i,12n,77p,1279b,1383s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
@@ -804,10 +815,10 @@ e/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2
 nts/type1/public/bera/fver8a.pfb></usr/local/texlive/2022/texmf-dist/fonts/type
 1/public/bera/fver8a.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public
 /bera/fvmr8a.pfb>
-Output written on paper.pdf (19 pages, 2607729 bytes).
+Output written on paper.pdf (20 pages, 2615581 bytes).
 PDF statistics:
- 458 PDF objects out of 1000 (max. 8388607)
- 401 compressed objects within 5 object streams
- 155 named destinations out of 1000 (max. 500000)
- 56542 words of extra memory for PDF output out of 61914 (max. 10000000)
+ 468 PDF objects out of 1000 (max. 8388607)
+ 410 compressed objects within 5 object streams
+ 157 named destinations out of 1000 (max. 500000)
+ 56534 words of extra memory for PDF output out of 61914 (max. 10000000)
 

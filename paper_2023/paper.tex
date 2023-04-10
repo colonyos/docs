@@ -83,13 +83,11 @@
 \begin{abstract}
 Artificial intelligence and machine learning has gained significant traction in recent years. At the same time, development and operation of AI workloads has become increasingly challenging. One difficulty is the lack of portability, making it cumbersome to move from one platform to another. Creating and operating fully automated end-to-end workflows across devices, edge, and cloud platforms is even more challenging. 
 
-    To address these challenges, the paper presents an open-source framework called Colonies\footnote{https://github.com/colonyos/colonies}, which facilitates execution of computational workloads across a diverse range of platforms. Colonies enables development of a \emph{grid-like distributed virtual computer}, called a \emph{Colony}, which can effortlessly integrate with any third-party application (or other workflow management systems).
+To address these challenges, the paper presents an open-source framework called Colonies\footnote{https://github.com/colonyos/colonies}, which facilitates execution of computational workloads across a diverse range of platforms. Colonies enables development of a \emph{grid-like distributed virtual computer}, called a \emph{Colony}, which can effortlessly integrate with any third-party application (or other workflow management systems).
 
 Based on a stateless microservice architecture, complex workflows to be broken down into composable functions. These composable functions can be implemented in any programming language and be executed by distributed executors deployed across platforms, anywhere on the Internet such as IoT, cloud, edge, and supercomputers. A zero-trust security protocol enables a collection of distributed executors to operate as a unified entity, thus establishing seamless compute continuums across platforms.
 
-In addition to a technical description of the Colonies framework, the paper also describes some potential use cases. The paper describes how Colonies can be leveraged to build a remote sensing platform on Kubernetes, serve as a building block for edge and serverless computing, and be integrated with the Slurm workload manager. 
-
-In summary, Colonies is a highly versatile and scalable framework that can streamline development and deployment of computational workloads across heterogeneous platforms while ensuring scalability, robustness, traceability and zero-trust security.
+In addition to a technical description of the Colonies framework, the paper also describes some potential use cases. In summary, Colonies is a highly versatile and scalable framework that can streamline development and deployment of computational workloads across heterogeneous platforms while ensuring scalability, robustness, traceability and zero-trust security.
 \end{abstract}
 
 \keywords{Distributed computing \and HPC \and Serverless computing \and Parallel computing \and Workflow orchestration}
@@ -434,12 +432,29 @@ process = colonies.submit(func_spec, executor_prvkey)
 
 Listing \ref{code:submit} demonstrates how to submit a function specification using the Python SDK and call the \emph{helloworld} function. Note that the executor must complete the process within 100 seconds. The process is reassigned to another executor if the execution takes too long a time. The previous executor then receives an error when trying to send a \emph{close} request. As discussed in Section \ref{stateless_error_management}, establishing boundaries on computations is critical to achieving robustness and supporting infrastructural changes that may result from DevOps or IT operations.
 
-\begin{figure}[h]
-	\centering
-    \includegraphics[scale=0.23]{dashboard1.png}
-	\caption{Process information. The timeline makes it possible to follow the execution of process in realtime.}
-	\label{fig:dashboard1}
+\begin{figure}
+     \centering
+     \begin{subfigure}[b]{0.49\textwidth}
+         \centering
+         \includegraphics[scale=0.17]{dashboard1.png}
+         \caption{Screenshot of process information.}
+     	 \label{fig:dashboard1}
+     \end{subfigure}
+     \hfill
+     \begin{subfigure}[b]{0.49\textwidth}
+         \centering
+         \includegraphics[scale=0.17]{dashboard2.png}
+      	 \caption{Screenshot of a workflow.}
+     \end{subfigure}
+     \caption{Screenshot of the Colonies Dashboard tool.}
 \end{figure}
+
+% \begin{figure}[h]
+% 	\centering
+%     \includegraphics[scale=0.23]{dashboard1.png}
+% 	\caption{Process information. The timeline makes it possible to follow the execution of process in realtime.}
+% 	\label{fig:dashboard1}
+% \end{figure}
 
 Figure \ref{fig:dashboard1} depicts a screenshot of the Colonies dashboard tool, which enables users to monitor the status of processes and executors. The timeline depicted in the figure allows for real-time monitoring of the execution of processes, similar to tracking a physical package sent through a postal service. As previously discussed, it's also possible to subscribe to a process and receive information about its progress, which can be used as another point of integration. For example, sending a notification on Slack or by email if a process fails.
 
@@ -462,18 +477,21 @@ A workflow is just a set of processes with dependencies represented as a DAG int
   } ]
 \end{lstlisting}
 
-\begin{figure}[h]
-	\centering
-    \includegraphics[scale=0.23]{dashboard2.png}
-	\caption{Screenshot of a workflow in the Colonies dashboard.}
-	\label{fig:dashboard2}
-\end{figure}
+% \begin{figure}[h]
+% 	\centering
+%     \includegraphics[scale=0.23]{dashboard2.png}
+% 	\caption{Screenshot of a workflow in the Colonies dashboard.}
+% 	\label{fig:dashboard2}
+% \end{figure}
 
 In addition to monitoring processes and executors, the Colonies dashboard can be used to visualize workflows. Figure \ref{fig:dashboard2} illustrates the DAG created when submitting the workflow shown in Listing \ref{code:workflow_spec}. This functionality makes it possible to follow workflow execution progress.
 
 \section{Use cases}
+Colonies is currently used commerically by a startup company called RockSigma AB\cite{https://www.rocksigma.com} to implement a compute engine for analysing seismic activities in underground mines. This section will not dig into the details of this specific implementation; instead it will provide an outline of potential future use cases in which Colonies could make a considerable impact.
+
 \subsection{Serverless computing}
 \label{faas}
+Serverless computing is a cloud-based architecture that allows developers to build and deploy applications without the need to manage the underlying infrastructure. In this model, the cloud service provider dynamically allocates and manages resources, such as computing power and storage, as required by the application.
 
 \begin{figure}[h]
 	\centering
@@ -481,9 +499,9 @@ In addition to monitoring processes and executors, the Colonies dashboard can be
 	\caption{A Colonies-based FaaS serverless computing platform.}
 	\label{fig:ha_deployment}
 \end{figure}
-\subsection{Edge computing}
-\subsection{Remote sensing}
-\subsection{HPC integration}
+
+\subsection{Slurm integration}
+\label{hpc_use_case}
 
 \begin{figure}[h]
 	\centering
@@ -492,7 +510,34 @@ In addition to monitoring processes and executors, the Colonies dashboard can be
 	\label{fig:dashboard2}
 \end{figure}
 
+\subsection{OpenEO example}
+OpenEO \cite{openeo} is an open-source project that aimes at providing a standardized and interoperable solution for accessing, processing, and analyzing Earth observation (EO) data. Its primary objective is to facilitate seamless user interaction with diverse data sources and processing backends through a unified API. An overview of various OpenEO backends is presented in \cite{openeo_backends}. The paper concludes that there is a need for a more decentralized and federated EO data processing platform, and OpenEO represents a significant step in this direction. Nevertheless, the paper also acknowledges that the implementation of underlying datacubes, storage solutions, and service plans cannot be entirely abstract away by the OpenEO API.
+
+% \begin{figure}[h]
+% 	\centering
+%     \includegraphics[scale=0.43]{openeo.png}
+% 	\caption{OpenEO integration}
+% 	\label{fig:dashboard2}
+% \end{figure}
+
+Colonies can be used to implement a decentralized, grid-like compute infrastructure for executing EO workloads across diverse platforms. By encapsulating computational EO tasks in Colony processes, interoperability among platforms can be significantly enhanced. Executors could also be used to provision computational resources if needed. For example, a provisioning engine similar to serverless engine presented in \ref{faas} can be used to deploy extra cloud executors to speed up execution of demaning EO workloads, or take advantage of HPC resources as discussed in Section \ref{hpc_use_case}. 
+
 \section{Discussion}
+This paper has presented an open-source framework called Colonies, which streamlines execution of computational workloads across platforms. Colonies enables creation of a grid-like distributed virtual computer, called a \emph{Colony}, which is a collective machine consisting of distributed executors running on the Internet. Unlike many other systems where security sometimes is added later on, Colonies builds on the principle, \emph{security first}.
+
+Public key encryption allows administrators and users to maintain strict control over a colony, even when executors are dispersed throughout the Internet. Each colony is governed by a private key that serves as a central authority, analogous to \emph{one ring to rule them all}, making it possible to control a colony as if it was a single machine. The zero-trust principle, \emph{trust, but verify} enables development of immune system-like functionality where malfunctional executors can be excluded and replaced with fresh new ones, ensuring that the overall performance and reliability of the system is not compromised. 
+
+A significant portion of the paper has focused on how to implement robustness, which allows software components to fail without compromising the entire system. In Colonies, robustness is a unique feature that can be leveraged not only to build stable data pipelines, but also to efficiently handle IT operations such as continuous deployments and software upgrades. When used together with Kubernetes, Colonies can significantly simplify software updates simply by killing pods in a live system, and let Kubernetes replace them with new versions, assuming the new pods have been thoroughly tested and are compatible with the old version. This approach can be further enhanced by applying chaos engineering and randomly killing executors to ensure that the system is capable of gracefully tolerating failures. In theory, by controlling the rate at which executors are killed, it would be possible to dynamically scale the system up or down, somewhat similar to programmed cell death mechanisms used in biological systems \footnote{https://en.wikipedia.org/wiki/Programmed\_cell\_death}. 
+
+Security and robustness are crucial factors to consider when developing a workflow management system that is capable of functioning across various platforms and handling constantly changing infrastructures. Another important mechanism is the use of queues, which makes it possible to separate responsibilities between different system components and ensure that each component can operate independently. 
+
+The use of queues also enables a split architecture, where executors can be dynamically managed. In Colonies, it is possible to submit a workflow even if no executor is available to execute the workload. The processes associated with the workflow are simply enqueued until an executor capable of handling the workload is deployed. By designing each executor as a standalone microservice, it becomes easy to scale the system by simply deploying more executors. However, if too few executors are available, a queue of pending processes will begin to build up. This opens up an exciting possibility to delegate colony management responsibility to another software capable of automatically provisioning and deploying executors whenever they are needed, and then also scale down the system to conserve resources and save costs. In line with this, the Cognit project \cite{cognit} aims over the next three years to develop an AI orchestrator capable of automatically managing serverless computing infrastructures.
+
+It has been mentioned in the paper more than once that Colonies is designed to simplify integration with other systems. What feature in Colonies is it that makes the integration easier? A core idea in the Colonies framework is to package meta information and instructions how to carry out a computation in a database record called a process, and then provide an API to manipulate the process record, e.g. assigning it to an executor. As Colonies is designed to be stateless and all data is stored in a database, Colonies provides full transparency and third-party can simply lookup the process to retrieve its status. As a result, third-party systems do not have to actively monitor submitted jobs, but can instead trust that the data will eventually be processed. This approach offloads a significant portion of error handling onto Colonies instead of the third-party software.
+
+Microservices is another design principle of the Colonies framework that simplifies integration. As executors are designed to be loosly-coupled and can be implemented in any language (supported by Colonies), the whole system becomes easier to develop and maintain. For example, different teams can take on responsibility to develop a certain executor, which can then be used as a part of a complex workflow running across platforms. 
+
+As a final remark, it is worth highlighting once again the significant advantage of Colonies as a security solution. As a colony is a trusted community of computer software, Colonies can be used to share secrets and credentials among its executor members. By storing credentials, such as one-time passwords or authentication keys in process records, executors can just execute a process in run-and-forget style and be able to access third-party infrastructures without the need to store the and manage credentials locally. Additionally, by targeting specific executor types when submitting a function specification, a colony can be further segmented so that only a subset of the executors in a colony can access the credentials, further improving the security. 
 
 \bibliographystyle{unsrt}
 \bibliography{references} 
@@ -500,20 +545,19 @@ In addition to monitoring processes and executors, the Colonies dashboard can be
 \newpage
 \appendix
 \section{Appendix - Colonies operations}
-
 \begin{table}[h]
 	\centering
 	\begin{tabular}{llcl}
 		\toprule
 		\cmidrule(r){1-4}
-        Operations                 & Role         & Assignment & Note \\
+        Operation                  & Role         & Assign required & Note \\
 		\midrule
-        \(add\_colony\)            & Server owner &            & Registers a new colony to the Colonies server. \\
-        \(delete\_colony\)         & Server owner &            & Unregisters a colony from the Colonies server. \\
+        \(add\_colony\)            & Server owner &            & Registers a new colony. \\
+        \(delete\_colony\)         & Server owner &            & Unregisters a colony. \\
         \(add\_executor\)          & Colony owner &            & Register a new executor to a colony. \\
         \(delete\_executor\)       & Colony owner &            & Unregister a executor from a colony. \\
-        \(approve\_executor\)      & Colony owner &            & Approve an executor to get process assignments. \\
-        \(reject\_executor\)       & Colony owner &            & Disaprove an executor from getting process assignments. \\
+        \(approve\_executor\)      & Colony owner &            & Approve an executor. \\
+        \(reject\_executor\)       & Colony owner &            & Disaprove an executor. \\
         \(get\_executors\)         & Executor     &            & List all executors member of a colony. \\
         \(get\_executor\)          & Executor     &            & Get info about an executor. \\
         \(get\_colonies\)          & Executor     &            & List all colonies on the Colonies server. \\
@@ -521,11 +565,11 @@ In addition to monitoring processes and executors, the Colonies dashboard can be
         \(subscribe\_process\)     & Executor     &            & Subscribe to a particular process. \\
         \(subscribe\_processes\)   & Executor     &            & Subscribe to processes status changes. \\
         \(submit\)                 & Executor     &            & Submit a function specification. \\
-        \(assign\)                 & Executor     &            & Assign and binds a waiting process to an executor. \\
+        \(assign\)                 & Executor     &            & Assign a waiting process to an executor. \\
         \(unassign\)               & Executor     & x          & Unassign a process from a executor. \\
         \(close\)                  & Executor     & x          & Close a process as successful. \\
         \(fail\)                   & Executor     & x          & Close a process as failed. \\
-        \(get\_processes\)         & Executor     &            & List all waiting, successful or failed processes. \\
+        \(get\_processes\)         & Executor     &            & List waiting, successful or failed processes. \\
         \(get\_process\)           & Executor     &            & Get info about a process. \\
         \(delete\_all\_processes\) & Colony owner &            & Delete all processes. \\
         \(delete\_process\)        & Colony owner &            & Delete a process. \\

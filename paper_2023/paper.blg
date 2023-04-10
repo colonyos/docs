@@ -3,49 +3,50 @@ Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: paper.aux
 The style file: unsrt.bst
 Database file #1: references.bib
+Warning--I didn't find a database entry for "https://www.rocksigma.com"
 Warning--empty institution in wf_challenges
 Warning--can't use both author and editor fields in Ouyang2010
 Warning--empty chapter and pages in workflow_in_bigdata
 Warning--empty publisher in workflow_in_bigdata
-You've used 27 entries,
+You've used 29 entries,
             1791 wiz_defined-function locations,
-            581 strings with 8733 characters,
-and the built_in function-call counts, 5631 in all, are:
-= -- 414
-> -- 353
+            590 strings with 9282 characters,
+and the built_in function-call counts, 6082 in all, are:
+= -- 435
+> -- 407
 < -- 5
-+ -- 131
-- -- 104
-* -- 349
-:= -- 853
-add.period$ -- 69
-call.type$ -- 27
-change.case$ -- 25
++ -- 150
+- -- 121
+* -- 389
+:= -- 935
+add.period$ -- 74
+call.type$ -- 29
+change.case$ -- 27
 chr.to.int$ -- 0
-cite$ -- 31
-duplicate$ -- 238
-empty$ -- 573
-format.name$ -- 104
-if$ -- 1287
+cite$ -- 33
+duplicate$ -- 251
+empty$ -- 606
+format.name$ -- 121
+if$ -- 1378
 int.to.chr$ -- 0
-int.to.str$ -- 27
-missing$ -- 16
-newline$ -- 125
-num.names$ -- 16
-pop$ -- 130
+int.to.str$ -- 29
+missing$ -- 17
+newline$ -- 134
+num.names$ -- 17
+pop$ -- 137
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 166
+skip$ -- 176
 stack$ -- 0
 substring$ -- 201
-swap$ -- 65
+swap$ -- 67
 text.length$ -- 5
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 4
-while$ -- 34
-width$ -- 29
-write$ -- 249
-(There were 4 warnings)
+while$ -- 35
+width$ -- 31
+write$ -- 267
+(There were 5 warnings)
