@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.1.7)  10 APR 2023 10:30
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.1.7)  10 APR 2023 12:26
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -654,7 +654,7 @@ LaTeX Font Info:    Font shape `T1/fve/m/sc' will be
 (Font)              scaled to size 8.09995pt on input line 112.
 
 [2]
-<overview.png, id=135, 711.6186pt x 636.2169pt>
+<overview.png, id=139, 711.6186pt x 636.2169pt>
 File: overview.png Graphic file (type png)
 <use overview.png>
 Package pdftex.def Info: overview.png  used on input line 125.
@@ -673,7 +673,7 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
  [5]
-<arch.png, id=164, 567.0786pt x 327.1422pt>
+<arch.png, id=168, 567.0786pt x 327.1422pt>
 File: arch.png Graphic file (type png)
 <use arch.png>
 Package pdftex.def Info: arch.png  used on input line 173.
@@ -683,7 +683,7 @@ Overfull \hbox (68.88788pt too wide) in paragraph at lines 173--174
  [][] 
  []
 
-<process.png, id=165, 391.2216pt x 444.4605pt>
+<process.png, id=169, 391.2216pt x 444.4605pt>
 File: process.png Graphic file (type png)
 <use process.png>
 Package pdftex.def Info: process.png  used on input line 179.
@@ -700,7 +700,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
 nput line 232.
  [7]
-<raft.png, id=203, 298.9569pt x 422.5386pt>
+<raft.png, id=207, 298.9569pt x 422.5386pt>
 File: raft.png Graphic file (type png)
 <use raft.png>
 Package pdftex.def Info: raft.png  used on input line 258.
@@ -709,7 +709,7 @@ Package pdftex.def Info: raft.png  used on input line 258.
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [8 <./raft.png>]
-<workflow.png, id=214, 1534.65344pt x 396.40096pt>
+<workflow.png, id=218, 1534.65344pt x 396.40096pt>
 File: workflow.png Graphic file (type png)
 <use workflow.png>
 Package pdftex.def Info: workflow.png  used on input line 306.
@@ -733,34 +733,37 @@ LaTeX Font Info:    Font shape `T1/fve/m/sl' will be
 (Font)              scaled to size 8.09995pt on input line 407.
 
 [13]
-<dashboard1.png, id=298, 1676.2625pt x 1185.42876pt>
+<dashboard1.png, id=302, 1373.13pt x 1296.845pt>
 File: dashboard1.png Graphic file (type png)
 <use dashboard1.png>
-Package pdftex.def Info: dashboard1.png  used on input line 439.
-(pdftex.def)             Requested size: 419.0646pt x 296.35646pt.
+Package pdftex.def Info: dashboard1.png  used on input line 438.
+(pdftex.def)             Requested size: 315.81326pt x 298.26808pt.
+ [14 <./dashboard1.png>]
+<dashboard2.png, id=320, 1373.13pt x 1296.845pt>
+File: dashboard2.png Graphic file (type png)
+<use dashboard2.png>
+Package pdftex.def Info: dashboard2.png  used on input line 466.
+(pdftex.def)             Requested size: 315.81326pt x 298.26808pt.
  (./paper.bbl
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [14 <./dashboard1.png>] [15]) [16]
-Overfull \hbox (46.9797pt too wide) in paragraph at lines 462--510
+ [15 <./dashboard2.png>] [16]) [17]
+Overfull \hbox (46.9797pt too wide) in paragraph at lines 491--539
  [][] 
  []
 
-[17] (./paper.aux)
+[18] (./paper.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
 Package rerunfilecheck Info: File `paper.out' has not changed.
-(rerunfilecheck)             Checksum: 50E98F25D7B067E54D93F20043341D12;3081.
+(rerunfilecheck)             Checksum: 07FFEA262D2C529CEC7E33A91C7E477C;3184.
  ) 
 Here is how much of TeX's memory you used:
- 18324 strings out of 478268
- 306714 string characters out of 5846348
- 926927 words of memory out of 5000000
- 35873 multiletter control sequences out of 15000+600000
+ 18366 strings out of 478268
+ 307351 string characters out of 5846348
+ 981125 words of memory out of 5000000
+ 35897 multiletter control sequences out of 15000+600000
  539733 words of font info for 242 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  70i,11n,77p,1279b,1383s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -775,10 +778,10 @@ e/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2
 nts/type1/public/bera/fver8a.pfb></usr/local/texlive/2022/texmf-dist/fonts/type
 1/public/bera/fver8a.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public
 /bera/fvmr8a.pfb>
-Output written on paper.pdf (17 pages, 1586081 bytes).
+Output written on paper.pdf (18 pages, 2104321 bytes).
 PDF statistics:
- 415 PDF objects out of 1000 (max. 8388607)
- 365 compressed objects within 4 object streams
- 135 named destinations out of 1000 (max. 500000)
- 56519 words of extra memory for PDF output out of 61914 (max. 10000000)
+ 448 PDF objects out of 1000 (max. 8388607)
+ 395 compressed objects within 4 object streams
+ 152 named destinations out of 1000 (max. 500000)
+ 56532 words of extra memory for PDF output out of 61914 (max. 10000000)
 
