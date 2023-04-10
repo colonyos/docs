@@ -17,6 +17,33 @@
 \usepackage{listings}
 \usepackage{caption}
 \usepackage{subcaption}
+\usepackage{xcolor}
+
+\colorlet{punct}{red!60!black}
+\definecolor{background}{HTML}{EEEEEE}
+\definecolor{delim}{RGB}{20,105,176}
+\colorlet{numb}{magenta!60!black}
+
+\usepackage{bera}% optional: just to have a nice mono-spaced font
+
+\lstdefinelanguage{json}{
+    basicstyle=\normalfont\ttfamily,
+    numbers=left,
+    numberstyle=\scriptsize,
+    stepnumber=1,
+    numbersep=8pt,
+    showstringspaces=false,
+    breaklines=true,
+    frame=lines,
+    backgroundcolor=\color{background},
+    literate=
+      {:}{{{\color{punct}{:}}}}{1}
+      {,}{{{\color{punct}{,}}}}{1}
+      {\{}{{{\color{delim}{\{}}}}{1}
+      {\}}{{{\color{delim}{\}}}}}{1}
+      {[}{{{\color{delim}{[}}}}{1}
+      {]}{{{\color{delim}{]}}}}{1},
+}
 
 \title{Colonies - Compute Continuums across Platforms}
 
@@ -46,26 +73,25 @@
 }
 
 % Uncomment to override  the `A preprint' in the header
-\renewcommand{\headeright}{Technical Report}
-\renewcommand{\undertitle}{Technical Report}
+%\renewcommand{\headeright}{Technical Report}
+%\renewcommand{\undertitle}{Technical Report}
 %\renewcommand{\shorttitle}{\textit{arXiv} Template}
 
 \begin{document}
 \maketitle
 
 \begin{abstract}
-Artificial intelligence and machine learning has gained significant traction in recent years. At the same time, development and operation of AI workloads has become increasingly challenging. One difficulty is the lack of portability, making it cumbersome to move from one platform to another. Creating and operating fully automated end-to-end workflows across devices, edge, and cloud platforms is even more challenging.
+Artificial intelligence and machine learning has gained significant traction in recent years. At the same time, development and operation of AI workloads has become increasingly challenging. One difficulty is the lack of portability, making it cumbersome to move from one platform to another. Creating and operating fully automated end-to-end workflows across devices, edge, and cloud platforms is even more challenging. 
 
-To address the aforementioned challenges, the paper introduces an open-source framework called Colonies\footnote{https://github.com/colonyos/colonies}, which is designed to facilitate execution of computational workloads across a diverse range of platforms. Colonies enables development of a \emph{grid-like distributed virtual computer}, called a \emph{Colony}, which can effortlessly integrate with any third-party application or other workflow management systems.
+To address these challenges, the paper presents an open-source framework called Colonies\footnote{https://github.com/colonyos/colonies}, which facilitates execution of computational workloads across a diverse range of platforms. Colonies enables development of a \emph{grid-like distributed virtual computer}, called a \emph{Colony}, which can effortlessly integrate with any third-party application or other workflow management systems.
 
-Based on a stateless microservice architecture, Colonies enables complex workflows to be broken down into composable functions. With the use of an HTTP protocol, these composable functions can be implemented in any programming language and be executed by independent executors deployed across platforms, anywhere on the Internet, including cloud, edge, high-performance computing (HPC) environments. A zero-trust security protocol enables a collection of distributed executors to operate as a unified entity, thus establishing seamless compute continuums across multiple platforms.
+Based on a stateless microservice architecture, complex workflows to be broken down into composable functions. These composable functions can be implemented in any programming language and be executed by distributed executors deployed across platforms, anywhere on the Internet such as IoT, cloud, edge, and supercomputers. A zero-trust security protocol enables a collection of distributed executors to operate as a unified entity, thus establishing seamless compute continuums across platforms.
 
-In addition to a technical description of the Colonies framework, the paper also describes some potential use cases. The paper describes how Colonies can be leveraged to build a remote sensing platform on Kubernetes, serve as a building block for edge computing, implement a serverless FaaS (Function-as-a-Service) platform, and be integrated with the Slurm workload manager. Finally, the paper presents a performance and robustness investigation.
+In addition to a technical description of the Colonies framework, the paper also describes some potential use cases. The paper describes how Colonies can be leveraged to build a remote sensing platform on Kubernetes, serve as a building block for edge and serverless computing, and be integrated with the Slurm workload manager. 
 
-In summary, Colonies is a highly versatile and scalable framework that can streamline development and deployment of computational workloads across heterogeneous platforms while ensuring full traceability and zero-trust security.
+In summary, Colonies is a highly versatile and scalable framework that can streamline development and deployment of computational workloads across heterogeneous platforms while ensuring scalability, robustness, traceability and zero-trust security.
 \end{abstract}
 
-% keywords can be removed
 \keywords{Distributed computing \and HPC \and Serverless computing \and Parallel computing \and Workflow orchestration}
 
 \section{Introduction}
@@ -173,12 +199,12 @@ Colonies enables executors to interact with each other by submitting function sp
 	\begin{tabular}{llllll}
 		\toprule
 		\cmidrule(r){1-2}
-        Process Id & Function Spec & Wait for Parents & Assigned Executor Id & State      & Priority Time \\
+        Process Id & Function Spec & Wait for Parents & Executor  & State      & Priority Time \\
 		\midrule
-        $P_{1}$    & $F_{1}$       & $False$          & $E_{1}$              & Successful & 1679906715352024000 \\
-        $P_{2}$    & $F_{2}$       & $False$          & $E_{1}$              & Running    & 1679906715353453000 \\
-        $P_{3}$    & $F_{3}$       & $False$          & $E_{2}$              & Running    & 1679906715354286000 \\
-        $P_{4}$    & $F_{4}$       & $True$           & -                    & Waiting    & 1679906715355188000 \\
+        $P_{1}$    & $F_{1}$       & $False$          & $E_{1}$   & Successful & 1679906715352024000 \\
+        $P_{2}$    & $F_{2}$       & $False$          & $E_{1}$   & Running    & 1679906715353453000 \\
+        $P_{3}$    & $F_{3}$       & $False$          & $E_{2}$   & Running    & 1679906715354286000 \\
+        $P_{4}$    & $F_{4}$       & $True$           & -         & Waiting    & 1679906715355188000 \\
 		\bottomrule
 	\end{tabular}
 	\label{proctable}
@@ -203,12 +229,20 @@ Colonies enables executors to interact with each other by submitting function sp
 
 When an executor connects to the Colonies server, the server hangs the incoming HTTP connection\footnote{An alternative protocol is to use WebSockets or gPRC to communicate with the Colonies server.} until the executor is assigned a process, or until a connection timer expires. Note that the Colonies server does not connect to the executors. Rather, it is the responsibility of the executors to connect to the Colonies server. This enables executors to be deployed anywhere on the Internet, behind firewalls, commercial telco networks, or even in web browser-based applications.
 
-\begin{figure}[h]
-	\centering
-    \includegraphics[scale=0.35]{function_spec.png}
-	\caption{Example of a function specification.}
-	\label{fig:function_spec}
-\end{figure}
+\begin{lstlisting}[basicstyle=\small, label=fig:function_spec, language=json, basicstyle=\small, caption=Example of a function specification.]
+{
+   "conditions": {
+       "colonyid": "0c1168fe986ffe39fad14f17e0bd9e5896f6d968405ac0fb3380154109ee4022",
+       "executortype": "helloworld_executor"
+   },
+   "funcname": "helloworld",
+   "args": ["hello world"],
+   "maxwaittime": 10,
+   "maxexectime": 100,
+   "maxretries": 3,
+   "priority": 1
+}
+\end{lstlisting}
 
 Figure \ref{fig:process_assignment} depicts an executor submitting a function specification that is later assigned to another executor. When registering, executors have to specify to the Colonies server which functions they are capable of executing. The Colonies server then makes sure that the conditions (i.e requirements) part of the function specification matches the capability of an executor. 
 
@@ -219,7 +253,15 @@ Figure \ref{fig:process_assignment} depicts an executor submitting a function sp
 
 Table \ref{proctable} shows an example of a process table. The process table also contains a reference to a function specification depicted in Table \ref{functable}. To assign a process to an executor, the Colonies server searches in the process table to find a process matching a waiting executor. By using the \emph{priority time} column to sort the processes, the process table serves as a queue. This can be done in SQL by utilizing the \emph{order by} to sort processes according to their submission time. To make it possible to handle priorities, the submission time is adjusted so that higher priority processes are processed before lower priority processes. When a process is submitted, a \emph{priority time} value is calculated and stored in the process table. Equation \ref{eq:pt} shows how the priority time is calculated for a nanosecond timestamp. 
 
+\begin{figure}[h]
+	\centering
+    \includegraphics[scale=0.5]{raft.png}
+	\caption{High-availability deployment of Colonies.}
+	\label{fig:ha_deployment}
+\end{figure}
+
 \subsection{A stateless failsafe mechanism}
+\label{stateless_error_management}
 The primary objective of all Colonies API requests is to alter some state stored in the database or retrieve information from the database. The Colonies framework is designed to be stateless, meaning that the Colonies server does not keep any information in memory between requests. Each request is handled independently without relying on information from previous requests. 
 
 Figure \ref{fig:function_spec} shows an example of a function specification. The \emph{maxexectime} attribute specifies the maximum time an executor may run a process (in this case, 100 seconds). Before a process is assigned to an executor, the Colonies server updates the process entry in the process table database and calculates a deadline when the process must be finished. The server then regularly checks for any running processes that have exceeded their deadlines. If such a process is detected, it is reset, allowing it to be re-assigned to other executors. 
@@ -227,13 +269,6 @@ Figure \ref{fig:function_spec} shows an example of a function specification. The
 Making it possible to specify maximum execution time is a simple but powerful mechanism. To scale up a system, more executors can simply be deployed. Scaling down, however, can be more challenging. One solution is to select a set of executors to be removed and then starve them out by denying them new process assignments. Another, simpler solution, is to immediately destroy the executors and use the \emph{maxexectime} failsafe mechanism to move back processes from defunct executors to the queue. The \emph{maxexectime} failsafe mechanism ensures that processes will eventually be executed even in the case of failures. This mechanism also relieves the burden of the user to check if a process has been executed or not, as they can simply look up the process in the database to get its current status. 
 
 Utilizing the \emph{maxexectime} failsafe mechanism not only enhances system reliability, but also provides an opportunity to apply Chaos engineering \cite{chaos_engineering}. For example, a Chaos monkey can be used to deliberately terminate executors. If executors are deployed on Kubernetes, Kubernetes will then automatically redeploy terminated executors. The constant flux of executor replacements ensures that the system is capable of gracefully tolerating failures.
-
-\begin{figure}[h]
-	\centering
-    \includegraphics[scale=0.5]{raft.png}
-	\caption{High-availability deployment of Colonies.}
-	\label{fig:ha_deployment}
-\end{figure}
 
 \subsubsection{Data consistency and distributed consensus}
 Synchronization is essential to prevent data inconsistency and race conditions when accessing shared resources concurrently with multiple threads. However, synchronization can also slow down execution as only one thread can access critical sections at a time. By carefully designing multithreaded applications and employing the right synchronization techniques, it is possible to minimize the performance impact while still ensuring data consistency and correctness.  
@@ -303,14 +338,14 @@ The Colonies framework is based on a stateless architecture where each request i
 
 Cron is a time-based job scheduler designed to trigger workflows at predefined intervals. It can for example be used to automate tasks such as routinely fetching data from external systems. To make Colonies robust and easy to implement it is essential to make Cron workflows stateless. This can be achieved by introducing an additional database table to store information about Cron workflow, and let the elected Colonies server leader assume the responsibility of managing Cron workflows through a two-step process. 
 
-Firstly, the leading Colonies server calculates a future deadline, indicating when a specific Cron workflow is scheduled to be executed. The leader server then conducts periodic scans of the Cron table. When the current time surpasses the calculated deadline for a particular workflow, a new workflow is automatically submitted. Note that this protocol is completely stateful as no session information is stored in memory between cron scans. In the event that the leader Colonies server experiences a crash, a new leader is simply selected and assumes the responsibility of managing Cron workflows according to the two-step protocol.
+Firstly, the leading Colonies server calculates a future deadline, indicating when a specific Cron workflow is scheduled to be executed. The leader server then conducts periodic scans of the Cron table. When the current time surpasses the calculated deadline for a particular workflow, a new workflow is automatically submitted. Note that this protocol is completely stateless as no session information is stored in memory between cron scans. In the event that the leader Colonies server experiences a crash, a new leader is simply selected and assumes the responsibility of managing Cron workflows according to the two-step protocol.
 
 \subsubsection{Generators}
 Another feature of the Colonies framework are so-called generators. Generators are workflow templates that are automatically triggered when specific conditions are met. Generators can be used to accumulate input data into bulks to improve performance or parallelism. For example, an external service downloads satellite images and can use a generator to automatically triggered a workflow when 10 images are collected. This is achieved by sending a special \emph{pack request} containing input data to a Colonies server, targeting a certain generator. 
 
 Generators facilities integration with third-party systems as it allows for stateless implementation where interactions with Colonies can be done in a fire-and-forget style. Colonies guarantees that all pack requests submitted to a generator are processed correctly, even if a Colonies server is restarted or fails. Without generators, third-party integration software would have to use an alternative method such as a message broker or a database to enqueue input data and periodically empty the queues to generate workflows themselves. This adds complexity to the integration process and may require additional infrastructure components. Generators are a powerful feature of the Colonies framework that can help simplify integration and implement robust data processing pipelines.
 
-Generators can be implemented using a similar method to how Cron workflows are implemented. The elected leader Colonies server is responsible for scanning a special generator table to decide if a workflow should be triggered. This approach ensures that there is a single point of control for generating workflows and prevents generation of duplicate workflows. If the leader server crashes, a new leader Colonies server is automatically elected, which takes over the responsibility for triggering generators. This ensures that the generation of workflows is not impacted by server failures, and the system can continue to operate smoothly even in case of failures. It can be worth pointing out that since the pack request only adds information to the generator table and does not manipulate any states, it can be processed by any Colonies server without synchronization precautious. This means that any Colonies server in the cluster can handle incoming pack requests, which increases the scalability and fault-tolerance of the system as a whole.
+Generators can be implemented using a similar method to how Cron workflows are implemented. The elected leader Colonies server takes on the responsibility for scanning a special generator table to decide if a workflow should be triggered. This approach ensures that there is a single point of control for generating workflows and prevents generation of duplicate workflows. If the leader server crashes, a new leader Colonies server is automatically elected, which takes over the responsibility for triggering generators. This ensures that the generation of workflows is not impacted by server failures, and the system can continue to operate smoothly even in case of failures. It can be worth pointing out that since the pack request only adds information to the generator table and does not manipulate any states, it can be processed by any Colonies server without synchronization precautious. This means that any Colonies server in the cluster can handle incoming pack requests, which increases the scalability and fault-tolerance of the system as a whole.
 
 \subsubsection{Zero-trust security}
 \label{zerotrustsecurity}
@@ -343,34 +378,67 @@ Table \ref{coltable} shows an example of a colony table consisting of three exec
 An advantage of using a stateless architecture for workflow management as proposed in the paper is the ability to monitor executor performance to detect any unusual or suspicious behaviors. Because all transactions are recorded in a database, it is possible to track the activity of individual executors and identify any unusual patterns or behaviors. For example, if an executor suddenly starts to consume a lot of resources, it could indicate a performance issue, or it could be a sign of malicious activity, such as a denial-of-service attack. Automatic monitoring can for example be implemented using anomaly detection algorithms and machine learning to grade the performance of each executor. Administrators can then be automatically notified if the grade of an executor exceeds a certain threshold, enabling them to take appropriate action.
 
 \section{Implementation}
-There are SDKs is Golang\footnote{https://github.com/colonyos/colonies/tree/main/pkg/client}, Rust\footnote{https://github.com/colonyos/rust}, Julia\footnote{https://github.com/colonyos/Colonies.jl}, JavaScript\footnote{https://github.com/colonyos/colonies.js}, Python\footnote{https://github.com/colonyos/pycolonies}, and Haskell\footnote{https://github.com/colonyos/haskell}.
+Colonies is implemented in Golang and is publicly available on GitHub\footnote{https://github.com/colonyos/colonies} under the MIT license. It consists of a statically compiled binary that offers a CLI tool for deploying Colonies servers or managing the system. Furthermore, there are several software development kits (SDKs) available for various programming languages, including Golang\footnote{https://github.com/colonyos/colonies/tree/main/pkg/client}, Rust\footnote{https://github.com/colonyos/rust}, Julia\footnote{https://github.com/colonyos/Colonies.jl}, JavaScript\footnote{https://github.com/colonyos/colonies.js}, Python\footnote{https://github.com/colonyos/pycolonies}, and Haskell\footnote{https://github.com/colonyos/haskell}. As an introduction to Colonies, the following section gives a brief overview of the Colonies tools and how to use the Python SDK.
 
-\begin{figure}[h]
-	\centering
-    \includegraphics[scale=0.35]{executor_code.png}
-	\caption{Register an executor to a colony in Python.}
-	\label{fig:dashboard1}
-\end{figure}
+\subsection{Python SDK}
+A colonies application typically consists of a network of executors written in different programming languages and deployed across multiple platforms. The executors are small microservices that interact with one another by submitting function specifications or workflows, which are then executed by other executors that are part of the same colony.
 
-\begin{figure}[h]
-	\centering
-    \includegraphics[scale=0.35]{assign_code.png}
-	\caption{Assigning a process to an executor in Python.}
-	\label{fig:dashboard1}
-\end{figure}
+The first step in implementing an executor in Python is to create a private key and identity, followed by registering the executor with a colony. Registering an executor can only be carried out by the colony owner with access to the colony private key. Code in listening \ref{code:regexecutor} illustrates how to register an executor and which functions a specific executor is capable of running. In the example, an executor of type \emph{helloworld\_executor} is registered to run a function named \emph{helloworld}.
 
+\begin{lstlisting}[showstringspaces=false, frame=lines, numbers=left, numberstyle=\scriptsize, backgroundcolor=\color{background}, basicstyle=\small, label=code:regexecutor, language=Python, caption=Register an executor to a colony in Python.]
+colonies = Colonies("localhost", 50080)
+
+crypto = Crypto()
+colonyid = "4787a5071856a4acf702b2ffcea422e3237a679c681314113d86139461290cf4"
+colony_prvkey = "ba949fa134981372d6da62b6a56f336ab4d843b22c02a4257dcf7d0d73097514"
+executor_prvkey = crypto.prvkey()
+executorid = crypto.id(executor_prvkey)
+
+executor = {
+    "executorname": "helloworld_executor",
+    "executorid": executorid,
+    "colonyid": colonyid,
+    "executortype": "helloworld _executor"
+}
+
+colonies.add_executor(executor, colony_prvkey)
+colonies.approve_executor(executorid, colony_prvkey)
+
+# register capability run the helloworld function
+colonies.add_function(executorid, colonyid, "helloworld",  executor_prvkey)
+\end{lstlisting}
+
+After registration, the executor must connect to the Colonies server and request process assignments of the type \emph{helloworld\_executor}. Note that executor properties, such as the executor type, are not explicitly specified, but rather derived implicitly by the Colonies server from the executor identity, which is derived from the signature generated by executor's the private key. This approach ensures that the executor can only be assigned processes that match its registered capabilities.
+
+\begin{lstlisting}[showstringspaces=false, frame=lines, numbers=left, numberstyle=\scriptsize, backgroundcolor=\color{background}, basicstyle=\small, language=Python, label=code:assign, caption=Assigning and executing a process in Python.]
+while True:
+    process = colonies.assign(colonyid, 10, executor_prvkey)
+    if process["spec"]["funcname"] == "helloworld":
+       colonies.close(process["processid"], ["hello world"], executor_prvkey)
+\end{lstlisting}
+
+This \emph{assign} request is always initiated by the executor using an HTTP-based protocol, allowing executors to be deployed behind firewalls. When receiving the request, the Colonies server hangs the request until a matching process is found or a timer expires. In the example in Listing \ref{code:assign}, the timer is set for 10 seconds, after which an exception is raised, and the executor must reconnect to the server.
+
+When assigned to a process, the executor interprets the metadata stored in the process data structure, including the function name and arguments, and performs some kind of computation such as preprocessing some data or training a neural network. Upon completion, the executor closes the process and sets the output. In the example, the output is set to the the string \emph{helloworld}.
+
+\begin{lstlisting}[showstringspaces=false, frame=lines, numbers=left, numberstyle=\scriptsize, backgroundcolor=\color{background}, basicstyle=\small, language=Python, label=code:submit, caption=Submitting a function specification.]
+func_spec = create_func_spec(func="helloworld",
+                             colonyid=colonyid,
+                             executortype="helloworld_executor",
+                             priority=0,
+                             maxexectime=100,
+                             maxretries=3)
+process = colonies.submit(func_spec, executor_prvkey)
+\end{lstlisting}
+
+Listing \ref{code:submit} demonstrates how to submit a function specification using the Python SDK and call the \emph{helloworld} function. Note that the executor must complete the process within 100 seconds. If the execution takes longer, the process is reassigned to another executor, and the previosuly executor receives an error upon closure. As discussed in Section \ref{stateless_error_management}, establishing boundaries on computations is critical to achieving robustness and supporting infrastructural changes that may result from DevOps or IT operations.
+
+The Colonies CLI tool can be used to 
 \begin{figure}[h]
 	\centering
     \includegraphics[scale=0.25]{dashboard1.png}
 	\caption{Process information. The timeline makes it possible to follow the execution of process in realtime.}
 	\label{fig:dashboard1}
-\end{figure}
-
-\begin{figure}[h]
-	\centering
-    \includegraphics[scale=0.25]{dashboard2.png}
-	\caption{Visualization of a DAG.}
-	\label{fig:dashboard2}
 \end{figure}
 
 \section{Use cases}
@@ -380,7 +448,6 @@ There are SDKs is Golang\footnote{https://github.com/colonyos/colonies/tree/main
 \subsection{Remote sensing}
 \subsection{HPC integration}
 
-\section{Evaluation}
 \section{Discussion}
 
 \bibliographystyle{unsrt}

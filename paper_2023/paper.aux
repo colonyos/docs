@@ -21,9 +21,9 @@
 \citation{apache_airflow}
 \citation{rabbitmq}
 \citation{apache_kafka}
-\citation{argowf}
 \@writefile{toc}{\contentsline {section}{\numberline {1}Introduction}{2}{section.1}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {2}Related work}{2}{section.2}\protected@file@percent }
+\citation{argowf}
 \citation{cognit}
 \citation{openwolf}
 \citation{openfaas}
@@ -42,64 +42,70 @@
 \newlabel{fig:overview}{{1}{4}{Overview of the Colonies framework. Executors may be deployed anywhere on the Internet.\relax }{figure.caption.1}{}}
 \newlabel{fig:overview@cref}{{[figure][1][]1}{[1][3][]4}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Microservices}{4}{subsection.3.1}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Process management via Colonies HTTP API. Note that only the assigned executor has write access to the process database entry.\relax }}{5}{figure.caption.2}\protected@file@percent }
-\newlabel{fig:process_assignment}{{2}{5}{Process management via Colonies HTTP API. Note that only the assigned executor has write access to the process database entry.\relax }{figure.caption.2}{}}
-\newlabel{fig:process_assignment@cref}{{[figure][2][]2}{[1][5][]5}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.2}The role of queues as seperation of concerns}{5}{subsection.3.2}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Process Table\relax }}{6}{table.caption.3}\protected@file@percent }
-\newlabel{proctable}{{1}{6}{Process Table\relax }{table.caption.3}{}}
-\newlabel{proctable@cref}{{[table][1][]1}{[1][6][]6}}
-\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces Function Specifications\relax }}{6}{table.caption.4}\protected@file@percent }
-\newlabel{functable}{{2}{6}{Function Specifications\relax }{table.caption.4}{}}
-\newlabel{functable@cref}{{[table][2][]2}{[1][6][]6}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.3}Process tables}{6}{subsection.3.3}\protected@file@percent }
-\newlabel{eq:pt}{{1}{6}{Process tables}{equation.3.1}{}}
-\newlabel{eq:pt@cref}{{[equation][1][]1}{[1][6][]6}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Process management via Colonies HTTP API. Note that only the assigned executor has write access to the process database entry.\relax }}{6}{figure.caption.2}\protected@file@percent }
+\newlabel{fig:process_assignment}{{2}{6}{Process management via Colonies HTTP API. Note that only the assigned executor has write access to the process database entry.\relax }{figure.caption.2}{}}
+\newlabel{fig:process_assignment@cref}{{[figure][2][]2}{[1][6][]6}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2}The role of queues as seperation of concerns}{6}{subsection.3.2}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Process Table\relax }}{7}{table.caption.3}\protected@file@percent }
+\newlabel{proctable}{{1}{7}{Process Table\relax }{table.caption.3}{}}
+\newlabel{proctable@cref}{{[table][1][]1}{[1][7][]7}}
+\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces Function Specifications\relax }}{7}{table.caption.4}\protected@file@percent }
+\newlabel{functable}{{2}{7}{Function Specifications\relax }{table.caption.4}{}}
+\newlabel{functable@cref}{{[table][2][]2}{[1][7][]7}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3}Process tables}{7}{subsection.3.3}\protected@file@percent }
+\newlabel{fig:function_spec}{{1}{7}{Example of a function specification}{lstlisting.1}{}}
+\newlabel{fig:function_spec@cref}{{[lstlisting][1][]1}{[1][7][]7}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {1}{\ignorespaces Example of a function specification.}}{7}{lstlisting.1}\protected@file@percent }
+\newlabel{eq:pt}{{1}{7}{Process tables}{equation.3.1}{}}
+\newlabel{eq:pt@cref}{{[equation][1][]1}{[1][7][]7}}
 \citation{chaos_engineering}
-\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Example of a function specification.\relax }}{7}{figure.caption.5}\protected@file@percent }
-\newlabel{fig:function_spec}{{3}{7}{Example of a function specification.\relax }{figure.caption.5}{}}
-\newlabel{fig:function_spec@cref}{{[figure][3][]3}{[1][6][]7}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.4}A stateless failsafe mechanism}{7}{subsection.3.4}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.4.1}Data consistency and distributed consensus}{7}{subsubsection.3.4.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces High-availability deployment of Colonies.\relax }}{8}{figure.caption.5}\protected@file@percent }
+\newlabel{fig:ha_deployment}{{3}{8}{High-availability deployment of Colonies.\relax }{figure.caption.5}{}}
+\newlabel{fig:ha_deployment@cref}{{[figure][3][]3}{[1][8][]8}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.4}A stateless failsafe mechanism}{8}{subsection.3.4}\protected@file@percent }
+\newlabel{stateless_error_management}{{3.4}{8}{A stateless failsafe mechanism}{subsection.3.4}{}}
+\newlabel{stateless_error_management@cref}{{[subsection][4][3]3.4}{[1][8][]8}}
 \citation{raft}
-\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces High-availability deployment of Colonies.\relax }}{8}{figure.caption.6}\protected@file@percent }
-\newlabel{fig:ha_deployment}{{4}{8}{High-availability deployment of Colonies.\relax }{figure.caption.6}{}}
-\newlabel{fig:ha_deployment@cref}{{[figure][4][]4}{[1][7][]8}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.4.2}Workflows}{8}{subsubsection.3.4.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.4.1}Data consistency and distributed consensus}{9}{subsubsection.3.4.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.4.2}Workflows}{9}{subsubsection.3.4.2}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces Dependency Table\relax }}{9}{table.caption.6}\protected@file@percent }
+\newlabel{deptable}{{3}{9}{Dependency Table\relax }{table.caption.6}{}}
+\newlabel{deptable@cref}{{[table][3][]3}{[1][9][]9}}
 \citation{mapreduce}
 \citation{hadoop}
-\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces Dependency Table\relax }}{9}{table.caption.7}\protected@file@percent }
-\newlabel{deptable}{{3}{9}{Dependency Table\relax }{table.caption.7}{}}
-\newlabel{deptable@cref}{{[table][3][]3}{[1][8][]9}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Workflow execution timeline.\relax }}{9}{figure.caption.8}\protected@file@percent }
-\newlabel{fig:workflowexec}{{5}{9}{Workflow execution timeline.\relax }{figure.caption.8}{}}
-\newlabel{fig:workflowexec@cref}{{[figure][5][]5}{[1][8][]9}}
-\@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces Input/Output\relax }}{9}{table.caption.9}\protected@file@percent }
-\newlabel{inouttable}{{4}{9}{Input/Output\relax }{table.caption.9}{}}
-\newlabel{inouttable@cref}{{[table][4][]4}{[1][9][]9}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.4.3}Cron}{9}{subsubsection.3.4.3}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Workflow execution timeline.\relax }}{10}{figure.caption.7}\protected@file@percent }
+\newlabel{fig:workflowexec}{{4}{10}{Workflow execution timeline.\relax }{figure.caption.7}{}}
+\newlabel{fig:workflowexec@cref}{{[figure][4][]4}{[1][9][]10}}
+\@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces Input/Output\relax }}{10}{table.caption.8}\protected@file@percent }
+\newlabel{inouttable}{{4}{10}{Input/Output\relax }{table.caption.8}{}}
+\newlabel{inouttable@cref}{{[table][4][]4}{[1][10][]10}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.4.3}Cron}{10}{subsubsection.3.4.3}\protected@file@percent }
 \citation{zerotrust}
 \citation{ecdsa}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.4.4}Generators}{10}{subsubsection.3.4.4}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.4.5}Zero-trust security}{10}{subsubsection.3.4.5}\protected@file@percent }
-\newlabel{zerotrustsecurity}{{3.4.5}{10}{Zero-trust security}{subsubsection.3.4.5}{}}
-\newlabel{zerotrustsecurity@cref}{{[subsubsection][5][3,4]3.4.5}{[1][10][]10}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.4.4}Generators}{11}{subsubsection.3.4.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.4.5}Zero-trust security}{11}{subsubsection.3.4.5}\protected@file@percent }
+\newlabel{zerotrustsecurity}{{3.4.5}{11}{Zero-trust security}{subsubsection.3.4.5}{}}
+\newlabel{zerotrustsecurity@cref}{{[subsubsection][5][3,4]3.4.5}{[1][11][]11}}
+\@writefile{lot}{\contentsline {table}{\numberline {5}{\ignorespaces Colony Id: \(4787a5071856a4acf702b2ffcea422e3237a679c681314113d86139461290cf4\)\relax }}{12}{table.caption.9}\protected@file@percent }
+\newlabel{coltable}{{5}{12}{Colony Id: \(4787a5071856a4acf702b2ffcea422e3237a679c681314113d86139461290cf4\)\relax }{table.caption.9}{}}
+\newlabel{coltable@cref}{{[table][5][]5}{[1][12][]12}}
+\@writefile{toc}{\contentsline {section}{\numberline {4}Implementation}{12}{section.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}Python SDK}{13}{subsection.4.1}\protected@file@percent }
+\newlabel{code:regexecutor}{{2}{13}{Register an executor to a colony in Python}{lstlisting.2}{}}
+\newlabel{code:regexecutor@cref}{{[lstlisting][2][]2}{[1][13][]13}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {2}{\ignorespaces Register an executor to a colony in Python.}}{13}{lstlisting.2}\protected@file@percent }
+\newlabel{code:assign}{{3}{13}{Assigning and executing a process in Python}{lstlisting.3}{}}
+\newlabel{code:assign@cref}{{[lstlisting][3][]3}{[1][13][]13}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {3}{\ignorespaces Assigning and executing a process in Python.}}{13}{lstlisting.3}\protected@file@percent }
 \bibstyle{unsrt}
 \bibdata{references}
 \bibcite{wf_challenges}{{1}{}{{}}{{}}}
-\@writefile{lot}{\contentsline {table}{\numberline {5}{\ignorespaces Colony Id: \(4787a5071856a4acf702b2ffcea422e3237a679c681314113d86139461290cf4\)\relax }}{11}{table.caption.10}\protected@file@percent }
-\newlabel{coltable}{{5}{11}{Colony Id: \(4787a5071856a4acf702b2ffcea422e3237a679c681314113d86139461290cf4\)\relax }{table.caption.10}{}}
-\newlabel{coltable@cref}{{[table][5][]5}{[1][10][]11}}
-\@writefile{toc}{\contentsline {section}{\numberline {4}Implementation}{11}{section.4}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {5}Use cases}{11}{section.5}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.1}Serverless computing}{11}{subsection.5.1}\protected@file@percent }
-\newlabel{faas}{{5.1}{11}{Serverless computing}{subsection.5.1}{}}
-\newlabel{faas@cref}{{[subsection][1][5]5.1}{[1][11][]11}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.2}Edge computing}{11}{subsection.5.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.3}Remote sensing}{11}{subsection.5.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.4}HPC integration}{11}{subsection.5.4}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {6}Evaluation}{11}{section.6}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {7}Discussion}{11}{section.7}\protected@file@percent }
+\newlabel{code:submit}{{4}{14}{Submitting a function specification}{lstlisting.4}{}}
+\newlabel{code:submit@cref}{{[lstlisting][4][]4}{[1][13][]14}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {4}{\ignorespaces Submitting a function specification.}}{14}{lstlisting.4}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Process information. The timeline makes it possible to follow the execution of process in realtime.\relax }}{14}{figure.caption.10}\protected@file@percent }
+\newlabel{fig:dashboard1}{{5}{14}{Process information. The timeline makes it possible to follow the execution of process in realtime.\relax }{figure.caption.10}{}}
+\newlabel{fig:dashboard1@cref}{{[figure][5][]5}{[1][14][]14}}
 \bibcite{service_wfs}{{2}{}{{}}{{}}}
 \bibcite{schmitt2022workflow}{{3}{}{{}}{{}}}
 \bibcite{GarciaRepresa1740746}{{4}{}{{}}{{}}}
@@ -112,16 +118,18 @@
 \bibcite{argowf}{{11}{}{{}}{{}}}
 \bibcite{cognit}{{12}{}{{}}{{}}}
 \bibcite{openwolf}{{13}{}{{}}{{}}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Register an executor to a colony in Python.\relax }}{12}{figure.caption.11}\protected@file@percent }
-\newlabel{fig:dashboard1}{{6}{12}{Register an executor to a colony in Python.\relax }{figure.caption.11}{}}
-\newlabel{fig:dashboard1@cref}{{[figure][6][]6}{[1][11][]12}}
-\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces Assigning a process to an executor in Python.\relax }}{12}{figure.caption.12}\protected@file@percent }
-\newlabel{fig:dashboard1}{{7}{12}{Assigning a process to an executor in Python.\relax }{figure.caption.12}{}}
-\newlabel{fig:dashboard1@cref}{{[figure][7][]7}{[1][11][]12}}
 \bibcite{openfaas}{{14}{}{{}}{{}}}
 \bibcite{serverlessworkflows}{{15}{}{{}}{{}}}
 \bibcite{synapse}{{16}{}{{}}{{}}}
 \bibcite{scafe}{{17}{}{{}}{{}}}
+\@writefile{toc}{\contentsline {section}{\numberline {5}Use cases}{15}{section.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1}Serverless computing}{15}{subsection.5.1}\protected@file@percent }
+\newlabel{faas}{{5.1}{15}{Serverless computing}{subsection.5.1}{}}
+\newlabel{faas@cref}{{[subsection][1][5]5.1}{[1][14][]15}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2}Edge computing}{15}{subsection.5.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.3}Remote sensing}{15}{subsection.5.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.4}HPC integration}{15}{subsection.5.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {6}Discussion}{15}{section.6}\protected@file@percent }
 \bibcite{GarciaRepresa1640771}{{18}{}{{}}{{}}}
 \bibcite{delsing2017iot}{{19}{}{{}}{{}}}
 \bibcite{grid_computing}{{20}{}{{}}{{}}}
@@ -132,14 +140,8 @@
 \bibcite{hadoop}{{25}{}{{}}{{}}}
 \bibcite{zerotrust}{{26}{}{{}}{{}}}
 \bibcite{ecdsa}{{27}{}{{}}{{}}}
-\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces Process information. The timeline makes it possible to follow the execution of process in realtime.\relax }}{13}{figure.caption.13}\protected@file@percent }
-\newlabel{fig:dashboard1}{{8}{13}{Process information. The timeline makes it possible to follow the execution of process in realtime.\relax }{figure.caption.13}{}}
-\newlabel{fig:dashboard1@cref}{{[figure][8][]8}{[1][11][]13}}
 \providecommand\NAT@force@numbers{}\NAT@force@numbers
-\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces Visualization of a DAG.\relax }}{14}{figure.caption.14}\protected@file@percent }
-\newlabel{fig:dashboard2}{{9}{14}{Visualization of a DAG.\relax }{figure.caption.14}{}}
-\newlabel{fig:dashboard2@cref}{{[figure][9][]9}{[1][11][]14}}
-\@writefile{toc}{\contentsline {section}{\numberline {A}Appendix - Colonies operations}{14}{appendix.A}\protected@file@percent }
-\newlabel{optable}{{\caption@xref {optable}{ on input line 442}}{15}{Appendix - Colonies operations}{table.caption.16}{}}
-\newlabel{optable@cref}{{[appendix][1][2147483647]A}{[1][14][]15}}
-\gdef \@abspage@last{15}
+\@writefile{toc}{\contentsline {section}{\numberline {A}Appendix - Colonies operations}{17}{appendix.A}\protected@file@percent }
+\newlabel{optable}{{\caption@xref {optable}{ on input line 509}}{17}{Appendix - Colonies operations}{table.caption.12}{}}
+\newlabel{optable@cref}{{[appendix][1][2147483647]A}{[1][17][]17}}
+\gdef \@abspage@last{17}

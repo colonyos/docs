@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.1.7)  9 APR 2023 22:48
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.1.7)  10 APR 2023 10:30
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -384,41 +384,69 @@ Package: subcaption 2022/01/07 v1.5 Sub-captions (AR)
 \c@subfigure=\count294
 \c@subtable=\count295
 )
-(./paper.aux
+(/usr/local/texlive/2022/texmf-dist/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2021/10/31 v2.13 LaTeX color extensions (UK)
 
-LaTeX Warning: Label `fig:dashboard1' multiply defined.
-
-
-LaTeX Warning: Label `fig:dashboard1@cref' multiply defined.
-
-
-LaTeX Warning: Label `fig:dashboard1' multiply defined.
-
-
-LaTeX Warning: Label `fig:dashboard1@cref' multiply defined.
-
+(/usr/local/texlive/2022/texmf-dist/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
+Package xcolor Info: Driver file: pdftex.def on input line 227.
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1352.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1356.
+Package xcolor Info: Model `RGB' extended on input line 1368.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1370.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1371.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1372.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1373.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1374.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1375.
+)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/bera/bera.sty
+Package: bera 2004/01/31 (WaS)
+
+(/usr/local/texlive/2022/texmf-dist/tex/latex/base/fontenc.sty
+Package: fontenc 2021/04/29 v2.0v Standard LaTeX package
+)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/base/textcomp.sty
+Package: textcomp 2020/02/02 v2.0n Standard LaTeX package
+)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/bera/beraserif.sty
+Package: beraserif 2004/01/30 (WaS)
+LaTeX Font Info:    Trying to load font information for T1+fve on input line 30
+.
+
+(/usr/local/texlive/2022/texmf-dist/tex/latex/bera/t1fve.fd
+File: t1fve.fd 2004/09/07 scalable font definitions for T1/fve.
+)
+LaTeX Font Info:    Font shape `T1/fve/m/n' will be
+(Font)              scaled to size 8.99994pt on input line 30.
+)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/bera/berasans.sty
+Package: berasans 2004/01/30 (WaS)
+)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/bera/beramono.sty
+Package: beramono 2004/01/31 (WaS)
+)) (./paper.aux)
 \openout1 = `paper.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 53.
-LaTeX Font Info:    ... okay on input line 53.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 53.
-LaTeX Font Info:    ... okay on input line 53.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 53.
-LaTeX Font Info:    ... okay on input line 53.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 53.
-LaTeX Font Info:    ... okay on input line 53.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 53.
-LaTeX Font Info:    ... okay on input line 53.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 53.
-LaTeX Font Info:    ... okay on input line 53.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 53.
-LaTeX Font Info:    ... okay on input line 53.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 53.
-LaTeX Font Info:    ... okay on input line 53.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 53.
-LaTeX Font Info:    ... okay on input line 53.
-
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 80.
+LaTeX Font Info:    ... okay on input line 80.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 80.
+LaTeX Font Info:    ... okay on input line 80.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 80.
+LaTeX Font Info:    ... okay on input line 80.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 80.
+LaTeX Font Info:    ... okay on input line 80.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 80.
+LaTeX Font Info:    ... okay on input line 80.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 80.
+LaTeX Font Info:    ... okay on input line 80.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 80.
+LaTeX Font Info:    ... okay on input line 80.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 80.
+LaTeX Font Info:    ... okay on input line 80.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 80.
+LaTeX Font Info:    ... okay on input line 80.
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
@@ -485,7 +513,7 @@ LaTeX Font Info:    ... okay on input line 53.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-Package hyperref Info: Link coloring OFF on input line 53.
+Package hyperref Info: Link coloring OFF on input line 80.
 (/usr/local/texlive/2022/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
 
@@ -498,32 +526,33 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count296
 )
-LaTeX Info: Redefining \ref on input line 53.
-LaTeX Info: Redefining \pageref on input line 53.
-LaTeX Info: Redefining \nameref on input line 53.
+LaTeX Info: Redefining \ref on input line 80.
+LaTeX Info: Redefining \pageref on input line 80.
+LaTeX Info: Redefining \nameref on input line 80.
  (./paper.out) (./paper.out)
 \@outlinefile=\write3
 \openout3 = `paper.out'.
 
-LaTeX Info: Redefining \microtypecontext on input line 53.
-Package microtype Info: Applying patch `item' on input line 53.
-Package microtype Info: Applying patch `toc' on input line 53.
-Package microtype Info: Applying patch `eqnum' on input line 53.
-Package microtype Info: Applying patch `footnote' on input line 53.
+LaTeX Info: Redefining \microtypecontext on input line 80.
+Package microtype Info: Applying patch `item' on input line 80.
+Package microtype Info: Applying patch `toc' on input line 80.
+Package microtype Info: Applying patch `eqnum' on input line 80.
+Package microtype Info: Applying patch `footnote' on input line 80.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
 Package microtype Info: Automatic font expansion enabled (level 2),
 (microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
 Package microtype Info: Using default expansion set `alltext-nott'.
-LaTeX Info: Redefining \showhyphens on input line 53.
+LaTeX Info: Redefining \showhyphens on input line 80.
 Package microtype Info: No adjustment of tracking.
 Package microtype Info: No adjustment of interword spacing.
 Package microtype Info: No adjustment of character kerning.
+Package microtype Info: Loading generic protrusion settings for font family
+(microtype)             `fve' (encoding: T1).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
 
-(/usr/local/texlive/2022/texmf-dist/tex/latex/microtype/mt-ptm.cfg
-File: mt-ptm.cfg 2006/04/20 v1.7 microtype config. file: Times (RS)
-)
 (/usr/local/texlive/2022/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count297
@@ -549,12 +578,20 @@ e
 \c@lstlisting=\count303
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
+LaTeX Font Info:    Font shape `T1/fve/m/n' will be
+(Font)              scaled to size 15.55188pt on input line 82.
 
+
+LaTeX Font Warning: Font shape `T1/fve/m/sc' undefined
+(Font)              using `T1/fve/m/n' instead on input line 82.
+
+LaTeX Font Info:    Font shape `T1/fve/m/sc' will be
+(Font)              scaled to size 8.99994pt on input line 82.
 (/usr/local/texlive/2022/texmf-dist/tex/latex/microtype/mt-cmr.cfg
 File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman 
 (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+msa on input line 55.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 82.
 
 
 (/usr/local/texlive/2022/texmf-dist/tex/latex/amsfonts/umsa.fd
@@ -563,7 +600,7 @@ File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 (/usr/local/texlive/2022/texmf-dist/tex/latex/microtype/mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 55.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 82.
 
 
 (/usr/local/texlive/2022/texmf-dist/tex/latex/amsfonts/umsb.fd
@@ -572,180 +609,176 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 (/usr/local/texlive/2022/texmf-dist/tex/latex/microtype/mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
-LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 5
-5.
+LaTeX Font Info:    Font shape `T1/fve/b/n' will be
+(Font)              scaled to size 8.99994pt on input line 82.
+LaTeX Font Info:    Trying to load font information for T1+fvm on input line 82
+.
 
-(/usr/local/texlive/2022/texmf-dist/tex/latex/base/t1cmtt.fd
-File: t1cmtt.fd 2019/12/16 v2.5j Standard LaTeX font definitions
+(/usr/local/texlive/2022/texmf-dist/tex/latex/bera/t1fvm.fd
+File: t1fvm.fd 2004/09/07 scalable font definitions for T1/fvm.
 )
+LaTeX Font Info:    Font shape `T1/fvm/m/n' will be
+(Font)              scaled to size 8.99994pt on input line 82.
 Package microtype Info: Loading generic protrusion settings for font family
-(microtype)             `cmtt' (encoding: T1).
+(microtype)             `fvm' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
+LaTeX Font Info:    Font shape `T1/fve/m/n' will be
+(Font)              scaled to size 10.79993pt on input line 83.
+LaTeX Font Info:    Font shape `T1/fve/b/n' will be
+(Font)              scaled to size 10.79993pt on input line 83.
 
-Underfull \vbox (badness 3219) has occurred while \output is active []
 
- [1
+LaTeX Font Warning: Font shape `T1/fve/b/sc' undefined
+(Font)              using `T1/fve/b/n' instead on input line 83.
+
+LaTeX Font Info:    Font shape `T1/fve/m/n' will be
+(Font)              scaled to size 6.29996pt on input line 86.
+LaTeX Font Info:    Font shape `T1/fve/m/n' will be
+(Font)              scaled to size 8.09995pt on input line 86.
+LaTeX Font Info:    Font shape `T1/fve/m/n' will be
+(Font)              scaled to size 5.39996pt on input line 86.
+LaTeX Font Info:    Font shape `T1/fve/m/it' in size <10> not available
+(Font)              Font shape `T1/fve/m/sl' tried instead on input line 86.
+LaTeX Font Info:    Font shape `T1/fve/m/sl' will be
+(Font)              scaled to size 8.99994pt on input line 86.
+LaTeX Font Info:    Font shape `T1/fve/b/it' in size <10> not available
+(Font)              Font shape `T1/fve/b/sl' tried instead on input line 95.
+LaTeX Font Info:    Font shape `T1/fve/b/sl' will be
+(Font)              scaled to size 8.99994pt on input line 95.
+[1
 
 
-{/usr/local/texlive/2022/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2]
-<overview.png, id=138, 711.6186pt x 636.2169pt>
+{/usr/local/texlive/2022/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+LaTeX Font Info:    Font shape `T1/fve/m/sc' will be
+(Font)              scaled to size 8.09995pt on input line 112.
+
+[2]
+<overview.png, id=135, 711.6186pt x 636.2169pt>
 File: overview.png Graphic file (type png)
 <use overview.png>
-Package pdftex.def Info: overview.png  used on input line 99.
+Package pdftex.def Info: overview.png  used on input line 125.
 (pdftex.def)             Requested size: 320.22542pt x 286.29495pt.
+ [3] [4 <./overview.png>]
+LaTeX Font Info:    Trying to load font information for TS1+fve on input line 1
+42.
 
-Underfull \vbox (badness 5533) has occurred while \output is active []
-
- [3]
-LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 1
-16.
-
-(/usr/local/texlive/2022/texmf-dist/tex/latex/psnfss/ts1ptm.fd
-File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
-) [4 <./overview.png>]
-<arch.png, id=160, 567.0786pt x 327.1422pt>
+(/usr/local/texlive/2022/texmf-dist/tex/latex/bera/ts1fve.fd
+File: ts1fve.fd 2004/09/07 scalable font definitions for TS1/fve.
+)
+LaTeX Font Info:    Font shape `TS1/fve/m/n' will be
+(Font)              scaled to size 8.99994pt on input line 142.
+Package microtype Info: Loading generic protrusion settings for font family
+(microtype)             `fve' (encoding: TS1).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
+ [5]
+<arch.png, id=164, 567.0786pt x 327.1422pt>
 File: arch.png Graphic file (type png)
 <use arch.png>
-Package pdftex.def Info: arch.png  used on input line 147.
+Package pdftex.def Info: arch.png  used on input line 173.
 (pdftex.def)             Requested size: 209.8158pt x 121.04071pt.
 
-Overfull \hbox (68.88788pt too wide) in paragraph at lines 147--148
+Overfull \hbox (68.88788pt too wide) in paragraph at lines 173--174
  [][] 
  []
 
-<process.png, id=161, 391.2216pt x 444.4605pt>
+<process.png, id=165, 391.2216pt x 444.4605pt>
 File: process.png Graphic file (type png)
 <use process.png>
-Package pdftex.def Info: process.png  used on input line 153.
+Package pdftex.def Info: process.png  used on input line 179.
 (pdftex.def)             Requested size: 144.74973pt x 164.4478pt.
 
-Overfull \hbox (3.82181pt too wide) in paragraph at lines 153--154
+Overfull \hbox (3.82181pt too wide) in paragraph at lines 179--180
  [][] 
  []
 
-[5 <./arch.png> <./process.png>]
-<function_spec.png, id=168, 1004.75375pt x 394.47375pt>
-File: function_spec.png Graphic file (type png)
-<use function_spec.png>
-Package pdftex.def Info: function_spec.png  used on input line 208.
-(pdftex.def)             Requested size: 351.66908pt x 138.06787pt.
 
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[6]
-<raft.png, id=189, 298.9569pt x 422.5386pt>
+ [6 <./arch.png> <./process.png>]
+Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
+nput line 232.
+ [7]
+<raft.png, id=203, 298.9569pt x 422.5386pt>
 File: raft.png Graphic file (type png)
 <use raft.png>
-Package pdftex.def Info: raft.png  used on input line 233.
+Package pdftex.def Info: raft.png  used on input line 258.
 (pdftex.def)             Requested size: 149.47807pt x 211.26878pt.
 
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[7 <./function_spec.png>]
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-<workflow.png, id=200, 1534.65344pt x 396.40096pt>
+ [8 <./raft.png>]
+<workflow.png, id=214, 1534.65344pt x 396.40096pt>
 File: workflow.png Graphic file (type png)
 <use workflow.png>
-Package pdftex.def Info: workflow.png  used on input line 271.
+Package pdftex.def Info: workflow.png  used on input line 306.
 (pdftex.def)             Requested size: 460.39958pt x 118.92119pt.
 
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-
-Underfull \vbox (badness 6493) has occurred while \output is active []
-
- [8 <./raft.png>] [9 <./workflow.png>]
-Underfull \vbox (badness 1210) has occurred while \output is active []
-
- [10]
-Underfull \hbox (badness 6364) in paragraph at lines 341--342
-[]\T1/ptm/m/n/10 (+20) Table []5[] shows an ex-am-ple of a colony ta-ble con-si
-st-ing of three ex-ecu-tors. In this case, to
- []
-
-
-Underfull \hbox (badness 5288) in paragraph at lines 341--342
-\T1/ptm/m/n/10 (+20) reg-is-ter a new ex-ecu-tor, the SHA-3 hash of the re-cov-
-ered sig-na-ture needs to match the iden-tity
- []
-
-<executor_code.png, id=236, 1078.0275pt x 563.10374pt>
-File: executor_code.png Graphic file (type png)
-<use executor_code.png>
-Package pdftex.def Info: executor_code.png  used on input line 350.
-(pdftex.def)             Requested size: 377.31528pt x 197.08926pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<assign_code.png, id=237, 1063.975pt x 123.46124pt>
-File: assign_code.png Graphic file (type png)
-<use assign_code.png>
-Package pdftex.def Info: assign_code.png  used on input line 357.
-(pdftex.def)             Requested size: 372.39684pt x 43.21207pt.
+[9] [10 <./workflow.png>]
+Underfull \vbox (badness 2799) has occurred while \output is active []
 
-LaTeX Warning: `h' float specifier changed to `ht'.
+ [11]
+[12] (/usr/local/texlive/2022/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2020/03/24 1.8d listings language file
+)
+LaTeX Font Info:    Font shape `T1/fve/b/n' will be
+(Font)              scaled to size 8.09995pt on input line 395.
+LaTeX Font Info:    Font shape `T1/fve/m/it' in size <9> not available
+(Font)              Font shape `T1/fve/m/sl' tried instead on input line 407.
+LaTeX Font Info:    Font shape `T1/fve/m/sl' will be
+(Font)              scaled to size 8.09995pt on input line 407.
 
-<dashboard1.png, id=238, 1676.2625pt x 1185.42876pt>
+[13]
+<dashboard1.png, id=298, 1676.2625pt x 1185.42876pt>
 File: dashboard1.png Graphic file (type png)
 <use dashboard1.png>
-Package pdftex.def Info: dashboard1.png  used on input line 364.
+Package pdftex.def Info: dashboard1.png  used on input line 439.
 (pdftex.def)             Requested size: 419.0646pt x 296.35646pt.
+ (./paper.bbl
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-<dashboard2.png, id=239, 1676.2625pt x 1185.42876pt>
-File: dashboard2.png Graphic file (type png)
-<use dashboard2.png>
-Package pdftex.def Info: dashboard2.png  used on input line 371.
-(pdftex.def)             Requested size: 419.0646pt x 296.35646pt.
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-(./paper.bbl [11] [12 <./executor_code.png> <./assign_code.png>]) [13 <./dashbo
-ard1.png>]
-Overfull \hbox (0.51492pt too wide) in paragraph at lines 395--443
+ [14 <./dashboard1.png>] [15]) [16]
+Overfull \hbox (46.9797pt too wide) in paragraph at lines 462--510
  [][] 
  []
 
+[17] (./paper.aux)
 
-LaTeX Warning: `h' float specifier changed to `ht'.
+LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-[14 <./dashboard2.png>] [15] (./paper.aux)
 
-LaTeX Warning: There were multiply-defined labels.
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
 Package rerunfilecheck Info: File `paper.out' has not changed.
-(rerunfilecheck)             Checksum: 1F85D60FC0E899645970FAF575665003;3064.
+(rerunfilecheck)             Checksum: 50E98F25D7B067E54D93F20043341D12;3081.
  ) 
 Here is how much of TeX's memory you used:
- 17277 strings out of 478268
- 293941 string characters out of 5846348
- 704912 words of memory out of 5000000
- 34886 multiletter control sequences out of 15000+600000
- 534853 words of font info for 245 fonts, out of 8000000 for 9000
+ 18324 strings out of 478268
+ 306714 string characters out of 5846348
+ 926927 words of memory out of 5000000
+ 35873 multiletter control sequences out of 15000+600000
+ 539733 words of font info for 242 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 70i,12n,77p,1279b,500s stack positions out of 10000i,1000n,20000p,200000b,200000s
-{/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/base/8r.enc}{/usr/local/t
-exlive/2022/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}</usr/local/tex
-live/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texl
-ive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texliv
-e/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/
-2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/202
-2/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2022
-/texmf-dist/fonts/type1/public/cm-super/sftt1000.pfb></usr/local/texlive/2022/t
-exmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2022/texmf-dist/
-fonts/type1/urw/times/utmbi8a.pfb></usr/local/texlive/2022/texmf-dist/fonts/typ
-e1/urw/times/utmr8a.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/urw/tim
-es/utmri8a.pfb>
-Output written on paper.pdf (15 pages, 2468272 bytes).
+ 70i,11n,77p,1279b,1383s stack positions out of 10000i,1000n,20000p,200000b,200000s
+{/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
+exlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/te
+xlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texl
+ive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texliv
+e/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2
+022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/20
+22/texmf-dist/fonts/type1/public/bera/fveb8a.pfb></usr/local/texlive/2022/texmf
+-dist/fonts/type1/public/bera/fveb8a.pfb></usr/local/texlive/2022/texmf-dist/fo
+nts/type1/public/bera/fver8a.pfb></usr/local/texlive/2022/texmf-dist/fonts/type
+1/public/bera/fver8a.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public
+/bera/fvmr8a.pfb>
+Output written on paper.pdf (17 pages, 1586081 bytes).
 PDF statistics:
- 357 PDF objects out of 1000 (max. 8388607)
- 301 compressed objects within 4 object streams
- 89 named destinations out of 1000 (max. 500000)
- 60635 words of extra memory for PDF output out of 61914 (max. 10000000)
+ 415 PDF objects out of 1000 (max. 8388607)
+ 365 compressed objects within 4 object streams
+ 135 named destinations out of 1000 (max. 500000)
+ 56519 words of extra memory for PDF output out of 61914 (max. 10000000)
 
