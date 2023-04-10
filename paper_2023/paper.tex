@@ -83,7 +83,7 @@
 \begin{abstract}
 Artificial intelligence and machine learning has gained significant traction in recent years. At the same time, development and operation of AI workloads has become increasingly challenging. One difficulty is the lack of portability, making it cumbersome to move from one platform to another. Creating and operating fully automated end-to-end workflows across devices, edge, and cloud platforms is even more challenging. 
 
-To address these challenges, the paper presents an open-source framework called Colonies\footnote{https://github.com/colonyos/colonies}, which facilitates execution of computational workloads across a diverse range of platforms. Colonies enables development of a \emph{grid-like distributed virtual computer}, called a \emph{Colony}, which can effortlessly integrate with any third-party application or other workflow management systems.
+    To address these challenges, the paper presents an open-source framework called Colonies\footnote{https://github.com/colonyos/colonies}, which facilitates execution of computational workloads across a diverse range of platforms. Colonies enables development of a \emph{grid-like distributed virtual computer}, called a \emph{Colony}, which can effortlessly integrate with any third-party application (or other workflow management systems).
 
 Based on a stateless microservice architecture, complex workflows to be broken down into composable functions. These composable functions can be implemented in any programming language and be executed by distributed executors deployed across platforms, anywhere on the Internet such as IoT, cloud, edge, and supercomputers. A zero-trust security protocol enables a collection of distributed executors to operate as a unified entity, thus establishing seamless compute continuums across platforms.
 
@@ -255,7 +255,7 @@ Table \ref{proctable} shows an example of a process table. The process table als
 
 \begin{figure}[h]
 	\centering
-    \includegraphics[scale=0.5]{raft.png}
+    \includegraphics[scale=0.6]{raft.png}
 	\caption{High-availability deployment of Colonies.}
 	\label{fig:ha_deployment}
 \end{figure}
@@ -281,9 +281,6 @@ Raft \cite{raft} is a consensus algorithm specifically designed to manage a repl
 
 Adding Raft with the Colonies framework allows incoming assign requests to be directed towards the leading Colonies server, thereby ensuring that only one Colonies server replica handles such requests. Figure \ref{fig:ha_deployment} shows an overview of a high-availability Colonies deployment. A new leader is elected in the event that a Colonies server replica fails. The Raft protocol also enables seamless updates to the Colonies server software by making it possible to upgrade each replica individually. Consequently, Colonies is well-suited for Kubernetes deployments, ensuring high levels of availability and fault tolerance.
 
-\subsubsection{Workflows}
-A workflow is a series of processes that need to be completed in a specific order. In Colonies, workflows are represented as directed acyclic graphs (DAGs) where nodes represent processes and edges represent dependencies and data flow between processes. Similar to processes, workflows are managed completely stateless. When a workflow is submitted, all processes part of the workflow are submitted and added to the process table similar to how ordinary processes are handled. To control the order processes can be assigned, Colonies sets a flag, \emph{wait for parents} to prevent processes to be assigned to an executor before their dependencies have been satisfied. Note that processes may run in parallel if a sufficient number of executors are available.
-
 \begin{table}[h]
 	\caption{Dependency Table}
 	\centering
@@ -300,6 +297,10 @@ A workflow is a series of processes that need to be completed in a specific orde
 	\end{tabular}
 	\label{deptable}
 \end{table}
+
+\subsubsection{Workflows}
+A workflow is a series of processes that need to be completed in a specific order. In Colonies, workflows are represented as directed acyclic graphs (DAGs) where nodes represent processes and edges represent dependencies and data flow between processes. Similar to processes, workflows are managed completely stateless. When a workflow is submitted, all processes part of the workflow are submitted and added to the process table similar to how ordinary processes are handled. To control the order processes can be assigned, Colonies sets a flag, \emph{wait for parents} to prevent processes to be assigned to an executor before their dependencies have been satisfied. Note that processes may run in parallel if a sufficient number of executors are available.
+
 
 \begin{figure}[h]
 	\centering
@@ -445,7 +446,7 @@ Figure \ref{fig:dashboard1} depicts a screenshot of the Colonies dashboard tool,
 \subsection{Workflows}
 A workflow is just a set of processes with dependencies represented as a DAG internally in Colonies. Workflows can either be submitted using SDKs or the Colonies CLI, which supports submission of JSON files. Listening \ref{code:workflow_spec} shows an example of a workflow consisting of four processes, each requiring different types of executors. The management of workflows is entirely handled by Colonies, and each executor executes only processes that are part of the graph for which it is responsible for. This approach significantly reduces the complexity of designing, implementing and operating large-scale AI applications and data pipelines. 
 
-\begin{lstlisting}[basicstyle=\small, label=code:workflow_spec, language=json, basicstyle=\small, caption=Example of a workflow]
+\begin{lstlisting}[basicstyle=\small, label=code:workflow_spec, language=json, basicstyle=\small, caption=Example of a workflow expressed in JSON.]
 [ { "nodename": "task_a",
     "funcname": "echo",
     "conditions": { "executortype": "executor_type1", "dependencies": [] } },
@@ -473,9 +474,23 @@ In addition to monitoring processes and executors, the Colonies dashboard can be
 \section{Use cases}
 \subsection{Serverless computing}
 \label{faas}
+
+\begin{figure}[h]
+	\centering
+    \includegraphics[scale=0.44]{cognite_faas.png}
+	\caption{A Colonies-based FaaS serverless computing platform.}
+	\label{fig:ha_deployment}
+\end{figure}
 \subsection{Edge computing}
 \subsection{Remote sensing}
 \subsection{HPC integration}
+
+\begin{figure}[h]
+	\centering
+    \includegraphics[scale=0.43]{hpc_workflow.png}
+	\caption{HPC workflow.}
+	\label{fig:dashboard2}
+\end{figure}
 
 \section{Discussion}
 
