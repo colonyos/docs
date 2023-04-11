@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.1.7)  11 APR 2023 09:00
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.1.7)  11 APR 2023 13:01
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -746,60 +746,52 @@ Overfull \hbox (3.2465pt too wide) in paragraph at lines 446--447
  []
 
 
-Underfull \vbox (badness 3364) has occurred while \output is active []
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [14 <./dashboard1.png> <./dashboard2.png>]
-
-LaTeX Warning: Reference `fig:dashboard2' on page 15 undefined on input line 48
-7.
-
-<cognite_faas.png, id=319, 859.0494pt x 587.0733pt>
+<cognite_faas.png, id=320, 859.0494pt x 587.0733pt>
 File: cognite_faas.png Graphic file (type png)
 <use cognite_faas.png>
-Package pdftex.def Info: cognite_faas.png  used on input line 491.
+Package pdftex.def Info: cognite_faas.png  used on input line 492.
 (pdftex.def)             Requested size: 377.9829pt x 258.31305pt.
-
-Package natbib Warning: Citation `https://www.rocksigma.com' on page 15 undefin
-ed on input line 497.
-
 
 Underfull \vbox (badness 8075) has occurred while \output is active []
 
  [15 <./cognite_faas.png>]
-
-LaTeX Warning: Reference `hpc_workflow' on page 16 undefined on input line 517.
-
-
-[16]
-<hpc_workflow.png, id=348, 761.7258pt x 442.5333pt>
+<hpc_workflow.png, id=344, 761.7258pt x 442.5333pt>
 File: hpc_workflow.png Graphic file (type png)
 <use hpc_workflow.png>
-Package pdftex.def Info: hpc_workflow.png  used on input line 527.
+Package pdftex.def Info: hpc_workflow.png  used on input line 518.
 (pdftex.def)             Requested size: 327.5357pt x 190.2856pt.
- [17 <./hpc_workflow.png>] [18] (./paper.bbl [19]) [20]
-Overfull \hbox (1.08005pt too wide) in paragraph at lines 569--617
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[16]
+<hpc_overlay.png, id=353, 686.3241pt x 359.1819pt>
+File: hpc_overlay.png Graphic file (type png)
+<use hpc_overlay.png>
+Package pdftex.def Info: hpc_overlay.png  used on input line 529.
+(pdftex.def)             Requested size: 295.1136pt x 154.4452pt.
+ [17 <./hpc_workflow.png> <./hpc_overlay.png>] [18] (./paper.bbl [19])
+[20]
+Overfull \hbox (1.08005pt too wide) in paragraph at lines 577--625
  [][] 
  []
-
-
-Package natbib Warning: There were undefined citations.
 
 [21] (./paper.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-
-LaTeX Warning: There were undefined references.
-
 Package rerunfilecheck Info: File `paper.out' has not changed.
 (rerunfilecheck)             Checksum: 3B4860B3AB51960476D33278E6D7E2F5;3053.
  ) 
 Here is how much of TeX's memory you used:
- 18413 strings out of 478268
- 308078 string characters out of 5846348
- 982043 words of memory out of 5000000
- 35925 multiletter control sequences out of 15000+600000
- 540526 words of font info for 248 fonts, out of 8000000 for 9000
+ 18423 strings out of 478268
+ 308310 string characters out of 5846348
+ 982348 words of memory out of 5000000
+ 35935 multiletter control sequences out of 15000+600000
+ 540345 words of font info for 246 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  70i,12n,77p,1279b,1383s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
@@ -813,10 +805,10 @@ e/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2
 nts/type1/public/bera/fver8a.pfb></usr/local/texlive/2022/texmf-dist/fonts/type
 1/public/bera/fver8a.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public
 /bera/fvmr8a.pfb>
-Output written on paper.pdf (21 pages, 2643111 bytes).
+Output written on paper.pdf (21 pages, 2756087 bytes).
 PDF statistics:
- 476 PDF objects out of 1000 (max. 8388607)
- 417 compressed objects within 5 object streams
- 160 named destinations out of 1000 (max. 500000)
- 56534 words of extra memory for PDF output out of 61914 (max. 10000000)
+ 482 PDF objects out of 1000 (max. 8388607)
+ 422 compressed objects within 5 object streams
+ 162 named destinations out of 1000 (max. 500000)
+ 56539 words of extra memory for PDF output out of 61914 (max. 10000000)
 
