@@ -150,6 +150,10 @@ Panagiotis Kontogiannis and Theodora Varvarigou.
 \newblock {ECDSA Private Keys Study of Security}.
 \newblock {\em OALib}, 06:1--20, 01 2019.
 
+\bibitem{slurm}
+{Slurm workload manager}.
+\newblock \url{https://slurm.schedmd.com}.
+
 \bibitem{openeo}
 {OpenEO}.
 \newblock \url{https://openeo.org}.

@@ -506,18 +506,31 @@ Figure \ref{fig:faas} depicts a Colonies-based FaaS platform. Similar to AWS Lam
 
 The advantage of Colonies is that it introduces an extra level of separation by offering a queuing system. If an executor is unavailable, the process is simply enqueued in the process table, enabling development of a loosely coupled system. A software agent could then monitor pending processes on the Colonies server, predict the system load, and automatically deploy executors to meet the load, resulting in a highly efficient and scalable system. In the future, the Cognit AI orchestrator could also be used together with Colonies to reduce energy consumption or minimize network latency by efficiently utilizing edge servers.
 
-\subsection{Slurm integration}
+\subsection{HPC integration}
 \label{hpc_use_case}
+Slurm \cite{slurm} is a workload manager and job scheduler commonly used in HPC environments. In constrast to Colonies, it provides functionality to reserve resources. This is particularly useful when running complex simulations that requires a large number of of CPUs or a large amount of memory. 
+
+A challenge associated with Slurm and HPC environments in general is that they can be difficult to set up and use. Submitting a job typically requires users to develop job scripts and manually transfer data to the HPC environment before a job can be executed. Compared to cloud platforms, Slurm is less mature when it comes to APIs and users have to develop their own automation tools, which can make the usage more time-consuming and manual.
+
+Colonies could be used to fill the gap between cloud and HPC and create workflows that can automate processing of data in the cloud while also taking advantage of the vaste compuational capacity offered by HPC. For example, a company could develop a workflow that automatically copy training data to a HPC center, train a neural network, move the result back to the cloud, and finally re-deploy a Kubernetes service to use the new model.
+
+Figure \ref{hpc_workflow} shows an example how Colonies could be used in a HPC environment. Several executors runs at the HPC system, each with their own responsibilities. The Container Importer Executor is responsible for converting container images to a format that is supported by Slurm, e.g. Singularity containers\footnote{https://docs.sylabs.io}. The Data Importer Executors downloads data to the HPC file system. The Slurm Executor is responsible for submitting and overseeing Slurm jobs, while the Data Exporter executor is responsible for uploading result data to the cloud.
+
+A challenge developing cross-platform workflows is the integration with different autentication services. For example, the Data Importer may need to access an S3 services to fetch data. The Container Importer must authenticate with a Docker registry to be able to pull a Docker container to the HPC system. Generally, it is not straigtforward connect to the HPC system. In many cases, users have to manually set up SSH tunnels. 
+
+When using Colonies, users would not direclty connect to the HPC system, but indirectly control it by submitting Colonies processes that are subsequently picked up by HPC executors. 
+
+picked up the HPC executors. Since the security model offered by Colonies allows for different executors to trust each other, Colonies also provide a way of sharing secrets, e.g. S3 secrets. As the executors running at the HPC system would get all needed information in the assigned process records, they become easy to configure and wouldn't need to store credentials locally at the HPC system.  
 
 \begin{figure}[h]
 	\centering
     \includegraphics[scale=0.43]{hpc_workflow.png}
 	\caption{HPC workflow.}
-	\label{fig:dashboard2}
+	\label{fig:hpc_workflow}
 \end{figure}
 
 \subsection{OpenEO example}
-OpenEO \cite{openeo} is an open-source project that aimes at providing a standardized and interoperable solution for accessing, processing, and analyzing Earth observation (EO) data. Its primary objective is to facilitate seamless user interaction with diverse data sources and processing backends through a unified API. An overview of various OpenEO backends is presented in \cite{openeo_backends}. The paper concludes that there is a need for a more decentralized and federated EO data processing platform, and OpenEO represents a significant step in this direction. Nevertheless, the paper also acknowledges that the implementation of underlying datacubes, storage solutions, and service plans cannot be entirely abstract away by the OpenEO API.
+OpenEO \cite{openeo} is an open-source project that aims at providing a standardized and interoperable solution for accessing, processing, and analyzing Earth observation (EO) data. Its primary objective is to facilitate seamless user interaction with diverse data sources and processing backends through a unified API. An overview of various OpenEO backends is presented in \cite{openeo_backends}. The paper concludes that there is a need for a more decentralized and federated EO data processing platform, and OpenEO represents a significant step in this direction. Nevertheless, the paper also acknowledges that the implementation of underlying datacubes, storage solutions, and service plans cannot be entirely abstract away by the OpenEO API.
 
 % \begin{figure}[h]
 % 	\centering
@@ -526,10 +539,10 @@ OpenEO \cite{openeo} is an open-source project that aimes at providing a standar
 % 	\label{fig:dashboard2}
 % \end{figure}
 
-Colonies can be used to implement a decentralized, grid-like compute infrastructure for executing EO workloads across diverse platforms. By encapsulating computational EO tasks in Colony processes, interoperability among platforms can be significantly enhanced. Executors could also be used to provision computational resources if needed. For example, automatically provision cloud resources and setup EO software, or deploy workflows at HPC systems to handle high-demand EO workloads. 
+Colonies offer a promising solution for implementing a decentralized and grid-like compute infrastructure, capable of executing Earth Observation (EO) workloads across diverse platforms. By encapsulating computational EO tasks into Colonies processes, interoperability among platforms can be further enhanced. For instance, it becomes possible to create a broker-based architecture that enables OpenEO applications to submit job specifications indirectly to a Colonies server. These specifications are then picked up by executors connecting to different backend providers, e.g. by an executor connected to a Data and Information Access Services (DIAS). Executors can also be leveraged to provision computational resources. For example, automatically provision AWS cloud resources or deploy workflows at HPC systems to handle high-demand EO workloads. 
 
 \section{Discussion}
-This paper has presented an open-source framework called Colonies, which streamlines execution of computational workloads across platforms. Colonies enables creation of a grid-like distributed virtual computer, called a \emph{Colony}, which is a collective machine consisting of distributed executors running on the Internet. Unlike many other systems where security sometimes is added later on, Colonies builds on the principle, \emph{security first}.
+This paper has presented an open-source framework called Colonies, which streamlines execution of computational workloads across platforms. Colonies enables creation of a \emph{grid-like distributed virtual computer}, called a \emph{Colony}, which can be seen as a collective computer machine consisting of distributed executor software running on the Internet. Unlike many other systems where security sometimes is added later on, Colonies builds on the principle: \emph{security first}.
 
 Public key encryption allows administrators and users to maintain strict control over a colony, even when executors are dispersed throughout the Internet. Each colony is governed by a private key that serves as a central authority, analogous to \emph{one ring to rule them all}, making it possible to control a colony as if it was a single machine. The zero-trust principle, \emph{trust, but verify} enables development of immune system-like functionality where malfunctional executors can be excluded and replaced with fresh new ones, ensuring that the overall performance and reliability of the system is not compromised. 
 
@@ -543,7 +556,7 @@ It has been mentioned in the paper more than once that Colonies is designed to s
 
 Microservices is another design principle of the Colonies framework that simplifies integration. As executors are designed to be loosly-coupled and can be implemented in any language (supported by Colonies), the whole system becomes easier to develop and maintain. For example, different teams can take on responsibility to develop a certain executor, which can then be used as a part of a complex workflow running across platforms. 
 
-As a final remark, it is worth highlighting once again the significant advantage of Colonies as a security solution. As a colony is a trusted community of computer software, Colonies can be used to share secrets and credentials among its executor members. By storing credentials, such as one-time passwords or authentication keys in process records, executors can just execute a process in run-and-forget style and be able to access third-party infrastructures without the need to store the and manage credentials locally. Additionally, by targeting specific executor types when submitting a function specification, a colony can be further segmented so that only a subset of the executors in a colony can access the credentials, further improving the security. 
+As a final remark, it is worth highlighting once again the significant advantage of Colonies as a security solution. As a colony is a trusted community of execturs, it can be used to share secrets and credentials among its executor members. By storing credentials, such as one-time passwords or authentication keys in process records, executors can just execute process in run-and-forget style and still be able to access third-party infrastructures without the need to store and manage credentials locally. Additionally, by targeting specific executor types when submitting a function specification, a colony can be further segmented so that only a subset of the executors in a colony can access the credentials, further improving security. 
 
 \bibliographystyle{unsrt}
 \bibliography{references} 
