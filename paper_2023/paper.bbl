@@ -18,6 +18,16 @@ Rafael Ferreira~da Silva, Henri Casanova, Kyle Chard, Tainã Coleman, Dan
   Scientific Workflows Management Systems Research and Development}.
 \newblock Technical report, 2021.
 
+\bibitem{scafe}
+Zhijun Ding, Yuanyuan Zhou, Shuaijun Wang, and Changjun Jiang.
+\newblock {SCAFE: A Service-Centered Cloud-Native Workflow Engine
+  Architecture}.
+\newblock {\em IEEE Transactions on Services Computing}, pages 1--14, 2023.
+
+\bibitem{synapse}
+{Synapse}.
+\newblock \url{https://github.com/serverlessworkflow/synapse}.
+
 \bibitem{service_wfs}
 W.~Viriyasitavat, L.~Da Xu, G.~Dhiman, A.~Sapsomboon, V.~Pungpapong, and Z.~Bi.
 \newblock {Service Workflow: State-of-the-Art and Future Trends}.
@@ -85,20 +95,6 @@ Christian Sicari, Lorenzo Carnevale, Antonino Galletta, and Massimo Villari.
 \bibitem{openfaas}
 {OpenFaaS}.
 \newblock \url{https://www.openfaas.com}.
-
-\bibitem{serverlessworkflows}
-{Serverless Workflows}.
-\newblock \url{https://serverlessworkflow.io}.
-
-\bibitem{synapse}
-{Synapse}.
-\newblock \url{https://github.com/serverlessworkflow/synapse}.
-
-\bibitem{scafe}
-Zhijun Ding, Yuanyuan Zhou, Shuaijun Wang, and Changjun Jiang.
-\newblock {SCAFE: A Service-Centered Cloud-Native Workflow Engine
-  Architecture}.
-\newblock {\em IEEE Transactions on Services Computing}, pages 1--14, 2023.
 
 \bibitem{GarciaRepresa1640771}
 Jaime Garcia~Represa.
