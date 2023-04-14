@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.1.7)  13 APR 2023 09:52
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.1.7)  14 APR 2023 07:35
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -781,11 +781,10 @@ File: hpc_workflow.png Graphic file (type png)
 <use hpc_workflow.png>
 Package pdftex.def Info: hpc_workflow.png  used on input line 554.
 (pdftex.def)             Requested size: 327.5357pt x 190.2856pt.
- [18 <./hpc_overlay.png> <./hpc_workflow.png>] (./paper.bbl
+
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [19]
-[20]) [21]
+ [18 <./hpc_overlay.png> <./hpc_workflow.png>] (./paper.bbl [19] [20]) [21]
 Overfull \hbox (1.08005pt too wide) in paragraph at lines 592--640
  [][] 
  []
@@ -794,8 +793,14 @@ Overfull \hbox (1.08005pt too wide) in paragraph at lines 592--640
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-Package rerunfilecheck Info: File `paper.out' has not changed.
-(rerunfilecheck)             Checksum: 6C93AD6E832479409A352479FD568696;3254.
+
+Package rerunfilecheck Warning: File `paper.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `paper.out':
+(rerunfilecheck)             Before: 6C93AD6E832479409A352479FD568696;3254
+(rerunfilecheck)             After:  5D19ABDB99380B97F27EAFA05EFCBC0E;3108.
  ) 
 Here is how much of TeX's memory you used:
  18441 strings out of 478268
@@ -805,21 +810,25 @@ Here is how much of TeX's memory you used:
  541342 words of font info for 252 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  70i,12n,77p,1247b,1933s stack positions out of 10000i,1000n,20000p,200000b,200000s
-{/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
-exlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/te
-xlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texl
-ive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texliv
-e/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2
-022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/20
-22/texmf-dist/fonts/type1/public/bera/fveb8a.pfb></usr/local/texlive/2022/texmf
--dist/fonts/type1/public/bera/fveb8a.pfb></usr/local/texlive/2022/texmf-dist/fo
-nts/type1/public/bera/fver8a.pfb></usr/local/texlive/2022/texmf-dist/fonts/type
-1/public/bera/fver8a.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public
-/bera/fvmr8a.pfb>
-Output written on paper.pdf (22 pages, 3145927 bytes).
+
+pdfTeX warning (dest): name{subsection.5.4} has been referenced but does not ex
+ist, replaced by a fixed one
+
+{/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/tex
+live/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texl
+ive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texliv
+e/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/
+2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/202
+2/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2022
+/texmf-dist/fonts/type1/public/bera/fveb8a.pfb></usr/local/texlive/2022/texmf-d
+ist/fonts/type1/public/bera/fveb8a.pfb></usr/local/texlive/2022/texmf-dist/font
+s/type1/public/bera/fver8a.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/
+public/bera/fver8a.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/b
+era/fvmr8a.pfb>
+Output written on paper.pdf (22 pages, 3145248 bytes).
 PDF statistics:
- 492 PDF objects out of 1000 (max. 8388607)
- 430 compressed objects within 5 object streams
+ 490 PDF objects out of 1000 (max. 8388607)
+ 428 compressed objects within 5 object streams
  164 named destinations out of 1000 (max. 500000)
  56552 words of extra memory for PDF output out of 61914 (max. 10000000)
 
