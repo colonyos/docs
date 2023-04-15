@@ -150,17 +150,4 @@ Panagiotis Kontogiannis and Theodora Varvarigou.
 {Slurm workload manager}.
 \newblock \url{https://slurm.schedmd.com}.
 
-\bibitem{openeo}
-{OpenEO}.
-\newblock \url{https://openeo.org}.
-
-\bibitem{openeo_backends}
-Matthias Schramm, Edzer Pebesma, Milutin Milenković, Luca Foresta, Jeroen
-  Dries, Alexander Jacob, Wolfgang Wagner, Matthias Mohr, Markus Neteler, Miha
-  Kadunc, Tomasz Miksa, Pieter Kempeneers, Jan Verbesselt, Bernhard Gößwein,
-  Claudio Navacchi, Stefaan Lippens, and Johannes Reiche.
-\newblock The openeo api–harmonising the use of earth observation cloud
-  services using virtual data cube functionalities.
-\newblock {\em Remote Sensing}, 13(6), 2021.
-
 \end{thebibliography}
