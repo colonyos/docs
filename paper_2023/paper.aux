@@ -2,10 +2,13 @@
 \providecommand\hyper@newdestlabel[2]{}
 \providecommand\HyperFirstAtBeginDocument{\AtBeginDocument}
 \HyperFirstAtBeginDocument{\ifx\hyper@anchor\@undefined
+\global\let\oldcontentsline\contentsline
+\gdef\contentsline#1#2#3#4{\oldcontentsline{#1}{#2}{#3}}
 \global\let\oldnewlabel\newlabel
 \gdef\newlabel#1#2{\newlabelxx{#1}#2}
 \gdef\newlabelxx#1#2#3#4#5#6{\oldnewlabel{#1}{{#2}{#3}}}
 \AtEndDocument{\ifx\hyper@anchor\@undefined
+\let\contentsline\oldcontentsline
 \let\newlabel\oldnewlabel
 \fi}
 \fi}
@@ -14,12 +17,14 @@
 \providecommand\HyField@AuxAddToFields[1]{}
 \providecommand\HyField@AuxAddToCoFields[2]{}
 \citation{wf_challenges}
+\citation{spark}
+\citation{flink}
+\@writefile{toc}{\contentsline {section}{\numberline {1}Introduction}{2}{section.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {2}Related work}{2}{section.2}\protected@file@percent }
 \citation{scafe,synapse,service_wfs,schmitt2022workflow,GarciaRepresa1740746,Ouyang2010,NIKOLOV2021100440,workflow_in_bigdata}
 \citation{apache_airflow}
 \citation{rabbitmq}
 \citation{apache_kafka}
-\@writefile{toc}{\contentsline {section}{\numberline {1}Introduction}{2}{section.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {2}Related work}{2}{section.2}\protected@file@percent }
 \citation{argowf}
 \citation{cognit}
 \citation{openwolf}
@@ -27,26 +32,26 @@
 \citation{GarciaRepresa1740746,GarciaRepresa1640771}
 \citation{delsing2017iot}
 \citation{grid_computing}
-\@writefile{toc}{\contentsline {section}{\numberline {3}The Colonies framework}{3}{section.3}\protected@file@percent }
-\newlabel{sec:headings}{{3}{3}{The Colonies framework}{section.3}{}}
-\newlabel{sec:headings@cref}{{[section][3][]3}{[1][3][]3}}
 \citation{microservices}
 \@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Overview of the Colonies framework. Executors may be deployed anywhere on the Internet.\relax }}{4}{figure.caption.1}\protected@file@percent }
 \providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
 \newlabel{fig:overview}{{1}{4}{Overview of the Colonies framework. Executors may be deployed anywhere on the Internet.\relax }{figure.caption.1}{}}
 \newlabel{fig:overview@cref}{{[figure][1][]1}{[1][3][]4}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Microservices}{4}{subsection.3.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {3}The Colonies framework}{4}{section.3}\protected@file@percent }
+\newlabel{sec:headings}{{3}{4}{The Colonies framework}{section.3}{}}
+\newlabel{sec:headings@cref}{{[section][3][]3}{[1][3][]4}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Microservices}{5}{subsection.3.1}\protected@file@percent }
 \@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Process management via Colonies HTTP API. Note that only the assigned executor has write access to the process database entry.\relax }}{6}{figure.caption.2}\protected@file@percent }
 \newlabel{fig:process_assignment}{{2}{6}{Process management via Colonies HTTP API. Note that only the assigned executor has write access to the process database entry.\relax }{figure.caption.2}{}}
-\newlabel{fig:process_assignment@cref}{{[figure][2][]2}{[1][5][]6}}
+\newlabel{fig:process_assignment@cref}{{[figure][2][]2}{[1][6][]6}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.2}The role of queues as seperation of concerns}{6}{subsection.3.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.3}Process tables}{6}{subsection.3.3}\protected@file@percent }
 \@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Process Table\relax }}{7}{table.caption.3}\protected@file@percent }
 \newlabel{proctable}{{1}{7}{Process Table\relax }{table.caption.3}{}}
-\newlabel{proctable@cref}{{[table][1][]1}{[1][6][]7}}
+\newlabel{proctable@cref}{{[table][1][]1}{[1][7][]7}}
 \@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces Function Specifications\relax }}{7}{table.caption.4}\protected@file@percent }
 \newlabel{functable}{{2}{7}{Function Specifications\relax }{table.caption.4}{}}
-\newlabel{functable@cref}{{[table][2][]2}{[1][6][]7}}
+\newlabel{functable@cref}{{[table][2][]2}{[1][7][]7}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3}Process tables}{7}{subsection.3.3}\protected@file@percent }
 \newlabel{fig:function_spec}{{1}{7}{Example of a function specification}{lstlisting.1}{}}
 \newlabel{fig:function_spec@cref}{{[lstlisting][1][]1}{[1][7][]7}}
 \@writefile{lol}{\contentsline {lstlisting}{\numberline {1}{\ignorespaces Example of a function specification.}}{7}{lstlisting.1}\protected@file@percent }
@@ -55,18 +60,18 @@
 \citation{chaos_engineering}
 \@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces High-availability deployment of Colonies.\relax }}{8}{figure.caption.5}\protected@file@percent }
 \newlabel{fig:ha_deployment}{{3}{8}{High-availability deployment of Colonies.\relax }{figure.caption.5}{}}
-\newlabel{fig:ha_deployment@cref}{{[figure][3][]3}{[1][7][]8}}
+\newlabel{fig:ha_deployment@cref}{{[figure][3][]3}{[1][8][]8}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.4}A stateless failsafe mechanism}{8}{subsection.3.4}\protected@file@percent }
 \newlabel{stateless_error_management}{{3.4}{8}{A stateless failsafe mechanism}{subsection.3.4}{}}
-\newlabel{stateless_error_management@cref}{{[subsection][4][3]3.4}{[1][7][]8}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.4.1}Data consistency and distributed consensus}{8}{subsubsection.3.4.1}\protected@file@percent }
+\newlabel{stateless_error_management@cref}{{[subsection][4][3]3.4}{[1][8][]8}}
 \citation{raft}
-\citation{mapreduce}
-\citation{hadoop}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.4.1}Data consistency and distributed consensus}{9}{subsubsection.3.4.1}\protected@file@percent }
 \@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces Dependency Table\relax }}{9}{table.caption.6}\protected@file@percent }
 \newlabel{deptable}{{3}{9}{Dependency Table\relax }{table.caption.6}{}}
 \newlabel{deptable@cref}{{[table][3][]3}{[1][9][]9}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {3.4.2}Workflows}{9}{subsubsection.3.4.2}\protected@file@percent }
+\citation{mapreduce}
+\citation{hadoop}
 \@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Workflow execution timeline.\relax }}{10}{figure.caption.7}\protected@file@percent }
 \newlabel{fig:workflowexec}{{4}{10}{Workflow execution timeline.\relax }{figure.caption.7}{}}
 \newlabel{fig:workflowexec@cref}{{[figure][4][]4}{[1][9][]10}}
@@ -84,7 +89,7 @@
 \newlabel{coltable}{{5}{12}{Colony Id: \(4787a5071856a4acf702b2ffcea422e3237a679c681314113d86139461290cf4\)\relax }{table.caption.9}{}}
 \newlabel{coltable@cref}{{[table][5][]5}{[1][12][]12}}
 \@writefile{toc}{\contentsline {section}{\numberline {4}Implementation}{12}{section.4}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}Python SDK}{12}{subsection.4.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}Python SDK}{13}{subsection.4.1}\protected@file@percent }
 \newlabel{code:regexecutor}{{2}{13}{Register an executor to a colony in Python}{lstlisting.2}{}}
 \newlabel{code:regexecutor@cref}{{[lstlisting][2][]2}{[1][13][]13}}
 \@writefile{lol}{\contentsline {lstlisting}{\numberline {2}{\ignorespaces Register an executor to a colony in Python.}}{13}{lstlisting.2}\protected@file@percent }
@@ -128,39 +133,41 @@
 \newlabel{fig:hpc_overlay@cref}{{[figure][8][]8}{[1][17][]17}}
 \@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces HPC workflow.\relax }}{18}{figure.caption.14}\protected@file@percent }
 \newlabel{fig:hpc_workflow}{{9}{18}{HPC workflow.\relax }{figure.caption.14}{}}
-\newlabel{fig:hpc_workflow@cref}{{[figure][9][]9}{[1][17][]18}}
+\newlabel{fig:hpc_workflow@cref}{{[figure][9][]9}{[1][18][]18}}
 \@writefile{toc}{\contentsline {section}{\numberline {6}Discussion}{18}{section.6}\protected@file@percent }
 \bibstyle{unsrt}
 \bibdata{references}
 \bibcite{wf_challenges}{{1}{}{{}}{{}}}
-\bibcite{scafe}{{2}{}{{}}{{}}}
-\bibcite{synapse}{{3}{}{{}}{{}}}
-\bibcite{service_wfs}{{4}{}{{}}{{}}}
-\bibcite{schmitt2022workflow}{{5}{}{{}}{{}}}
-\bibcite{GarciaRepresa1740746}{{6}{}{{}}{{}}}
-\bibcite{Ouyang2010}{{7}{}{{}}{{}}}
-\bibcite{NIKOLOV2021100440}{{8}{}{{}}{{}}}
-\bibcite{workflow_in_bigdata}{{9}{}{{}}{{}}}
-\bibcite{apache_airflow}{{10}{}{{}}{{}}}
-\bibcite{rabbitmq}{{11}{}{{}}{{}}}
-\bibcite{apache_kafka}{{12}{}{{}}{{}}}
-\bibcite{argowf}{{13}{}{{}}{{}}}
-\bibcite{cognit}{{14}{}{{}}{{}}}
-\bibcite{openwolf}{{15}{}{{}}{{}}}
-\bibcite{openfaas}{{16}{}{{}}{{}}}
-\bibcite{GarciaRepresa1640771}{{17}{}{{}}{{}}}
-\bibcite{delsing2017iot}{{18}{}{{}}{{}}}
-\bibcite{grid_computing}{{19}{}{{}}{{}}}
-\bibcite{microservices}{{20}{}{{}}{{}}}
-\bibcite{chaos_engineering}{{21}{}{{}}{{}}}
-\bibcite{raft}{{22}{}{{}}{{}}}
-\bibcite{mapreduce}{{23}{}{{}}{{}}}
-\bibcite{hadoop}{{24}{}{{}}{{}}}
-\bibcite{zerotrust}{{25}{}{{}}{{}}}
-\bibcite{ecdsa}{{26}{}{{}}{{}}}
-\bibcite{slurm}{{27}{}{{}}{{}}}
+\bibcite{spark}{{2}{}{{}}{{}}}
+\bibcite{flink}{{3}{}{{}}{{}}}
+\bibcite{scafe}{{4}{}{{}}{{}}}
+\bibcite{synapse}{{5}{}{{}}{{}}}
+\bibcite{service_wfs}{{6}{}{{}}{{}}}
+\bibcite{schmitt2022workflow}{{7}{}{{}}{{}}}
+\bibcite{GarciaRepresa1740746}{{8}{}{{}}{{}}}
+\bibcite{Ouyang2010}{{9}{}{{}}{{}}}
+\bibcite{NIKOLOV2021100440}{{10}{}{{}}{{}}}
+\bibcite{workflow_in_bigdata}{{11}{}{{}}{{}}}
+\bibcite{apache_airflow}{{12}{}{{}}{{}}}
+\bibcite{rabbitmq}{{13}{}{{}}{{}}}
+\bibcite{apache_kafka}{{14}{}{{}}{{}}}
+\bibcite{argowf}{{15}{}{{}}{{}}}
+\bibcite{cognit}{{16}{}{{}}{{}}}
+\bibcite{openwolf}{{17}{}{{}}{{}}}
+\bibcite{openfaas}{{18}{}{{}}{{}}}
+\bibcite{GarciaRepresa1640771}{{19}{}{{}}{{}}}
+\bibcite{delsing2017iot}{{20}{}{{}}{{}}}
+\bibcite{grid_computing}{{21}{}{{}}{{}}}
+\bibcite{microservices}{{22}{}{{}}{{}}}
+\bibcite{chaos_engineering}{{23}{}{{}}{{}}}
+\bibcite{raft}{{24}{}{{}}{{}}}
+\bibcite{mapreduce}{{25}{}{{}}{{}}}
+\bibcite{hadoop}{{26}{}{{}}{{}}}
+\bibcite{zerotrust}{{27}{}{{}}{{}}}
+\bibcite{ecdsa}{{28}{}{{}}{{}}}
+\bibcite{slurm}{{29}{}{{}}{{}}}
 \providecommand\NAT@force@numbers{}\NAT@force@numbers
 \@writefile{toc}{\contentsline {section}{\numberline {A}Appendix - Colonies Operations}{21}{appendix.A}\protected@file@percent }
-\newlabel{optable}{{\caption@xref {optable}{ on input line 635}}{21}{Appendix - Colonies Operations}{table.caption.16}{}}
+\newlabel{optable}{{\caption@xref {optable}{ on input line 636}}{21}{Appendix - Colonies Operations}{table.caption.16}{}}
 \newlabel{optable@cref}{{[appendix][1][2147483647]A}{[1][21][]21}}
 \gdef \@abspage@last{21}

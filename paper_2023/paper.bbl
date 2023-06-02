@@ -18,6 +18,22 @@ Rafael Ferreira~da Silva, Henri Casanova, Kyle Chard, Tainã Coleman, Dan
   Scientific Workflows Management Systems Research and Development}.
 \newblock Technical report, 2021.
 
+\bibitem{spark}
+Matei Zaharia, Reynold~S. Xin, Patrick Wendell, Tathagata Das, Michael
+  Armbrust, Ankur Dave, Xiangrui Meng, Josh Rosen, Shivaram Venkataraman,
+  Michael~J. Franklin, Ali Ghodsi, Joseph Gonzalez, Scott Shenker, and Ion
+  Stoica.
+\newblock Apache spark: A unified engine for big data processing.
+\newblock {\em Commun. ACM}, 59(11):56–65, oct 2016.
+
+\bibitem{flink}
+Paris Carbone, Asterios Katsifodimos, Stephan Ewen, Volker Markl, Seif Haridi,
+  and Kostas Tzoumas.
+\newblock Apache flink{\texttrademark}: Stream and batch processing in a single
+  engine.
+\newblock {\em Bulletin of the IEEE Computer Society Technical Committee on
+  Data Engineering}, 36(4):28--38, 2015.
+
 \bibitem{scafe}
 Zhijun Ding, Yuanyuan Zhou, Shuaijun Wang, and Changjun Jiang.
 \newblock {SCAFE: A Service-Centered Cloud-Native Workflow Engine
